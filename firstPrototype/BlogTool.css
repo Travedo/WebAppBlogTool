@@ -1,0 +1,200 @@
+/* ==========================================================================
+   http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */ 
+
+body {
+    background: #0e9; /* background: #09e;*/
+    font: 700 20px/24px "Niconne" ; /* oder Chewy, Cookie, "Great Vibes", Montez, "Indie Flower", Dosis (700) */ 
+}
+
+.sign-up, .login {
+    background: rgba(0, 0, 0, 0.8); 
+    display: none;
+    left: 0;
+    padding-top: 150px;
+    position: absolute;
+    top:0; 
+    width: 100%;
+}
+
+.sign-up-box, .login-box {
+    background: #fff; 
+    margin: 0 auto;
+    padding: 40px 35px;
+    width: 50%;
+}
+
+.sign-up-box input, .login-box input {  /*input[type=text]*/
+    margin: 20px 0;
+    padding: 10px 0;
+    width: 100%;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.7);
+    height: 40px;
+    padding: 20px 0 0;
+}
+
+.wrapper {
+    display: block;
+    margin: 0 auto;
+}
+
+.menu {
+
+}
+
+.menu-list {
+    float: right;
+    list-style: none;
+}
+
+.menu-list li {
+    float: left;
+    padding: 0 20px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0ca; /*color: #0ac;*/
+}
+
+
+
+h1, h2 {
+    font: 24px/28px "Coiny"; 
+    /* oder Ubuntu:700, "Yanone Kaffeesatz" 700, Dosis (400,600,700), Ewert, "Love Ya Like A Sister" */
+    margin: 5px 0;
+}
+h2 {
+    font: 20px/22px "Coiny"; 
+    /* oder Ubuntu:700, "Yanone Kaffeesatz" 700, Dosis (400,600,700), Ewert, "Love Ya Like A Sister" */
+}
+
+.main {
+    padding: 50px 8%;
+}
+
+p {
+    display: block;
+    font: 18px/20px "Niconne"; 
+    /* oder Allura, Montez, Niconne, Tangerine:700, Cookie, "Dancing Script" (400,700), Qwigley, "Great Vibes", Eczar, Italianno, "Indie Flower", "Yanone Kaffeesatz" 400 */
+    margin: 28px 0;
+}
+
+.text-img {
+    width:100%;
+}
+
+img {
+    width:100%;
+}
+
+textarea {
+    background: #e6ffe6;
+    border: none;
+    font: 18px/20px "Niconne";
+    padding: 10px 15px;
+    width: 96%;
+}
+
+
+
+
+
+
+
+
+
+/*
+aside {
+    float right;
+    width: 30%;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.group:before,
+.group:after {
+    content: " ";
+    display: table;
+}
+
+.group:after {
+    clear: both;
+}
+
+.group {
+    *zoom: 1;
+}
