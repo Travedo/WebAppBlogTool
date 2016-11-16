@@ -53,7 +53,7 @@ table {
    ========================================================================== */ 
 
 body {
-    background: #0e9; /* background: #09e;*/
+    /*background: #0e9; */
     font: 700 20px/24px "Niconne" ; /* oder Chewy, Cookie, "Great Vibes", Montez, "Indie Flower", Dosis (700) */ 
 }
 
@@ -114,7 +114,31 @@ a:hover {
     color: #0ca; /*color: #0ac;*/
 }
 
+.blog-elements {
+    float: left;
+    border: solid 1px #333;
+    box-shadow: 5px 6px 25px -5px rgba(0,0,0,0.75);
+    padding: 10px 3%;
+    width: 26%;
+}
 
+.blog-element {
+    background: #000;
+    border: solid 1px #333;
+    box-shadow: 5px 6px 25px -5px rgba(0,0,0,0.75);
+    display: block;
+    float: left;
+    height: 80px;
+    margin: 10px 5%;
+    width: 80px;
+}
+
+
+
+.blog-preview {
+    float: right;
+    width: 63%;
+}
 
 h1, h2 {
     font: 24px/28px "Coiny"; 

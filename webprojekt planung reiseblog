@@ -1,0 +1,25 @@
+
+webprojekt planung reiseblog
+
+Aijana: 
+a) was wir brauchen: eine fast leere seite, mit einem div drauf
+b) und dann... können wir je nach Methode entweder (zb asp.net) der view die Daten mitgeben & diese dann rendern lassen, oder..
+b.1) sich per js das html gerüst vom Service holen, sich den div pet getByID holen und dann alles ins div.innerHtml rein werfen
+etc etc
+dynamische seiten sind nichtmal soo schwer. das html zusammen zubauen wird glaub ich fast komplexer
+hier mal, was ich grad im asp.net getestet hab:
+public IActionResult Index()
+        {
+            string test = "<h2>TEST!</h2><br>Hallo?<hr id=\"123\">Liest mich jemand?";
+            ViewBag.Test = test;
+         
+            return View();
+        }   //Controller, der die view anzeigen lässt
+//"html" in der view rendern lassen
+<div id="test" >
+  @Html.Raw(test)
+</div>
+das, was ich zu sehen kriege ist das, was in dem test string drinne steckt. ist zwar grad statisch, das dynamische, aber mey
+
+
+und asp.net erlaubt wohl nutzer-Management. muss man auch alles einstellen und sich rumschlagen, aber immerhin nicht selbst programmieren ^^
