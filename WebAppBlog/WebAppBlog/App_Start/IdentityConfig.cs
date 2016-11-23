@@ -16,6 +16,8 @@ namespace WebAppBlog
 {
     public class EmailService : IIdentityMessageService
     {
+        private string fromMail = "";
+
         public Task SendAsync(IdentityMessage message)
         {
             // Plug in your email service here to send an email.
@@ -30,7 +32,7 @@ namespace WebAppBlog
             var client = new System.Net.Mail.SmtpClient("smtp.gmail.com", 587);
             client.EnableSsl = true;
             client.UseDefaultCredentials = false;
-            client.Credentials = new System.Net.NetworkCredential("WebAppsBlogMS@gmail.com", "#####");
+            client.Credentials = new System.Net.NetworkCredential(fromMail, "#####");
 
             try
             {
@@ -42,7 +44,7 @@ namespace WebAppBlog
 
                 // Set sender
                 // In this case the same as the username
-                mymessage.From = new System.Net.Mail.MailAddress("WebAppsBlogMS@gmail.com");
+                mymessage.From = new System.Net.Mail.MailAddress(fromMail);
 
                 // Set subject
                 mymessage.Subject = message.Subject;
