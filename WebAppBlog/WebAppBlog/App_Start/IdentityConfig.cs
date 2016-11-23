@@ -30,7 +30,7 @@ namespace WebAppBlog
             var client = new System.Net.Mail.SmtpClient("smtp.gmail.com", 587);
             client.EnableSsl = true;
             client.UseDefaultCredentials = false;
-            client.Credentials = new System.Net.NetworkCredential("WebAppsBlogMS@gmail.com", "webAppKxTTz+!Mjj77");
+            client.Credentials = new System.Net.NetworkCredential("WebAppsBlogMS@gmail.com", "#####");
 
             try
             {
@@ -38,7 +38,7 @@ namespace WebAppBlog
                 System.Net.Mail.MailMessage mymessage = new System.Net.Mail.MailMessage();
 
                 // Add receiver
-                mymessage.To.Add("aijana.schumann@gmail.com");
+                mymessage.To.Add(message.Destination);
 
                 // Set sender
                 // In this case the same as the username
