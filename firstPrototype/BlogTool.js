@@ -34,8 +34,11 @@ $(document).ready(function() {
 */
 $(document).ready(function() {
 
+alert("hi");
+
   $('.menu-trigger').click(function() {
-    $(".menu").fadeToggle();    
+    $(".menu").fadeToggle();
+        
   });
   
   $(window).resize(function() {

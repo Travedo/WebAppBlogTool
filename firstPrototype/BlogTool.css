@@ -124,19 +124,21 @@ header {
 
 .icon-menu:before {
     content: "\e9bd";
+    font-size: 30px;
 }
 
 .menu-trigger /*, .menu-close-btn*/ {
-    height: 22px;
+    height: 32px;
     position: absolute;
-    right: 15px;
-    top: 10px;
-    width: 25px;
+    right: 14px;
+    top: 14px;
+    width: 35px;
 }
 
 .menu {
     background: rgba(0, 0, 0, 0.9); 
-   /* display: none; */
+    display: none;
+    margin: 40px 0;
 }
 
 .menu-list {
@@ -292,6 +294,11 @@ aside {
         font: 16px/18px "Coiny"; 
     }
 
+    p {
+        font: 16px/18px "Niconne"; 
+        margin: 28px 0;
+    }
+
     .blog-elements {
         box-shadow: 5px 6px 25px -5px rgba(0,0,0,0.75);
         padding: 10px 3%;
@@ -341,6 +348,12 @@ aside {
 
     .menu-trigger {
         display: none;
+    }
+
+    .menu {
+        background: none;
+        display: block;
+        margin: 0;
     }
 
     .menu-list {
