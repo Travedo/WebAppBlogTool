@@ -11,3 +11,7 @@ Wenn das Projekt erstmals heruntergeladen wurde:
 - Klicke auf restore
 - => fehlende Pakete werden installiert
 
+## Mail Provider zufügen
+- der Email Service ist auf einen gmail Account konfiguriert
+- Trage Logindaten (zum Test) unter App_Start > IdentityConfig.cs in fromMail und mailPw ein
+- besser: externe setup datei, erstellung erklärt: TODO
