@@ -52,9 +52,40 @@ table {
    Author's custom styles
    ========================================================================== */ 
 
+ /* iconfonts */
+@font-face {
+    font-family: 'icomoon';
+    src:url('fonts/icomoon.eot?330og6');
+    src:url('fonts/icomoon.eot?#iefix330og6') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?330og6') format('truetype'),
+        url('fonts/icomoon.woff?330og6') format('woff'),
+        url('fonts/icomoon.svg?330og6#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* =======================================================================================================================
+        General styles - mobile Version
+   ======================================================================================================================= */
+
+
 body {
     /*background: #0e9; */
-    font: 700 20px/24px "Niconne" ; /* oder Chewy, Cookie, "Great Vibes", Montez, "Indie Flower", Dosis (700) */ 
+    font: 700 18px/20px "Niconne" ; /* oder Chewy, Cookie, "Great Vibes", Montez, "Indie Flower", Dosis (700) */ 
 }
 
 .sign-up, .login {
@@ -63,7 +94,7 @@ body {
     left: 0;
     padding-top: 150px;
     position: absolute;
-    top:0; 
+    top: 0; 
     width: 100%;
 }
 
@@ -81,7 +112,7 @@ body {
 }
 
 header {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.9);
     height: 40px;
     padding: 20px 0 0;
 }
@@ -91,18 +122,30 @@ header {
     margin: 0 auto;
 }
 
-.menu {
+.icon-menu:before {
+    content: "\e9bd";
+}
 
+.menu-trigger /*, .menu-close-btn*/ {
+    height: 22px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    width: 25px;
+}
+
+.menu {
+    background: rgba(0, 0, 0, 0.9); 
+   /* display: none; */
 }
 
 .menu-list {
-    float: right;
     list-style: none;
+    text-align: center;
 }
 
 .menu-list li {
-    float: left;
-    padding: 0 20px;
+    padding: 20px 0;
 }
 
 a {
@@ -112,6 +155,12 @@ a {
 
 a:hover {
     color: #0ca; /*color: #0ac;*/
+}
+
+.icon-users:before {
+    color: white;
+    content: "\e972";
+    margin-right: 15px;
 }
 
 .blog-elements {
@@ -128,51 +177,84 @@ a:hover {
     box-shadow: 5px 6px 25px -5px rgba(0,0,0,0.75);
     display: block;
     float: left;
-    height: 80px;
+    height: 40px;
     margin: 10px 5%;
-    width: 80px;
+    width: 40px;
 }
 
+.blog-element:before {
+    display: block;
+    font-size: 20px;
+    margin: 10px 0;
+    text-align: center;
+}
 
+.icon-text:before {
+    content: "\ea77";
+}
+
+.icon-image:before {
+    content: "\e90d";
+}
+
+.icon-images:before {
+    content: "\e90e";
+}
+
+.icon-images-slideshow:before {
+    content: " ";
+}
+
+.icon-video:before {
+    content: "\e912";
+}
+
+.icon-location:before {
+    content: "\e947";
+}
+
+.icon-music:before {
+    content: "\e911";
+}
 
 .blog-preview {
     float: right;
     width: 63%;
 }
 
-h1, h2 {
-    font: 24px/28px "Coiny"; 
+h1 {
+    font: 16px/18px "Coiny"; 
     /* oder Ubuntu:700, "Yanone Kaffeesatz" 700, Dosis (400,600,700), Ewert, "Love Ya Like A Sister" */
     margin: 5px 0;
 }
+
 h2 {
-    font: 20px/22px "Coiny"; 
-    /* oder Ubuntu:700, "Yanone Kaffeesatz" 700, Dosis (400,600,700), Ewert, "Love Ya Like A Sister" */
+    font: 14px/16px "Coiny"; 
 }
 
 .main {
-    padding: 50px 8%;
+    padding: 30px 8%;
 }
 
 p {
     display: block;
-    font: 18px/20px "Niconne"; 
+    font: 14px/16px "Niconne"; 
     /* oder Allura, Montez, Niconne, Tangerine:700, Cookie, "Dancing Script" (400,700), Qwigley, "Great Vibes", Eczar, Italianno, "Indie Flower", "Yanone Kaffeesatz" 400 */
-    margin: 28px 0;
+    margin: 20px 0;
 }
 
 .text-img {
-    width:100%;
+    width: 100%;
 }
 
 img {
-    width:100%;
+    width: 100%;
 }
 
 textarea {
     background: #e6ffe6;
     border: none;
-    font: 18px/20px "Niconne";
+    font: 14px/16px "Niconne";
     padding: 10px 15px;
     width: 96%;
 }
@@ -192,9 +274,119 @@ aside {
 }
 */
 
+/* =======================================================================================================================
+            Media Queries - Tablet
+   ======================================================================================================================= */
+
+@media only screen and (min-width: 760px) {
+  
+    body {
+        /* font: 700 18px/20px "Niconne";  */
+    }
+
+    h1 {
+        font: 18px/20px "Coiny"; 
+    }
+
+    h2 {
+        font: 16px/18px "Coiny"; 
+    }
+
+    .blog-elements {
+        box-shadow: 5px 6px 25px -5px rgba(0,0,0,0.75);
+        padding: 10px 3%;
+        width: 26%;
+    }
+
+    .blog-element {
+        height: 50px;
+        margin: 10px 5%;
+        width: 50px;
+    }
+
+    .blog-element:before {
+        font-size: 28px;
+        margin: 10px 0;
+    }
 
 
 
+
+}
+
+@media only screen and (min-width: 950px) {
+    .blog-element {
+        height: 60px;
+        margin: 10px 5%;
+        width: 60px;
+    }
+
+    .blog-element:before {
+        font-size: 30px;
+        margin: 15px 0;
+    }
+    
+ }
+
+/* =======================================================================================================================
+            Media Queries - Desktop
+   ======================================================================================================================= */
+
+
+@media only screen and (min-width: 1024px) {
+  
+    body {
+        font: 700 20px/24px "Niconne";  
+    }
+
+    .menu-trigger {
+        display: none;
+    }
+
+    .menu-list {
+        float: right;
+    }
+
+    .menu-list li {
+        float: left;
+        padding: 0 20px;
+    }
+
+    h1 {
+        font: 24px/28px "Coiny"; 
+        margin: 5px 0;
+    }
+
+    h2 {
+        font: 20px/22px "Coiny"; 
+    }
+
+    .main {
+        padding: 50px 8%;
+    }
+
+    p {
+        font: 18px/20px "Niconne"; 
+        margin: 28px 0;
+    }
+
+    textarea {
+        font: 18px/20px "Niconne";
+    }
+
+    .blog-element {
+        height: 80px;
+        margin: 10px 5%;
+        width: 80px;
+    }
+
+    .blog-element:before {
+        font-size: 36px;
+        margin: 20px 0;
+    }
+
+
+}
 
 
 
