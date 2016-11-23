@@ -11,5 +11,6 @@ namespace WebAppBlog.Models
         public string LastName { get; set; }
         public string Email { get; set; }
         public DateTime Birthdate{ get;set; }
+        public bool EmailConfirmation { get; set; }
     }
 }
