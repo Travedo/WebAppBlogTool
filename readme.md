@@ -7,7 +7,7 @@
 ## Restore Packages
 Wenn das Projekt erstmals heruntergeladen wurde: 
 - öffne es in Visual Studio (oder vergleichbare IDE), indem die .sln Datei doppelgeklickt wird
-- gehe im Solution Explorer zu References (-> Nuget Manager sollte sich öffnen)
+- gehe im Solution Explorer zu References > Manage Nuget Packages 
 - Klicke auf restore
 - => fehlende Pakete werden installiert
 
