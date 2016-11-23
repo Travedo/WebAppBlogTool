@@ -10,6 +10,7 @@ using WebAppBlog.Models;
 
 namespace WebAppBlog.Controllers
 {
+    [Authorize]
     public class UserController : Controller
     {
         private ApplicationUserManager _userManager;
