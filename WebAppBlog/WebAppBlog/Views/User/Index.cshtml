@@ -13,6 +13,20 @@
     @Html.DisplayTextFor(m => m.LastName)<br /><br />
     @Html.LabelFor(m => m.Birthdate)<br />
     @Html.DisplayTextFor(m => m.Birthdate)<br /><br />
+    @Html.LabelFor(m => m.EmailConfirmation)<br />
+    @Html.DisplayTextFor(m => m.EmailConfirmation)<br /><br />
+    @{
+        if (!Model.EmailConfirmation)
+        {
+            using (Html.BeginForm("ResendEmail", "User", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <text>Resend Email Confirmation
+                    <input type="submit" value="Resend Mail" class="btn btn-link" />
+                </text>
+            }
+        }
+    }
   
       @Html.ActionLink("Edit", "Index","Manage",null,null)
    

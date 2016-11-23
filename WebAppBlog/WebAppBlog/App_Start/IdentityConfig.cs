@@ -17,6 +17,7 @@ namespace WebAppBlog
     public class EmailService : IIdentityMessageService
     {
         private string fromMail = "";
+        private string mailpw = "###";
 
         public Task SendAsync(IdentityMessage message)
         {
@@ -32,7 +33,7 @@ namespace WebAppBlog
             var client = new System.Net.Mail.SmtpClient("smtp.gmail.com", 587);
             client.EnableSsl = true;
             client.UseDefaultCredentials = false;
-            client.Credentials = new System.Net.NetworkCredential(fromMail, "#####");
+            client.Credentials = new System.Net.NetworkCredential(fromMail, mailpw);
 
             try
             {
@@ -62,15 +63,6 @@ namespace WebAppBlog
             {
                 Console.WriteLine("Could not send e-mail. Exception caught: " + e);
             }
-        }
-    }
-
-    public class SmsService : IIdentityMessageService
-    {
-        public Task SendAsync(IdentityMessage message)
-        {
-            // Plug in your SMS service here to send a text message.
-            return Task.FromResult(0);
         }
     }
 
@@ -109,17 +101,13 @@ namespace WebAppBlog
 
             // Register two factor authentication providers. This application uses Phone and Emails as a step of receiving a code for verifying the user
             // You can write your own provider and plug it in here.
-            manager.RegisterTwoFactorProvider("Phone Code", new PhoneNumberTokenProvider<ApplicationUser>
-            {
-                MessageFormat = "Your security code is {0}"
-            });
+           
             manager.RegisterTwoFactorProvider("Email Code", new EmailTokenProvider<ApplicationUser>
             {
                 Subject = "Security Code",
                 BodyFormat = "Your security code is {0}"
             });
             manager.EmailService = new EmailService();
-            manager.SmsService = new SmsService();
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {

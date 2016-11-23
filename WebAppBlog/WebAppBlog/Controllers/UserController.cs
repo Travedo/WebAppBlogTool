@@ -35,6 +35,18 @@ namespace WebAppBlog.Controllers
             }
         }
 
+        //Post: User/ResendEmail
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ResendEmail()
+        {
+            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+            var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+            await UserManager.SendEmailAsync(user.Id, "Account confirmation mail resend", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+            return RedirectToAction("Index", "User");
+        }
+
         // GET: User
         public async Task<ActionResult> Index()
         {
@@ -43,7 +55,8 @@ namespace WebAppBlog.Controllers
                 FirstName=user.FirstName,
                 LastName=user.LastName,
                 Birthdate=user.Birthdate,
-                Email=user.Email
+                Email=user.Email,
+                EmailConfirmation=user.EmailConfirmed
             };
 
             return View(model);
