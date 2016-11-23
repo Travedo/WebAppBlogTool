@@ -5,6 +5,15 @@
 
 <h2>@ViewBag.Title</h2>
 <div>
-
+    @Html.LabelFor(m => m.Email)<br />
+    @Html.DisplayTextFor(m => m.Email)<br /><br />
+     @Html.LabelFor(m => m.FirstName)<br />
+    @Html.DisplayTextFor(m => m.FirstName)<br /><br />
+    @Html.LabelFor(m => m.LastName)<br />
+    @Html.DisplayTextFor(m => m.LastName)<br /><br />
+    @Html.LabelFor(m => m.Birthdate)<br />
+    @Html.DisplayTextFor(m => m.Birthdate)<br /><br />
+  
+      @Html.ActionLink("Edit", "Index","Manage",null,null)
    
 </div>
