@@ -196,12 +196,40 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\icomoon.svg" />
+    <Content Include="fonts\iconfonts\bin.svg" />
+    <Content Include="fonts\iconfonts\bubble.svg" />
+    <Content Include="fonts\iconfonts\bubbles2.svg" />
+    <Content Include="fonts\iconfonts\cogs.svg" />
+    <Content Include="fonts\iconfonts\cross.svg" />
+    <Content Include="fonts\iconfonts\enter.svg" />
+    <Content Include="fonts\iconfonts\file-text.svg" />
+    <Content Include="fonts\iconfonts\forward.svg" />
+    <Content Include="fonts\iconfonts\image.svg" />
+    <Content Include="fonts\iconfonts\images.svg" />
+    <Content Include="fonts\iconfonts\info.svg" />
+    <Content Include="fonts\iconfonts\location.svg" />
+    <Content Include="fonts\iconfonts\menu.svg" />
+    <Content Include="fonts\iconfonts\music.svg" />
+    <Content Include="fonts\iconfonts\play.svg" />
+    <Content Include="fonts\iconfonts\quill.svg" />
+    <Content Include="fonts\iconfonts\redo2.svg" />
+    <Content Include="fonts\iconfonts\reply.svg" />
+    <Content Include="fonts\iconfonts\spinner6.svg" />
+    <Content Include="fonts\iconfonts\undo2.svg" />
+    <Content Include="fonts\iconfonts\users.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\BlogTool.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\icomoon.eot" />
+    <Content Include="fonts\icomoon.ttf" />
+    <Content Include="fonts\icomoon.woff" />
+    <Content Include="fonts\icomoon.zip" />
+    <Content Include="fonts\icomoon_21_icons.zip" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\DragnDrop.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -251,6 +279,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="fonts\icomoon_21_icons\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
