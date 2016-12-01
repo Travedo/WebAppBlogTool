@@ -22,3 +22,26 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+.containerTest {
+     display: flex;
+     flex-direction: row;
+     align-items:stretch;
+     flex-wrap:wrap;
+     justify-content:flex-start;
+}
+
+.leftTest {order:1;  flex-basis:80%; height:80%}
+.middleTest {order:2; flex-basis:20%; height:80%;}
+
+@media (max-width:900px) {
+   .containerTest {
+       flex-wrap:nowrap;
+        flex-direction: column;
+   } 
+   
+   
+    
+}
+
