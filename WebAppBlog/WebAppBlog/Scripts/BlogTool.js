@@ -13,19 +13,20 @@
 });
 */
 
-$(document).ready(function() {
+/*$(document).ready(function() {
 	
 	$('.login-btn').click(function() {
 		
 		$('.login').css({'display': 'block'});
-		/*$(".login").fadeToggle();*/
+		/*$(".login").fadeToggle();
 		
-	});
+	});*/
 	
 	/*
 	$(window).resize(function() {
 		$(".login-close-btn").removeAttr('style');
 	});
-	*/
+	
 
-});
+});*/
+
