@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebAppBlog.Models.Blog;
 
 namespace WebAppBlog.Services
 {
     public interface IBlogDataService
     {
-       void SetTitle(string title);
-       string getTitle();
+        void SetBlogData(Blog blog);
+        Blog GetBlogData();
 
     }
 }

@@ -2,21 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using WebAppBlog.Models.Blog;
 
 namespace WebAppBlog.Services
 {
     public class BlogDataService : IBlogDataService
     {
-        private string title;
+        private Blog blog;
 
-        public string getTitle()
+        public Blog GetBlogData()
         {
-            return title;
+            return blog;
         }
 
-        public void SetTitle(string title)
+      
+
+        public void SetBlogData(Blog blog)
         {
-            this.title = title;
+            this.blog = blog;
         }
+
+        
     }
 }

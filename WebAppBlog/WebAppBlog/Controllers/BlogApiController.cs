@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using WebAppBlog.Models.Blog;
 using WebAppBlog.Services;
 
 namespace WebAppBlog.Controllers
@@ -45,7 +47,8 @@ namespace WebAppBlog.Controllers
             }
             else
             {
-                blogService.SetTitle("some test title");
+                var blogdata = JsonConvert.DeserializeObject<BlogWrapper>(data);
+                blogService.SetBlogData(blogdata.blog);
                 return new HttpResponseMessage(HttpStatusCode.OK);
             }
 

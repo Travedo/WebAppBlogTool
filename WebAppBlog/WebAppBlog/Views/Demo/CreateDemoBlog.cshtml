@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Demo Blog under construction";
+}
+
+<h2>Create your own Blog</h2>
+<div class="containerTest">
+    <div class="leftTest">
+        <div class="main group">
+            <div class="blog-elements">
+                <h2>Please choose your content here.</h2>
+                <a id="textAdd" href"#" draggable="true" ondragstart="drag(event)" class="blog-element icon-text"></a>
+                <a id="imgAdd" href"#" draggable="true" ondragstart="drag(event)" class="blog-element icon-image"></a>
+                <a id="imgsAdd" href"#" draggable="true" ondragstart="drag(event)" class="blog-element icon-images"></a>  <!-- -gallery -->
+                <a id="test2" href"#" draggable="true" ondragstart="drag(event)" class="blog-element icon-images-slideshow"></a>
+                <a id="videoAdd" href"#" draggable="true" ondragstart="drag(event)" class="blog-element icon-video"></a>
+                <a id="locationAdd" href"#" class="blog-element icon-location"></a>
+                <a id="musicAdd" href"#" class="blog-element icon-music"></a>
+            </div>
+            <div class="blog-preview">
+                <div id="blogdata" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <label>Titel</label><br />
+                    <input id="blog-titel" type="text" /><br /><br />
+                    <label>Subtitel</label><br />
+                    <input id="blog-subtitle" type="text" /><br /><br />
+                    <label>First Paragraph</label><br />
+                    <textarea></textarea>
+                </div>
+                <button onclick="createDemoBlog()">Create</button>
+            </div>
+        </div>
+    </div>
+    <div class="middleTest">
+        TODO: add google maps to chose location
+    </div>
+
+</div>
+
+
+
+

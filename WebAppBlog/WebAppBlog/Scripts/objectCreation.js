@@ -1,28 +1,59 @@
-﻿function create()
+﻿function createBlog() {
+
+    var blog = create();
+    sendData("/blog/index", create());
+}
+
+function createDemoBlog() {
+
+    sendData("/Demo/MyTemporaryDemoBlog", create());
+}
+
+function sendData(url, blog){
+    $.ajax({
+        type: "POST",
+        url: "/api/BlogApi/CreateBlog/",
+        data: JSON.stringify({ blog }),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        complete: function (data) {
+            if (data.readyState === 4 & data.status === 200) {
+                window.location.replace(url);
+            }
+        }
+    });
+}
+
+
+
+function create()
 {
-    var blogdata = document.getElementById("blogdata");
-    var jsonObject = {};
-    jsonObject.text = [];
-    jsonObject.images = [];
-    jsonObject.gmapsMarker = {};
+    var blogdata = document.getElementById("blogdata"); // get blog data
+    var blog = {};
+    blog.titel = "";
+    blog.subtitel = "";
+    blog.text = [];
+    blog.images = "";
+    blog.gmapsMarker = "";
 
     var positionCounter = 0;
     for (var element of blogdata.children) {
+
         switch (element.localName) {
-            case "input":
+            case "input": //go trough children and add accordingly
 
                 if (element.id === "blog-titel")
                 {
-                    jsonObject.titel = element.value;
+                    blog.titel = element.value;
                 } else
                     if (element.id === "blog-subtitle") {
-                    jsonObject.subtitel = element.value;
+                        blog.subtitel = element.value;
                 } else {
 
                     var text = {};
                     text.value = element.value;
                     text.position = positionCounter;
-                    jsonObject.text.push(text);
+                    blog.text.push(text);
                     positionCounter++;
                 }
                
@@ -32,30 +63,15 @@
                 var text = {};
                 text.value = element.value;
                 text.position = positionCounter;
-                jsonObject.text.push(text);
+                blog.text.push(text);
 
                 positionCounter++;
                 break;
-            
-            
         }
-        
     }
-    console.log(jsonObject);
+    console.log(blog);
 
-    $.ajax({
-        type: "POST",
-        url: "/api/BlogApi/CreateBlog/",
-        data: JSON.stringify({ jsonObject }),
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: function (data) {
-           
-        },
-        failure: function (errMsg) {
-            alert("fail");
-        }
-    });
-
-    window.location.replace("/blog");
+    
+    return blog;
+   
 }

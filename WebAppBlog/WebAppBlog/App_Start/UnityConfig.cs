@@ -3,6 +3,13 @@ using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 using WebAppBlog.Services;
 using System.Web.Http;
+using System.Data.Entity;
+using Microsoft.AspNet.Identity;
+using WebAppBlog.Models;
+using Microsoft.Owin.Security;
+using System.Web;
+using Microsoft.AspNet.Identity.EntityFramework;
+using static WebAppBlog.ApplicationUserManager;
 
 namespace WebAppBlog.App_Start
 {
@@ -43,6 +50,19 @@ namespace WebAppBlog.App_Start
             container.RegisterType<IBlogDataService,BlogDataService>();
              GlobalConfiguration.Configuration.DependencyResolver = new UnityResolver(container);
 
+
+            container.RegisterType<ApplicationDbContext>();
+            container.RegisterType<ApplicationSignInManager>();
+            container.RegisterType<ApplicationUserManager>();
+
+            container.RegisterType<IAuthenticationManager>(
+    new InjectionFactory(c => HttpContext.Current.GetOwinContext().Authentication));
+
+            container.RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>(
+            new InjectionConstructor(typeof(ApplicationDbContext)));
+
+            container.RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>(
+            new InjectionConstructor(typeof(ApplicationDbContext)));
         }
     }
 }

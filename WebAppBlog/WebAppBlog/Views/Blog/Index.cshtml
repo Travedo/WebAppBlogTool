@@ -1,7 +1,20 @@
-﻿@model WebAppBlog.Services.IBlogDataService
+﻿@model WebAppBlog.Models.Blog.BlogOutput
 @{
     ViewBag.Title = "My Blog";
 }
 
 
-<h2>@Model.getTitle()</h2>
+<h2>@Model.Title</h2>
+<h3>@Model.Subtitle</h3>
+@foreach(var element in Model.Elements)
+{
+    if(element is WebAppBlog.Models.Blog.TextElement)
+    {
+        @Html.Raw(element.value); <br />
+    }
+    else
+    {
+
+    }
+}
+
