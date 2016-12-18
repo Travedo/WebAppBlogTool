@@ -170,6 +170,11 @@ a:hover {
     width: 63%;
 }
 
+.blog-container{
+    float: right;
+    width: 63%;
+}
+
 h1 {
     font: 16px/18px "Coiny"; 
     /* oder Ubuntu:700, "Yanone Kaffeesatz" 700, Dosis (400,600,700), Ewert, "Love Ya Like A Sister" */
