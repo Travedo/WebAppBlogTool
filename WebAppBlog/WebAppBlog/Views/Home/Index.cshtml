@@ -16,13 +16,16 @@
                 <a id="locationAdd" href"#" class="blog-element icon-location"></a>
                 <a id="musicAdd" href"#" class="blog-element icon-music"></a>
             </div>
-            <div class="blog-preview" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <label>Titel</label><br />
-                <input type="text" /><br /><br />
-                <label>Subtitel</label><br />
-                <input type="text" /><br /><br />
-                <label>First Paragraph</label><br />
-                <textarea></textarea><br />
+            <div class="blog-preview">
+                <div id="blogdata" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <label>Titel</label><br />
+                    <input id="blog-titel" type="text" /><br /><br/>
+                    <label>Subtitel</label><br />
+                    <input id="blog-subtitle" type="text" /><br /><br />
+                    <label>First Paragraph</label><br />
+                    <textarea></textarea>
+                </div>
+                <button onclick="create()">Create</button>
             </div>
         </div>
         </div>
