@@ -49,9 +49,13 @@
         data: JSON.stringify({ jsonObject }),
         contentType: "application/json; charset=utf-8",
         dataType: "json",
-        success: function (data) { alert("sucess"); },
+        success: function (data) {
+           
+        },
         failure: function (errMsg) {
             alert("fail");
         }
     });
+
+    window.location.replace("/blog");
 }

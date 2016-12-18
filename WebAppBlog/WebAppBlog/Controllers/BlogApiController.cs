@@ -5,12 +5,20 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using WebAppBlog.Services;
 
 namespace WebAppBlog.Controllers
 {
     [RoutePrefix("api/BlogApi")]
     public class BlogApiController : ApiController
     {
+        private IBlogDataService blogService;
+        public BlogApiController(IBlogDataService service)
+        {
+            blogService = service;
+        }
+
+
         // GET api/<controller>
         public IEnumerable<string> Get()
         {
@@ -37,6 +45,7 @@ namespace WebAppBlog.Controllers
             }
             else
             {
+                blogService.SetTitle("some test title");
                 return new HttpResponseMessage(HttpStatusCode.OK);
             }
 
