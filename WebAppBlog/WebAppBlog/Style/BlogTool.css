@@ -55,11 +55,11 @@ table {
  /* iconfonts */
 @font-face {
     font-family: 'icomoon';
-    src:url('fonts/icomoon.eot?330og6');
-    src:url('fonts/icomoon.eot?#iefix330og6') format('embedded-opentype'),
-        url('fonts/icomoon.ttf?330og6') format('truetype'),
-        url('fonts/icomoon.woff?330og6') format('woff'),
-        url('fonts/icomoon.svg?330og6#icomoon') format('svg');
+    src:url('/fonts/icomoon.eot?330og6');
+    src:url('/fonts/icomoon.eot?#iefix330og6') format('embedded-opentype'),
+        url('/fonts/icomoon.ttf?330og6') format('truetype'),
+        url('/fonts/icomoon.woff?330og6') format('woff'),
+        url('/fonts/icomoon.svg?330og6#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -88,67 +88,13 @@ body {
     font: 700 18px/20px "Niconne" ; /* oder Chewy, Cookie, "Great Vibes", Montez, "Indie Flower", Dosis (700) */ 
 }
 
-.sign-up, .login {
-    background: rgba(0, 0, 0, 0.8); 
-    display: none;
-    left: 0;
-    padding-top: 150px;
-    position: absolute;
-    top: 0; 
-    width: 100%;
-}
 
-.sign-up-box, .login-box {
-    background: #fff; 
-    margin: 0 auto;
-    padding: 40px 35px;
-    width: 50%;
-}
-
-.sign-up-box input, .login-box input {  /*input[type=text]*/
-    margin: 20px 0;
-    padding: 10px 0;
-    width: 100%;
-}
-
-header {
-    background: rgba(0, 0, 0, 0.9);
-    height: 40px;
-    padding: 20px 0 0;
-}
-
-.wrapper {
-    display: block;
-    margin: 0 auto;
-}
 
 .icon-menu:before {
     content: "\e9bd";
     font-size: 30px;
 }
 
-.menu-trigger /*, .menu-close-btn*/ {
-    height: 32px;
-    position: absolute;
-    right: 14px;
-    top: 14px;
-    width: 35px;
-}
-
-.menu {
-    background: rgba(0, 0, 0, 0.9); 
-    display: none;
-    margin: 40px 0;
-}
-
-.menu-list {
-    list-style: none;
-    text-align: center;
-}
-
-.menu-list li {
-    padding: 20px 0;
-}
 
 a {
     color: #fff;
@@ -220,6 +166,11 @@ a:hover {
 }
 
 .blog-preview {
+    float: right;
+    width: 63%;
+}
+
+.blog-container{
     float: right;
     width: 63%;
 }
@@ -315,6 +266,10 @@ aside {
         font-size: 28px;
         margin: 10px 0;
     }
+
+
+
+
 }
 
 @media only screen and (min-width: 950px) {

@@ -28,10 +28,10 @@ namespace WebAppBlog
                       "~/Scripts/DragnDrop.js",
                       "~/Scripts/objectCreation.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/BlogTool.css",
-                         "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Style/css").Include(
+                      "~/Style/bootstrap.css",
+                      "~/Style/BlogTool.css",
+                         "~/Style/site.css"));
         }
     }
 }
