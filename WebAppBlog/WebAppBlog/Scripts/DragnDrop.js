@@ -19,7 +19,7 @@ function chooseElement(id) {
         case "textAdd":
             input = document.createElement("textarea");
             input.placeholder = "Add more text";
-
+            input.className = "pText";  /* p-element für css ansprechbar machen */
             break;
         case "imgAdd":
             input = document.createElement("input");

@@ -199,15 +199,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="App_Start\UnityConfig.cs" />
-    <Compile Include="App_Start\UnityMvcActivator.cs" />
-    <Compile Include="App_Start\UnityResolver.cs" />
-    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Style\App_Start\BundleConfig.cs" />
+    <Compile Include="Style\App_Start\FilterConfig.cs" />
+    <Compile Include="Style\App_Start\IdentityConfig.cs" />
+    <Compile Include="Style\App_Start\RouteConfig.cs" />
+    <Compile Include="Style\App_Start\Startup.Auth.cs" />
+    <Compile Include="Style\App_Start\UnityConfig.cs" />
+    <Compile Include="Style\App_Start\UnityMvcActivator.cs" />
+    <Compile Include="Style\App_Start\UnityResolver.cs" />
+    <Compile Include="Style\App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BlogApiController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
@@ -244,9 +244,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\BlogTool.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Style\BlogTool.css" />
+    <Content Include="Style\bootstrap.css" />
+    <Content Include="Style\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\icomoon.svg" />
@@ -272,7 +272,7 @@
     <Content Include="fonts\iconfonts\undo2.svg" />
     <Content Include="fonts\iconfonts\users.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Style\Site.css" />
     <Content Include="Scripts\BlogTool.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
