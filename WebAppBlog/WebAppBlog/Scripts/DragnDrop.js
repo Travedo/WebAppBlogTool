@@ -25,6 +25,8 @@ function chooseElement(id) {
             input = document.createElement("input");
             input.type = "file";
             input.className = "image";
+            input.onchange = previewFile;
+           
             break;
         case "videoAdd":
             input = document.createElement("input");
