@@ -88,21 +88,34 @@ body {
     font: 700 18px/20px "Niconne" ; /* oder Chewy, Cookie, "Great Vibes", Montez, "Indie Flower", Dosis (700) */ 
 }
 
-
+.body-content {
+    padding: 20px 8%;
+}
 
 .icon-menu:before {
     content: "\e9bd";
     font-size: 30px;
 }
 
-
 a {
-    color: #fff;
+    color: #000;
     text-decoration: none;
 }
 
-a:hover {
-    color: #0ca; /*color: #0ac;*/
+button {
+    border: none;
+    box-shadow: 5px 6px 25px -5px rgba(0,0,0,0.75);
+    margin: 15px 0;
+    padding: 6px 15px;
+}
+
+.blog-element {
+    color: #fff;
+}
+
+a:hover, button:hover {
+    color: #0ec; /*#0ca; #0ac;*/
+    text-decoration: none;
 }
 
 .icon-users:before {
@@ -149,16 +162,8 @@ a:hover {
     content: "\e90e";
 }
 
-.icon-images-slideshow:before {
-    content: " ";
-}
-
 .icon-video:before {
     content: "\e912";
-}
-
-.icon-location:before {
-    content: "\e947";
 }
 
 .icon-music:before {
@@ -183,10 +188,11 @@ h1 {
 
 h2 {
     font: 14px/16px "Coiny"; 
+    margin: 20px 0 0 0;
 }
 
 .main {
-    padding: 30px 8%;
+    padding: 30px 0;
 }
 
 p {
@@ -204,10 +210,15 @@ img {
     width: 100%;
 }
 
+input, select, textarea {
+    max-width: 380px;
+}
+
 textarea {
-    background: #e6ffe6;
+    background: #0ec; /*#e6ffe6;*/
     border: none;
     font: 14px/16px "Niconne";
+
     padding: 10px 15px;
     width: 96%;
 }
@@ -326,7 +337,7 @@ aside {
     }
 
     .main {
-        padding: 50px 8%;
+        
     }
 
     p {
