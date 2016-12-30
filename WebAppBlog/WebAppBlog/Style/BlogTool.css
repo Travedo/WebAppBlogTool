@@ -1,3 +1,31 @@
+
+/*****************************************************************
+*************************** TODOS: *******************************
+******************************************************************
+
+    <br> eliminieren und durch css-styles ersetzen
+    
+    footer anpassen
+    
+    site.css löschen und einbindung weg
+    
+    minimale größe für box festlegen
+    
+    titel/ subtitel maxwidth größer - je nach medium 
+
+
+
+
+
+******************************************************************/
+
+
+
+
+
+
+
+
 /* ==========================================================================
    http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -82,10 +110,14 @@ table {
         General styles - mobile Version
    ======================================================================================================================= */
 
+navbar a:hover {
+    color: #0ec ;
+}
 
 body {
     /*background: #0e9; */
     font: 700 18px/20px "Niconne" ; /* oder Chewy, Cookie, "Great Vibes", Montez, "Indie Flower", Dosis (700) */ 
+    padding: 50px 0 20px;
 }
 
 .body-content {
@@ -103,6 +135,7 @@ a {
 }
 
 button {
+    background: #cffffe;
     border: none;
     box-shadow: 5px 6px 25px -5px rgba(0,0,0,0.75);
     margin: 15px 0;
@@ -389,3 +422,55 @@ aside {
 .group {
     *zoom: 1;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+/*
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.containerTest {
+     display: flex;
+     flex-direction: row;
+     align-items:stretch;
+     flex-wrap:wrap;
+     justify-content:flex-start;
+}
+
+.leftTest {order:1;  flex-basis:80%; height:80%}
+.middleTest {order:2; flex-basis:20%; height:80%;}
+
+@media (max-width:900px) {
+   .containerTest {
+       flex-wrap:nowrap;
+        flex-direction: column;
+   } 
+}
+
+*/
