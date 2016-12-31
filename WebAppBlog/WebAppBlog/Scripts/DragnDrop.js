@@ -34,19 +34,28 @@ function chooseElement(id) {
             input = document.createElement("input");
             input.type = "file";
             input.multiple = true;
-            input.className = "image";
+            input.className = "gallery";
             input.onchange = previewGallery;
             numGallery++;
             break;
 
         case "videoAdd":
+            input = document.createElement("textarea");
+            input.placeholder = "insert Youtube link and hit enter";
+            input.onkeydown = insertYoutubeVideoOnEnter;
+            input.className = "videoo";
+            break;
+
+        case "mp3Add":
             input = document.createElement("input");
             input.type = "file";
-            input.className = "videoo";
+            input.onchange = createMusicPlayer;
             break;
     }
     return input;
 }
+
+//==== image creation ====/
 
 function previewImage(event) {
     var element = event.currentTarget;
@@ -64,12 +73,15 @@ function previewImage(event) {
 
     reader.addEventListener("load", function () {
         img.src = reader.result;
+        //todo: send data to rest api
     }, false);
 
     if (file) {
         reader.readAsDataURL(file);
     }
 }
+
+//==== gallery creation =====/
 
 function previewGallery(event) {
 
@@ -131,6 +143,7 @@ function readGallery(file, img) {
 
     reader.addEventListener("load", function () {
         img.src = reader.result;
+        //todo: send data to rest api
     }, false);
 
     if (file) {
@@ -174,5 +187,49 @@ function showDivs(n, classname) {
 
     //show img based on calculated index
     imgInGallery[n - 1].style.display = "block";
+}
+
+
+//====== youtube video creation =======//
+
+function insertYoutubeVideoOnEnter(event){
+    if (event.code === "Enter") {
+        var currentTarget = event.currentTarget;
+        var value = currentTarget.value;
+        if(value.startsWith("https://www.youtube.")){
+           
+            var parent = currentTarget.parentElement;
+            var video = document.createElement("iframe");
+            video.height = 315;
+            video.width = 560;
+            value = value.replace('watch?v=', 'embed/');
+            video.src = value;
+            video.frameBorder = "0";
+            video.allowFullscreen = true;
+
+            parent.insertBefore(video, currentTarget.children[0]);
+            parent.removeChild(currentTarget);
+        }
+    }
+}
+
+
+//==== Music player ==== //
+function createMusicPlayer(event) {
+    var element = event.currentTarget;
+    var file = element.files[0];
+    var parent = element.parentElement;
+    var audio = null;
+    if (element.nextSibling == null || !element.nextSibling.nodeName.toLowerCase() === 'audio') {
+        audio = document.createElement("audio");
+        audio.controls = true;
+        parent.insertBefore(audio, element.children[0]);
+    } else {
+        img = element.nextSibling;
+    }
+
+    //todo: send data to rest api
+    //insert audio source
+
 }
 
