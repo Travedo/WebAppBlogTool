@@ -76,34 +76,56 @@ function previewGallery(event) {
     var element = event.currentTarget;
     var classname = "galeryPreview" + numGallery;
     var parent = element.parentElement;
-    var container = document.createElement("div");
-    parent.insertBefore(container, element.children[0]);
-    if (element.files)
-     
-    for(var file of element.files) {
-        if (element.nextSibling.nodeName.toLowerCase() === 'div') {
+    var container = null;
 
+    //if we already have a div and children of img
+    if (element.nextSibling && element.nextSibling.nodeName.toLowerCase() === "div" && element.nextSibling.children[0].nodeName.toLowerCase() === "img") {
+        var el = element.nextSibling;
+        //delete all children
+        while (el.hasChildNodes())
+            el.removeChild(el.lastChild);
+
+        container = el;
+    }
+    else {
+        //else create new container
+        container = document.createElement("div");
+        container.style = "position: relative;";
+        parent.insertBefore(container, element.children[0]);
+    }
+
+    if (element.files) //if files have been selected
+     
+        for(var file of element.files) {
+
+                //create img tag
                 var img = document.createElement("img");
                 img.className = classname;
                 img.style = "width:100%";
+                //add img to container
                 container.appendChild(img);
+                
+                //use filereader to read selected file
                 readGallery(file, img);
-        }
     }
 
+    //add 'nav' buttons to slideshows
     var button1 = document.createElement('a');
-    button1.innerHTML = "Button One";
+    button1.innerHTML = "&#10094";
     button1.onclick = plusDivs;
+    button1.className = "galleryButtonLeft";
     var button2 = document.createElement('a');
-    button2.innerHTML = "Button Two";
+    button2.innerHTML = "&#10095;";
     button2.onclick = plusDivs;
+    button2.className = "galleryButtonRight";
     container.appendChild(button1);
     container.appendChild(button2);
 
+    //init slide show
     showDivs(1, classname);
-    
 }
 
+//reads selected images
 function readGallery(file, img) {
     var reader = new FileReader();
 
@@ -116,24 +138,41 @@ function readGallery(file, img) {
     }
 }
 
+//+/- slideshow imgs
+function plusDivs(event) {
+    var element = event.currentTarget;
+    var parent = element.parentElement;
+    var images = document.getElementsByClassName(parent.children[0].className);
 
-var slideIndex = 1;
+    var i = 0;
+    //get currently displayed img as index
+    for(var img of images) {
+        i++;
+        if (img.style.display === "block") {
+            break;
+        }
+    }
 
-
-function plusDivs() {
-    alert("Button clicked");
-    //TODO: add cyclin between images.
-    //showDivs(slideIndex += n, classname);
+    //pass index+/-1 to show new img
+    if (element.innerHTML === "&#10094;") {
+        showDivs(i-1, parent.children[0].className);
+    } else {
+        showDivs(i+1, parent.children[0].className);
+    }
 }
 
 function showDivs(n, classname) {
     var i;
-    var x = document.getElementsByClassName(classname);
-    if (n > x.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = x.length }
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
+    var imgInGallery = document.getElementsByClassName(classname);
+    if (n > imgInGallery.length) { n = 1 }
+    if (n < 1) { n = imgInGallery.length }
+
+    //hide all imgs
+    for (i = 0; i < imgInGallery.length; i++) {
+        imgInGallery[i].style.display = "none";
     }
-    x[slideIndex - 1].style.display = "block";
+
+    //show img based on calculated index
+    imgInGallery[n - 1].style.display = "block";
 }
 

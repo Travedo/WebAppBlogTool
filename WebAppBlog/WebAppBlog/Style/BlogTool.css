@@ -257,6 +257,50 @@ textarea {
 }
 
 
+.galleryButtonRight{
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(0%,-50%);
+
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    background-color: #000;
+    overflow: hidden;
+    z-index: 1;
+    padding: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.galleryButtonLeft{
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(0%,-50%);
+
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    background-color: #000;
+    overflow: hidden;
+    z-index: 1;
+    padding: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+}
+
 
 
 
