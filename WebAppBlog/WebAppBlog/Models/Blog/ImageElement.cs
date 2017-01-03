@@ -7,7 +7,6 @@ namespace WebAppBlog.Models.Blog
 {
     public class ImageElement : Element
     {
-        public string src;
         public string base64;
     }
 }
