@@ -12,5 +12,8 @@ namespace WebAppBlog.Services
         void SetBlogData(Blog blog);
         Blog GetBlogData();
 
+        void AddImages(ImageWrapper images);
+        List<ImageWrapper> GetImages();
+
     }
 }

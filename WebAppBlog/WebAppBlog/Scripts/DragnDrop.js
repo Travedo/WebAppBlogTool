@@ -1,5 +1,7 @@
 ﻿
 var numGallery = 0;
+var myId = null;
+
 function allowDrop(ev) {
     ev.preventDefault();
 }
@@ -12,7 +14,8 @@ function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     ev.currentTarget.appendChild(chooseElement(data)); //add new created element
-}
+
+    }
 
 function chooseElement(id) {
     var input;
@@ -73,7 +76,9 @@ function previewImage(event) {
 
     reader.addEventListener("load", function () {
         img.src = reader.result;
-        //todo: send data to rest api
+
+        var image = [{ name: file.name, base64: reader.result }];
+        sendImageData(image);
     }, false);
 
     if (file) {
@@ -89,6 +94,7 @@ function previewGallery(event) {
     var classname = "galeryPreview" + numGallery;
     var parent = element.parentElement;
     var container = null;
+    var status = { info: 0 };
 
     //if we already have a div and children of img
     if (element.nextSibling && element.nextSibling.nodeName.toLowerCase() === "div" && element.nextSibling.children[0].nodeName.toLowerCase() === "img") {
@@ -105,21 +111,30 @@ function previewGallery(event) {
         container.style = "position: relative;";
         parent.insertBefore(container, element.children[0]);
     }
+   
+    if (element.files) { //if files have been selected
 
-    if (element.files) //if files have been selected
-     
+        var image = [];
         for(var file of element.files) {
 
-                //create img tag
-                var img = document.createElement("img");
-                img.className = classname;
-                img.style = "width:100%";
-                //add img to container
-                container.appendChild(img);
-                
-                //use filereader to read selected file
-                readGallery(file, img);
+              //create img tag
+            var img = document.createElement("img");
+            img.className = classname;
+            img.style = "width:100%";
+             //add img to container
+            container.appendChild(img);
+
+            var currentImg = { name: classname + "_" + file.name, base64: "" };
+            image.push(currentImg);
+             //use filereader to read selected file
+            readGallery(file, img, currentImg, status)
+
+        }
     }
+    
+    //wait until all images have been processed, then send to server
+    myId =setInterval(function(){ sendGallery(status,element.files.length,image,myId)},2000);
+
 
     //add 'nav' buttons to slideshows
     var button1 = document.createElement('a');
@@ -137,13 +152,23 @@ function previewGallery(event) {
     showDivs(1, classname);
 }
 
+
+function sendGallery(status, length,images,myId)
+{
+    if (status.info === length) {
+        sendImageData(images);
+        clearInterval(myId);
+    }
+}
+
 //reads selected images
-function readGallery(file, img) {
+function readGallery(file, img, currentImg, status) {
     var reader = new FileReader();
 
     reader.addEventListener("load", function () {
         img.src = reader.result;
-        //todo: send data to rest api
+        currentImg.base64 = reader.result;
+        status.info++;
     }, false);
 
     if (file) {
@@ -225,7 +250,7 @@ function createMusicPlayer(event) {
         audio.controls = true;
         parent.insertBefore(audio, element.children[0]);
     } else {
-        img = element.nextSibling;
+        audio = element.nextSibling;
     }
 
     //todo: send data to rest api
@@ -233,3 +258,14 @@ function createMusicPlayer(event) {
 
 }
 
+//ajax send imges
+
+function sendImageData( images) {
+    $.ajax({
+        type: "POST",
+        url: "/api/BlogApi/AddImages/",
+        data: JSON.stringify({ images }),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+    });
+}

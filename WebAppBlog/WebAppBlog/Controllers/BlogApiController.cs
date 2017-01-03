@@ -51,9 +51,29 @@ namespace WebAppBlog.Controllers
                 blogService.SetBlogData(blogdata.blog);
                 return new HttpResponseMessage(HttpStatusCode.OK);
             }
+        }
 
-
-
+        [HttpPost]
+        [Route("AddImages")]
+        public HttpResponseMessage AddImages(HttpRequestMessage request)
+        {
+            var data = request.Content.ReadAsStringAsync().Result;
+            if (data == null)
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest)
+                {
+                    Content = new StringContent("Post data is empty")
+                };
+            }
+            else
+            {
+                Debug.WriteLine(data);
+                var blogdata = JsonConvert.DeserializeObject<ImageWrapper>(data);
+                blogService.AddImages(blogdata);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+           
+            
         }
 
         
