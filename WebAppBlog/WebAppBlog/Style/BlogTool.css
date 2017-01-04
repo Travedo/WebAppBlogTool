@@ -541,11 +541,15 @@ aside {
     order: 1;  
 }
 
-.middleTest {
+.mapBox {
     flex-basis:30%; 
     height:80%;
     order:2; 
     padding: 30px 0;
+}
+
+.mapBox h2{
+    margin-top: 0;
 }
 
 @media (max-width:900px) {
