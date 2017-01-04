@@ -275,7 +275,6 @@
     <Content Include="fonts\iconfonts\undo2.svg" />
     <Content Include="fonts\iconfonts\users.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Style\Site.css" />
     <Content Include="Scripts\BlogTool.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

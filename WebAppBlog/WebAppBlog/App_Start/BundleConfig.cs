@@ -31,8 +31,7 @@ namespace WebAppBlog
 
             bundles.Add(new StyleBundle("~/Style/css").Include(
                       "~/Style/bootstrap.css",
-                      "~/Style/BlogTool.css",
-                         "~/Style/site.css"));
+                      "~/Style/BlogTool.css"));
         }
     }
 }
