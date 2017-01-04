@@ -13,9 +13,11 @@
     
     titel/ subtitel maxwidth größer - je nach medium 
 
+    unterschied h1 h2 h3
 
+    eindeutig kennzeichnen wo was reingezogen werden soll
 
-
+    erklärung
 
 ******************************************************************/
 
@@ -111,7 +113,7 @@ table {
    ======================================================================================================================= */
 
 navbar a:hover {
-    color: #0ec ;
+    color: #80cbc4;
 }
 
 body {
@@ -135,7 +137,7 @@ a {
 }
 
 button {
-    background: #cffffe;
+    background: #009688;
     border: none;
     box-shadow: 5px 6px 25px -5px rgba(0,0,0,0.75);
     margin: 15px 0;
@@ -147,7 +149,7 @@ button {
 }
 
 a:hover, button:hover {
-    color: #0ec; /*#0ca; #0ac;*/
+    color: #80cbc4; /*#0ca; #0ac;*/
     text-decoration: none;
 }
 
@@ -216,7 +218,7 @@ a:hover, button:hover {
 h1 {
     font: 16px/18px "Coiny"; 
     /* oder Ubuntu:700, "Yanone Kaffeesatz" 700, Dosis (400,600,700), Ewert, "Love Ya Like A Sister" */
-    margin: 5px 0;
+    margin: 20px 0;
 }
 
 h2 {
@@ -243,12 +245,18 @@ img {
     width: 100%;
 }
 
+input {
+    background: #80cbc4;
+}
+
 input, select, textarea {
-    max-width: 380px;
+    border: none;
+    padding: 5px 3px;
+    width: 380px;
 }
 
 textarea {
-    background: #0ec; /*#e6ffe6;*/
+    background: #80cbc4; /*#009688  e6ffe6;*/
     border: none;
     font: 14px/16px "Niconne";
 
