@@ -247,11 +247,11 @@ img, iframe {
     width: 100%;
 }
 
-input, select, textarea {
+input, select, textarea, .more-content-box {
     background: #80cbc4;
     border: none;
     font: 14px/16px "Dosis";
-    margin-bottom: 15px;
+    margin: 3px 0 15px;
     padding: 10px 15px;
     width: 96%;
 }
@@ -316,6 +316,10 @@ input, select, textarea {
     border-radius: 50%;
     cursor: pointer;
     font-size: 24px;
+}
+
+#map {
+    margin: 10px 0;
 }
 
 
