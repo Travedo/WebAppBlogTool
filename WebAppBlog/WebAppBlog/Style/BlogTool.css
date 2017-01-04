@@ -130,6 +130,7 @@ button {
     background: #009688;
     border: none;
     box-shadow: 5px 6px 25px -5px rgba(0,0,0,0.75);
+    font: 16px/18px "Chewy"; 
     margin: 15px 0;
     padding: 6px 15px;
 }
@@ -153,8 +154,8 @@ a:hover, button:hover {
     border: solid 1px #333;
     box-shadow: 5px 6px 25px -5px rgba(0,0,0,0.75);
     float: left;
-    padding: 10px;
-    width: 62px;
+    padding: 12px 16px;
+    width: 76px;
 }
 
 .blog-elements h2 {
@@ -201,7 +202,7 @@ a:hover, button:hover {
 
 .blog-preview {
     float: right;
-    width: 63%;
+    width: calc(100% - 94px);
 }
 
 .blog-container{
@@ -210,14 +211,19 @@ a:hover, button:hover {
 }
 
 h1 {
-    font: 16px/18px "Chewy"; 
+    font: 22px/24px "Chewy"; 
     /* oder Ubuntu:700, "Yanone Kaffeesatz" 700, Dosis (400,600,700), Ewert, "Love Ya Like A Sister" */
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 h2 {
-    font: 14px/16px "Chewy"; 
+    font: 16px/18px "Chewy"; 
     margin: 20px 0 0 0;
+}
+
+h3, label {
+    font-size: 14px;
+    line-height: 16px;
 }
 
 .main {
@@ -246,10 +252,6 @@ input, select, textarea {
     margin-bottom: 15px;
     padding: 10px 15px;
     width: 96%;
-}
-
-label, .more-content h3  {
-    font-size: 16px;
 }
 
 .more-content {
@@ -338,12 +340,21 @@ aside {
 
     }
 
+    .main {
+        margin-right: 30px;
+    }
+        
     h1 {
+        font: 24px/26px "Chewy"; 
+    }
+
+    h2, button {
         font: 18px/20px "Chewy"; 
     }
 
-    h2 {
-        font: 16px/18px "Chewy"; 
+    h3, label {
+        font-size: 16px;
+        line-height: 18px;
     }
 
     p {
@@ -355,6 +366,10 @@ aside {
         box-shadow: 5px 6px 25px -5px rgba(0,0,0,0.75);
         padding: 10px 22px;
         width: 95px;
+    }
+
+    .blog-preview {
+        width: calc(100% - 110px);
     }
 
     .blog-element {
@@ -410,13 +425,11 @@ aside {
         margin: 5px 0;
     }
 
-    h2 {
+    h2, button {
         font: 20px/22px "Chewy"; 
     }
 
-    .main {
-        margin-right: 30px;
-    }
+    
 
     p {
         font: 18px/20px "Dosis"; 
@@ -440,6 +453,10 @@ aside {
     .blog-element:before {
         font-size: 36px;
         margin: 20px 0;
+    }
+
+    .blog-preview {
+        width: calc(100% - 150px);
     }
 
 
@@ -505,20 +522,30 @@ aside {
 }
 
 .containerTest {
+     align-items:stretch;
      display: flex;
      flex-direction: row;
-     align-items:stretch;
      flex-wrap:wrap;
      justify-content:flex-start;
 }
 
-.leftTest {order:1;  flex-basis:70%; height:80%}
-.middleTest {order:2; flex-basis:30%; height:80%;}
+.leftTest {
+    flex-basis: 70%;
+    height: 80%;
+    order: 1;  
+}
+
+.middleTest {
+    flex-basis:30%; 
+    height:80%;
+    order:2; 
+    padding: 30px 0;
+}
 
 @media (max-width:900px) {
    .containerTest {
        flex-wrap:nowrap;
-        flex-direction: column;
+       flex-direction: column;
    } 
 }
 

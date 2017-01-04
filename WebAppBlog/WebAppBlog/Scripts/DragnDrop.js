@@ -133,7 +133,7 @@ function previewGallery(event) {
     }
     
     //wait until all images have been processed, then send to server
-    myId =setInterval(function(){ sendGallery(status,element.files.length,image,myId)},2000);
+    myId = setInterval(function(){ sendGallery(status,element.files.length,image,myId)},2000);
 
 
     //add 'nav' buttons to slideshows

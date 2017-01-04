@@ -15,7 +15,7 @@
                 <a id="mp3Add" href"#" draggable="true" ondragstart="drag(event)" class="blog-element icon-music"></a>
             </div>
             <div class="blog-preview">
-                <div id="blogdata" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="blogdata">
                     <label>Titel</label>
                     <input id="blog-titel" type="text" />
                     <label>Subtitel</label>
@@ -28,7 +28,7 @@
 
                     <div class="more-content">
                         <h3>Add More Content</h3>
-                        <span class="more-content-box"></span>
+                        <span class="more-content-box" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
                     </div>
                 </div>
                 <button onclick="createBlog()">Create</button>
