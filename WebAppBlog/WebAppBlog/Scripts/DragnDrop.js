@@ -15,6 +15,8 @@ function drop(ev) {
     var data = ev.dataTransfer.getData("text");
     ev.currentTarget.appendChild(chooseElement(data)); //add new created element
 
+    /*ev.currentTarget.insertBefore(chooseElement(data));*/
+    /*parent.insertBefore(img, element.children[0])*/
 }
 
 function chooseElement(id) {

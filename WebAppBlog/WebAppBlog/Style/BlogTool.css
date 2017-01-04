@@ -238,10 +238,12 @@ p {
 }
 
 .text-img {
+    margin: 10px 0;
     width: 100%;
 }
 
-img {
+img, iframe {
+    margin: 10px 0;
     width: 100%;
 }
 
@@ -254,15 +256,12 @@ input, select, textarea {
     width: 96%;
 }
 
-.more-content {
-
-}
-
 .more-content-box {
     background: #fff url(../fonts/all-in-one-small.png) center center no-repeat;
     border: solid 1px #80cbc4;
     display: block;
-    height: 80px;
+    height: auto;
+    min-height: 80px;
     width: 96%;
 }
 
@@ -271,6 +270,9 @@ input, select, textarea {
     padding: 15px;
 }
 
+.more-content-box input, .more-content-box textarea  {
+    width: 100%;
+}
 
 .galleryButtonRight{
     position: absolute;
