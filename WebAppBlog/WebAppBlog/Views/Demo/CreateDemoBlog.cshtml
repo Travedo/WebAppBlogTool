@@ -16,25 +16,27 @@
             </div>
             <div class="blog-preview">
                 <div id="blogdata" ondrop="drop(event)" ondragover="allowDrop(event)">
-                    <label>Titel</label><br />
-                    <input id="blog-titel" type="text" /><br /><br />
-                    <label>Subtitel</label><br />
-                    <input id="blog-subtitle" type="text" /><br /><br />
+                    <label>Titel</label>
+                    <input id="blog-titel" type="text" />
+                    <label>Subtitel</label>
+                    <input id="blog-subtitle" type="text" />
                     
                     <h2>Your Content</h2>
                     
-                    <label>First Paragraph</label><br />
-                    <textarea></textarea><br />
-
-                    <label>More Content</label><br />
+                    <label>First Paragraph</label>
                     <textarea></textarea>
+
+                    <div class="more-content">
+                        <h3>Add More Content</h3>
+                        <span class="more-content-box"></span>
+                    </div>
                 </div>
                 <button onclick="createDemoBlog()">Create</button>
             </div>
         </div>
     </div>
     <div class="middleTest">
-        TODO: add google maps to chose location
+        <div id="map" style="height:250px;"></div>
     </div>
 
 </div>

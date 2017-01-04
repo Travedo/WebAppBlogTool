@@ -15,7 +15,7 @@ function drop(ev) {
     var data = ev.dataTransfer.getData("text");
     ev.currentTarget.appendChild(chooseElement(data)); //add new created element
 
-    }
+}
 
 function chooseElement(id) {
     var input;
