@@ -13,7 +13,9 @@ function drag(ev) {
 function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
-    ev.currentTarget.appendChild(chooseElement(data)); //add new created element
+    var parent = ev.currentTarget.parentElement;
+
+    parent.insertBefore(chooseElement(data),ev.currentTarget); //add new created element
 
     /*ev.currentTarget.insertBefore(chooseElement(data));*/
     /*parent.insertBefore(img, element.children[0])*/
@@ -67,9 +69,9 @@ function previewImage(event) {
     var file = element.files[0];
     var parent = element.parentElement;
     var img = null;
-    if (element.nextSibling == null || !element.nextSibling.nodeName.toLowerCase() === 'img') {
+    if (element.nextSibling.id == "more-content-box" || !element.nextSibling.nodeName.toLowerCase() === 'img') {
         img = document.createElement("img");
-        parent.insertBefore(img, element.children[0]);
+        parent.insertBefore(img, element.nextSibling);
     } else {
         img = element.nextSibling;
     }
@@ -111,7 +113,7 @@ function previewGallery(event) {
         //else create new container
         container = document.createElement("div");
         container.style = "position: relative;";
-        parent.insertBefore(container, element.children[0]);
+        parent.insertBefore(container, element.nextSibling);
     }
    
     if (element.files) { //if files have been selected
@@ -218,7 +220,7 @@ function showDivs(n, classname) {
 
 
 //====== youtube video creation =======//
-
+//TODO: proof check youtube url
 function insertYoutubeVideoOnEnter(event){
     if (event.code === "Enter") {
         var currentTarget = event.currentTarget;
@@ -234,7 +236,7 @@ function insertYoutubeVideoOnEnter(event){
             video.frameBorder = "0";
             video.allowFullscreen = true;
 
-            parent.insertBefore(video, currentTarget.children[0]);
+            parent.insertBefore(video, currentTarget.nextSibling);
             parent.removeChild(currentTarget);
         }
     }
