@@ -3,17 +3,23 @@
 *************************** TODOS: *******************************
 ******************************************************************
 
-    farben angleichen
+    ICH:
+        farben angleichen
+        erklärung blogtool - help/about
+        willkommensseite text ausdenken
+        responsible machen 
+        aufräumen! abstände auf die obergeordneten elemente setzen, wenn nicht andere seiten beeinflusst! 
+        checkbox hübsch machen - schwieriger - als letztes
 
-    erklärung blogtool - help/about
+    AIJANA:
+    
+        PREVIEW!!!
+        Karte markieren können
+        Hello NAME!
 
-    willkommensseite text ausdenken
-
-    responsible machen 
-
-    aufräumen
-
-    checkbox hübsch machen - schwieriger - als letztes
+    WIR:
+        coolen Namen ausdenken
+        logo?
 
 ******************************************************************/
 
@@ -150,11 +156,6 @@ body {
 
 .body-content li, .body-content span {
     font-weight: normal;
-}
-
-.body-content span {
-    display: block;
-    margin: 20px 0 10px;
 }
 
 .body-content li {
@@ -373,8 +374,10 @@ input, select, textarea, .more-content-box {
 
 .note {
     color: #808080;
+    display: block;
     font-size: 14px;
     font-weight: 300;
+    margin: 20px 0 10px;
 }
 
 #RememberMe {
@@ -389,6 +392,14 @@ input, select, textarea, .more-content-box {
     margin: 3px 0;
 }
 
+.contact-info a {
+   display: inline;
+}
+
+address {
+    margin: 20px 0;
+}
+
 .radio label, .checkbox label {
     vertical-align: 3px;
 }
@@ -397,7 +408,23 @@ input, select, textarea, .more-content-box {
     padding-top: 10px;
 }
 
+footer:before, .form-horizontal:before {
+    background: #ddd;
+    content: " ";
+    display: block;
+    height: 1px;
+    margin: 30px 0;
+    width: 100%;
+}
 
+.address-htw {
+    margin: 20px 0;
+}
+
+.address-htw li {
+    list-style: none;
+    margin: 3px 0;
+}
 
 
 /*
@@ -492,6 +519,9 @@ input[type="checkbox"]:checked + label span {
 
     .map-container {
         margin-top: 0;
+    }
+    .form-group {
+      margin-bottom: 15px;
     }
 }
 

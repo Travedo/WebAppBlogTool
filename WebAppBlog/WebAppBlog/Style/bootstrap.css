@@ -1753,11 +1753,11 @@ fieldset[disabled] .form-control {
 textarea.form-control {
   height: auto;
 }
-
+/*
 .form-group {
   margin-bottom: 15px;
 }
-
+*/
 .radio,
 .checkbox {
   display: block;
