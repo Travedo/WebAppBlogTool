@@ -3,11 +3,17 @@
 *************************** TODOS: *******************************
 ******************************************************************
 
-    footer anpassen
-  
-    eindeutig kennzeichnen wo was reingezogen werden soll
+    farben angleichen
 
     erklärung blogtool - help/about
+
+    willkommensseite text ausdenken
+
+    responsible machen 
+
+    aufräumen
+
+    checkbox hübsch machen - schwieriger - als letztes
 
 ******************************************************************/
 
@@ -107,13 +113,57 @@ navbar a:hover {
 }
 
 body {
-    /*background: #0e9; */
-    font: 700 18px/20px "Dosis" ; /* oder Chewy, Dosis (700) */ 
+    font: 700 18px/20px "Dosis"; 
     padding: 50px 0 20px;
 }
 
+.main-container {
+     align-items: stretch;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: flex-start;
+     padding: 30px 0;
+}
+
+.blog-build-container {
+    flex-basis: 66%;
+    height: 80%;
+    margin-right: 6px;
+    order: 1;  
+}
+
+.map-container {
+    flex-basis: 33%; 
+    height: 80%;
+    margin-top: 30px;
+    order: 2; 
+}
+
+.map-container h2{
+    margin-top: 0;
+}
+
 .body-content {
-    padding: 20px 8%;
+    padding: 50px 15px;
+}
+
+.body-content li, .body-content span {
+    font-weight: normal;
+}
+
+.body-content span {
+    display: block;
+    margin: 20px 0 10px;
+}
+
+.body-content li {
+    margin: 7px 0;
+}
+
+.body-content ul {
+    list-style-type: disc;
+    list-style-position: inside;
 }
 
 .icon-menu:before {
@@ -123,10 +173,12 @@ body {
 
 a {
     color: #000;
+    display: block;
+    margin: 20px 0 3px;
     text-decoration: none;
 }
 
-button {
+button, .btn {
     background: #009688;
     border: none;
     box-shadow: 5px 6px 25px -5px rgba(0,0,0,0.75);
@@ -226,10 +278,6 @@ h3, label {
     line-height: 16px;
 }
 
-.main {
-    padding: 30px 0;
-}
-
 p {
     display: block;
     font: 14px/16px "Dosis"; 
@@ -319,22 +367,76 @@ input, select, textarea, .more-content-box {
 }
 
 #map {
+    height:250px;
     margin: 10px 0;
 }
 
+.note {
+    color: #808080;
+    font-size: 14px;
+    font-weight: 300;
+}
 
+#RememberMe {
+    width: 10px;
+}
 
+.contact-info {
+    margin-top: 20px;
+}
 
+.contact-info span {
+    margin: 3px 0;
+}
+
+.radio label, .checkbox label {
+    vertical-align: 3px;
+}
+
+.form-horizontal .control-label {
+    padding-top: 10px;
+}
 
 
 
 
 /*
-aside {
-    float right;
-    width: 30%;
+input[type="checkbox"] {
+    display:none;
+}
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background: blue;
+    cursor:pointer;
+}
+input[type="checkbox"]:checked + label span {
+    background: yellow;
 }
 */
+
+
+
+
+
+
+
+@media (max-width:760px) {
+   .main-container {
+       flex-wrap: nowrap;
+       flex-direction: column;
+   } 
+}
+
+@media only screen and (min-width: 450px) {
+    .more-content-box {
+        background: #fff url(../fonts/all-in-one.png) center center no-repeat;
+    }
+}
+
 
 /* =======================================================================================================================
             Media Queries - Tablet
@@ -346,10 +448,6 @@ aside {
 
     }
 
-    .main {
-        margin-right: 30px;
-    }
-        
     h1 {
         font: 24px/26px "Chewy"; 
     }
@@ -392,8 +490,9 @@ aside {
         background: #fff url(../fonts/all-in-one.png) center center no-repeat;
     }
 
-
-
+    .map-container {
+        margin-top: 0;
+    }
 }
 
 /* =======================================================================================================================
@@ -470,11 +569,9 @@ aside {
 
 
 
-
-
-
-
-
+.dl-horizontal dt {
+    white-space: normal;
+}
 
 
 /* ==========================================================================
@@ -494,68 +591,3 @@ aside {
 .group {
     *zoom: 1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-
-.dl-horizontal dt {
-    white-space: normal;
-}
-
-.containerTest {
-     align-items:stretch;
-     display: flex;
-     flex-direction: row;
-     flex-wrap:wrap;
-     justify-content:flex-start;
-}
-
-.leftTest {
-    flex-basis: 70%;
-    height: 80%;
-    order: 1;  
-}
-
-.mapBox {
-    flex-basis:30%; 
-    height:80%;
-    order:2; 
-    padding: 30px 0;
-}
-
-.mapBox h2{
-    margin-top: 0;
-}
-
-@media (max-width:900px) {
-   .containerTest {
-       flex-wrap:nowrap;
-       flex-direction: column;
-   } 
-}
-
