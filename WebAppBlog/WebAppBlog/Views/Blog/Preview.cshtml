@@ -21,7 +21,8 @@
 {
     if (element is WebAppBlog.Models.Blog.TextElement) //show all text elements
     {
-        @Html.Raw(element.value); <br />
+        <p>@element.value</p><br>
+        
     }
     else if (element is WebAppBlog.Models.Blog.GalleryElement) //generate an awesome slideshow...
     {
@@ -47,8 +48,11 @@
     else //add a video
     {
         var video = element as WebAppBlog.Models.Blog.VideoElement;
-        <iframe src="@video.Src" height="315" width="560" frameBorder="0"  allowFullscreen />
+        <div>
+            <iframe src="@video.Src" height="315" width="560" frameBorder="0" allowFullscreen ></iframe>
+        </div>
     }
+
 }
 
 

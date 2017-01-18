@@ -78,7 +78,6 @@ namespace WebAppBlog.Controllers
         {
             List<Element> elements = new List<Element>();
             List<ImageListcs> tempGallery = new List<ImageListcs>();
-            List<GalleryElement> gg = new List<GalleryElement>();
 
             foreach (var img in list2)
             {
@@ -105,7 +104,8 @@ namespace WebAppBlog.Controllers
                     g.ClassName = img.galleryName;
                 }
             }
-            elements.Add(g);
+            if(g.Images.Count>0)
+                elements.Add(g);
 
             //map images, if available
             foreach (var img in list2)
