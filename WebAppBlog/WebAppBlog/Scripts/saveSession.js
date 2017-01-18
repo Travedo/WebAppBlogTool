@@ -37,6 +37,11 @@ function processData(element, dynamic) {
             var obj = { html: element.outerHTML };
             dynamic.push(obj);
             break;
+
+        case "iframe":
+            var obj = { html: element.outerHTML };
+            dynamic.push(obj);
+            break;
     }
 
 
