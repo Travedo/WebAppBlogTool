@@ -69,7 +69,7 @@ function previewImage(event) {
     var file = element.files[0];
     var parent = element.parentElement;
     var img = null;
-    if (element.nextSibling.id == "more-content-box" || !element.nextSibling.nodeName.toLowerCase() === 'img') {
+    if (element.nextSibling.id == "more-content-box" || element.nextSibling.nodeName.toLowerCase() != 'img') {
         img = document.createElement("img");
         parent.insertBefore(img, element.nextSibling);
     } else {
