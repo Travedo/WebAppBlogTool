@@ -211,7 +211,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BlogApiController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
-    <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -232,11 +231,15 @@
     <Compile Include="Models\Blog\BlogOutput.cs" />
     <Compile Include="Models\Blog\BlogWrapper.cs" />
     <Compile Include="Models\Blog\Element.cs" />
+    <Compile Include="Models\Blog\GalleryElement.cs" />
     <Compile Include="Models\Blog\Image.cs" />
     <Compile Include="Models\Blog\ImageElement.cs" />
+    <Compile Include="Models\Blog\ImageListcs.cs" />
     <Compile Include="Models\Blog\ImageWrapper.cs" />
     <Compile Include="Models\Blog\Text.cs" />
     <Compile Include="Models\Blog\TextElement.cs" />
+    <Compile Include="Models\Blog\Video.cs" />
+    <Compile Include="Models\Blog\VideoElement.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\UserViewModel.cs" />
@@ -246,6 +249,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\previewPage.js" />
     <Content Include="Scripts\mapsIntegration.js" />
     <Content Include="Style\BlogTool.css" />
     <Content Include="Style\bootstrap.css" />
@@ -309,7 +313,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Impressum.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -333,9 +337,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
-    <Content Include="Views\Demo\CreateDemoBlog.cshtml" />
-    <Content Include="Views\Demo\MyTemporaryDemoBlog.cshtml" />
     <Content Include="Views\Blog\Create.cshtml" />
+    <Content Include="Views\Blog\Preview.cshtml" />
+    <Content Include="Views\Blog\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -373,9 +377,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51046/</IISUrl>
+         
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

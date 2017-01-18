@@ -69,21 +69,45 @@ namespace WebAppBlog.Controllers
             {
                 Debug.WriteLine(data);
                 var blogdata = JsonConvert.DeserializeObject<ImageWrapper>(data);
-                blogService.AddImages(blogdata);
+                blogService.AddImages(blogdata.images);
                 return new HttpResponseMessage(HttpStatusCode.OK);
             }
            
             
         }
 
-        
-       /* [HttpPost]
-        [Route("CreateBlog")]
-        public string CreateBlog(string value)
+
+        [HttpPost]
+        [Route("AddGallery")]
+        public HttpResponseMessage AddGallery(HttpRequestMessage request)
         {
-            Debug.WriteLine(value);
-            return "test";
-        }*/
+            var data = request.Content.ReadAsStringAsync().Result;
+            if (data == null)
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest)
+                {
+                    Content = new StringContent("Post data is empty")
+                };
+            }
+            else
+            {
+                Debug.WriteLine(data);
+                var blogdata = JsonConvert.DeserializeObject<ImageWrapper>(data);
+                blogService.AddGallery(blogdata.images);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+
+
+        }
+
+
+        /* [HttpPost]
+         [Route("CreateBlog")]
+         public string CreateBlog(string value)
+         {
+             Debug.WriteLine(value);
+             return "test";
+         }*/
 
         // PUT api/<controller>/5
         public void Put(int id, [FromBody]string value)

@@ -9,6 +9,6 @@ namespace WebAppBlog.Models.Blog
     public class ImageWrapper
     {
         [JsonProperty]
-        public Images[] images;
+        public Images[] images { get; set; }
     }
 }

@@ -18,7 +18,10 @@ namespace WebAppBlog.Models.Blog
         public IList<Text> text { get; set; }
 
         [JsonProperty]
-        public string images { get; set; }
+        public IList<ImageListcs> images { get; set; }
+
+        [JsonProperty]
+        public IList<Video> videos { get; set; }
 
         [JsonProperty]
         public string gmapsMarker { get; set; }
