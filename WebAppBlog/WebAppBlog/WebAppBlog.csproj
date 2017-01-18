@@ -251,6 +251,7 @@
   <ItemGroup>
     <Content Include="Scripts\previewPage.js" />
     <Content Include="Scripts\mapsIntegration.js" />
+    <Content Include="Scripts\saveSession.js" />
     <Content Include="Style\BlogTool.css" />
     <Content Include="Style\bootstrap.css" />
     <Content Include="Style\bootstrap.min.css" />
@@ -377,7 +378,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-         
+          
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
