@@ -251,6 +251,7 @@
   <ItemGroup>
     <Content Include="Scripts\previewPage.js" />
     <Content Include="Scripts\mapsIntegration.js" />
+    <Content Include="Scripts\saveSession.js" />
     <Content Include="Style\BlogTool.css" />
     <Content Include="Style\bootstrap.css" />
     <Content Include="Style\bootstrap.min.css" />
@@ -380,6 +381,7 @@
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:64293/</IISUrl>
+          
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

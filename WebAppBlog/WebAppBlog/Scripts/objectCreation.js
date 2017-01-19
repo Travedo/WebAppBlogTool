@@ -13,7 +13,7 @@ function sendData(url, blog){
         dataType: "json",
         complete: function (data) {
             if (data.readyState === 4 & data.status === 200) {
-
+                savePartiallyChangedView();
                 //workaround to have the current page (create page) be added to browser history
                 setTimeout(function () {
                     window.location.href=url;
