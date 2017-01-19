@@ -24,9 +24,6 @@ namespace WebAppBlog
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js",
-                      "~/Scripts/BlogTool.js",
-                      "~/Scripts/DragnDrop.js",
-                      "~/Scripts/objectCreation.js",
                       "~/Scripts/mapsIntegration.js"));
 
             bundles.Add(new StyleBundle("~/Style/css").Include(

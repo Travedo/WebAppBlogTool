@@ -1,12 +1,7 @@
 ﻿function createBlog() {
 
     var blog = create();
-    sendData("/blog/index", create());
-}
-
-function createDemoBlog() {
-
-    sendData("/Demo/MyTemporaryDemoBlog", create());
+    sendData("/blog/preview", create());
 }
 
 function sendData(url, blog){
@@ -40,17 +35,18 @@ function create()
     blog.titel = "";
     blog.subtitel = "";
     blog.text = [];
-    blog.images = "";
+    blog.images = [];
+    blog.videos = [];
     blog.gmapsMarker = "";
 
-    var positionCounter = 0;
+    var position = { counter:0};
     for (var element of blogdata.children) {
-        extratElements(element, blog, positionCounter);
+        extratElements(element, blog, position);
     }
     
     for(var element of blogdatacontinued.children)
     {
-        extratElements(element, blog, positionCounter);
+        extratElements(element, blog, position);
     }
     console.log(blog);
 
@@ -59,10 +55,33 @@ function create()
    
 }
 
-function extratElements(element, blog, positionCounter) {
+function extratElements(element, blog, position) {
     switch (element.localName) {
         case "input": //go trough children and add accordingly
-            //TODO: handle file input (single) correctly
+            //TODO: handle file input! (single) correctly
+
+            if (element.type === "file") {
+                
+                //gallery found
+                if (element.nextSibling && element.nextSibling.nodeName.toLowerCase() === "div" && element.nextSibling.children[0].nodeName.toLowerCase() === "img") {
+                    var el = element.nextSibling;
+                    for(var imgs of el.children)
+                    {
+                        extratElements(imgs, blog, position);
+                    }
+                    //single image
+                } else if (element.nextSibling.nodeName.toLowerCase() === 'img') {
+
+                    var image = {};
+                    image.name = element.nextSibling.name;
+                    image.gallery = false;
+                    image.position = position.counter;
+                    position.counter++;
+                    blog.images.push(image);
+
+                }
+            }
+            else
             if (element.id === "blog-titel") {
                 blog.titel = element.value;
             } else
@@ -72,9 +91,9 @@ function extratElements(element, blog, positionCounter) {
 
                     var text = {};
                     text.value = element.value;
-                    text.position = positionCounter;
+                    text.position = position.counter;
                     blog.text.push(text);
-                    positionCounter++;
+                    position.counter++;
                 }
 
             break;
@@ -82,22 +101,36 @@ function extratElements(element, blog, positionCounter) {
 
             var text = {};
             text.value = element.value;
-            text.position = positionCounter;
+            text.position = position.counter;
             blog.text.push(text);
 
-            positionCounter++;
+            position.counter++;
             break;
 
-            //TODO: handle video correctly
         case "iframe":
-            var text = {};
-            text.value = element.src;
-            text.position = positionCounter;
-            blog.text.push(text);
+            var video = {};
+            video.src = element.src;
+            video.position = position.counter;
+            blog.videos.push(video);
 
-            positionCounter++;
+            position.counter++;
             break;
 
-            //TODO: handle gallery correctly
+        case "img":
+            var image = {};
+
+            if (element.className.includes("galery")){
+                image.gallery = true;
+            
+
+
+
+            image.name = element.className+"_"+element.name;
+            image.position = position.counter;
+            image.galleryName = element.className;
+            position.counter++;
+            blog.images.push(image);
+            }
+            break;
     }
 }

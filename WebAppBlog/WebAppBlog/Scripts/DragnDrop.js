@@ -69,7 +69,7 @@ function previewImage(event) {
     var file = element.files[0];
     var parent = element.parentElement;
     var img = null;
-    if (element.nextSibling.id == "more-content-box" || !element.nextSibling.nodeName.toLowerCase() === 'img') {
+    if (element.nextSibling.id == "more-content-box" || element.nextSibling.nodeName.toLowerCase() != 'img') {
         img = document.createElement("img");
         parent.insertBefore(img, element.nextSibling);
     } else {
@@ -80,9 +80,11 @@ function previewImage(event) {
 
     reader.addEventListener("load", function () {
         img.src = reader.result;
+        img.name = file.name;
+        
 
         var image = [{ name: file.name, base64: reader.result }];
-        sendImageData(image);
+        sendImageData(image, "/api/BlogApi/AddImages/");
     }, false);
 
     if (file) {
@@ -124,6 +126,7 @@ function previewGallery(event) {
               //create img tag
             var img = document.createElement("img");
             img.className = classname;
+            img.name = file.name;
             img.style = "width:100%";
              //add img to container
             container.appendChild(img);
@@ -160,7 +163,7 @@ function previewGallery(event) {
 function sendGallery(status, length,images,myId)
 {
     if (status.info === length) {
-        sendImageData(images);
+        sendImageData(images, "/api/BlogApi/AddGallery");
         clearInterval(myId);
     }
 }
@@ -212,6 +215,7 @@ function showDivs(n, classname) {
     //hide all imgs
     for (i = 0; i < imgInGallery.length; i++) {
         imgInGallery[i].style.display = "none";
+        
     }
 
     //show img based on calculated index
@@ -264,10 +268,10 @@ function createMusicPlayer(event) {
 
 //ajax send imges
 
-function sendImageData( images) {
+function sendImageData( images,url) {
     $.ajax({
         type: "POST",
-        url: "/api/BlogApi/AddImages/",
+        url: url, //"/api/BlogApi/AddImages/",
         data: JSON.stringify({ images }),
         contentType: "application/json; charset=utf-8",
         dataType: "json",

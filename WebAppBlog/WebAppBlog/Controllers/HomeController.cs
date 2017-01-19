@@ -20,7 +20,7 @@ namespace WebAppBlog.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Impressum()
         {
             ViewBag.Message = "Your contact page.";
 

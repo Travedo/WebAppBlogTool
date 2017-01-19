@@ -1,4 +1,11 @@
-﻿@{
+﻿@section JavaScript
+{
+    <script type="text/javascript" src="@Url.Content("/Scripts/BlogTool.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/DragnDrop.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/objectCreation.js")"></script>
+}
+
+@{
     ViewBag.Title = "Demo Blog under construction";
 }
 
@@ -29,7 +36,7 @@
                     <h3>Add More Content</h3>
                     <span id="more-content-box" class="more-content-box" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
                 </div>
-                <button onclick="createBlog()">Create</button>
+                <button onclick="createBlog()">Preview</button>
             </div>
         </div>
         
