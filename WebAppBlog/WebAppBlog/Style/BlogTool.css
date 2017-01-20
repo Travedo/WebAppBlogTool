@@ -7,15 +7,12 @@
 
         hinweis dateformat 01/01/2017 beim registrieren
 
-        review stylen
+        review stylen- br tags raus, durch spacings ersetzen
         responsible machen 
         aufräumen! abstände auf die obergeordneten elemente setzen, wenn nicht andere seiten beeinflusst!
         bootsstrap weg?!
-        
-        hoverfarbe
-        farben angleichen
 
-        testing
+        testing preview
 
         erklärung blogtool - help/about
         willkommensseite text ausdenken
@@ -293,13 +290,17 @@ p {
 }
 
 .text-img {
-    margin: 10px 0;
-    width: 100%;
+    display: block;
+    margin: 10px auto;
+    max-height: 300px;
+    max-width: 70%;
 }
 
 img, iframe {
-    margin: 10px 0;
-    width: 100%;
+    display: block;
+    margin: 10px auto;
+    max-height: 300px;
+    max-width: 70%;
 }
 
 input, select, textarea, .more-content-box {
