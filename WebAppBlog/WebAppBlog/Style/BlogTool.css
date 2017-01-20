@@ -4,19 +4,21 @@
 ******************************************************************
 
     ICH:
-
-        hinweis dateformat 01/01/2017 beim registrieren
-
-        review stylen- br tags raus, durch spacings ersetzen
-        responsible machen 
+    
         aufräumen! abstände auf die obergeordneten elemente setzen, wenn nicht andere seiten beeinflusst!
-        bootsstrap weg?!
 
         testing preview
 
+        styles perfektionieren
+        alles responsible machen 
+
+            review stylen-> ALLE br tags raus, durch spacings ersetzen
+
         erklärung blogtool - help/about
         willkommensseite text ausdenken
-         
+        
+        hinweis dateformat 01/01/2017 beim registrieren
+     
         checkbox hübsch machen - schwieriger - als letztes
 
     AIJANA:
@@ -150,7 +152,7 @@ button, .btn {
 }
 
 a:hover, button:hover {
-    color: #80cbc4; /*#0ca; #0ac;*/
+    color: #80cbc4;
     text-decoration: none;
 }
 
@@ -227,6 +229,13 @@ navbar a:hover {
     .impressum-page
 */
 
+/* ======================================================
+        Register/Login page styles 
+   ====================================================== */
+
+
+
+
 
 
 
@@ -287,17 +296,7 @@ navbar a:hover {
 */
 
 
-.blog-element {
-    background: #000;
-    border: solid 1px #333;
-    box-shadow: 5px 6px 25px -5px rgba(0,0,0,0.75);
-    color: #fff;
-    display: block;
-    float: left;
-    height: 40px;
-    margin: 10px 0;
-    width: 40px;
-}
+
 
 
 
@@ -313,13 +312,23 @@ navbar a:hover {
     margin: 10px 0 0;
 }
 
-
-
 .blog-element:before {
     display: block;
     font-size: 20px;
     margin: 10px 0;
     text-align: center;
+}
+
+.blog-element {
+    background: #000;
+    border: solid 1px #333;
+    box-shadow: 5px 6px 25px -5px rgba(0,0,0,0.75);
+    color: #fff;
+    display: block;
+    float: left;
+    height: 40px;
+    margin: 10px 0;
+    width: 40px;
 }
 
 .icon-text:before {
@@ -354,7 +363,6 @@ navbar a:hover {
 
 h1 {
     font: 22px/24px "Chewy"; 
-    /* oder Ubuntu:700, "Yanone Kaffeesatz" 700, Dosis (400,600,700), Ewert, "Love Ya Like A Sister" */
     margin: 10px 0;
 }
 
@@ -371,7 +379,6 @@ h3, label {
 p {
     display: block;
     font: 14px/16px "Dosis"; 
-    /* oder Allura, Niconne, Tangerine:700, "Dancing Script" (400,700), Qwigley, Eczar, Italianno, "Indie Flower", "Yanone Kaffeesatz" 400 */
     margin: 20px 0;
 }
 
