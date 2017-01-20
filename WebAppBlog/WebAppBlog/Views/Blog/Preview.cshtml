@@ -1,59 +1,61 @@
-﻿@section JavaScript
-{
-    <script type="text/javascript" src="@Url.Content("/Scripts/previewPage.js")"></script>
+﻿
 
-}
-@{
-    ViewBag.Title = "Preview";
-}
-
-<h2>Preview of Your Blog</h2>
-
-@model WebAppBlog.Models.Blog.BlogOutput
-@{
-    ViewBag.Title = "My Blog";
-}
-
-
-<h2>@Model.Title</h2>
-<h3>@Model.Subtitle</h3>
-@foreach (var element in Model.Elements)
-{
-    if (element is WebAppBlog.Models.Blog.TextElement) //show all text elements
+    @section JavaScript
     {
-        <p>@element.value</p><br>
-        
+        <script type="text/javascript" src="@Url.Content("/Scripts/previewPage.js")"></script>
     }
-    else if (element is WebAppBlog.Models.Blog.GalleryElement) //generate an awesome slideshow...
-    {
-        var img = element as WebAppBlog.Models.Blog.GalleryElement;
-        <div style="position: relative;">
-            @foreach (var i in img.Images)
-            {
-            <img src="@i.base64" class="@img.ClassName"  />
-            }
-            @if (img.Images.Count > 0)
-            {
-            <a onclick="initSlideChange(event)" class="galleryButtonLeft">&#10094;</a>
-            <a onclick="initSlideChange(event)"class="galleryButtonRight">&#10095;</a>
-               <script>changeSlides(1, "@img.ClassName");</script> 
-            }
-        </div>
-    }
-    else if (element is WebAppBlog.Models.Blog.ImageElement) //create images
-    {
-        var img = element as WebAppBlog.Models.Blog.ImageElement;
-        <img src="@img.base64" />
-    }
-    else //add a video
-    {
-        var video = element as WebAppBlog.Models.Blog.VideoElement;
-        <div>
-            <iframe src="@video.Src" height="315" width="560" frameBorder="0" allowFullscreen ></iframe>
-        </div>
+    @{
+        ViewBag.Title = "Preview";
     }
 
-}
+<div class="preview-page">
 
+    <h2>Preview of Your Blog</h2>
+
+    @model WebAppBlog.Models.Blog.BlogOutput
+    @{
+        ViewBag.Title = "My Blog";
+    }
+
+    <h2>@Model.Title</h2>
+    <h3>@Model.Subtitle</h3>
+    @foreach (var element in Model.Elements)
+    {
+        if (element is WebAppBlog.Models.Blog.TextElement) //show all text elements
+        {
+            <p>@element.value</p>
+
+        }
+        else if (element is WebAppBlog.Models.Blog.GalleryElement) //generate an awesome slideshow...
+        {
+            var img = element as WebAppBlog.Models.Blog.GalleryElement;
+            <div style="position: relative;">
+                @foreach (var i in img.Images)
+                {
+                    <img src="@i.base64" class="@img.ClassName" />
+                }
+                @if (img.Images.Count > 0)
+                {
+                    <a onclick="initSlideChange(event)" class="galleryButtonLeft">&#10094;</a>
+                    <a onclick="initSlideChange(event)" class="galleryButtonRight">&#10095;</a>
+                    <script>changeSlides(1, "@img.ClassName");</script>
+                }
+            </div>
+        }
+        else if (element is WebAppBlog.Models.Blog.ImageElement) //create images
+        {
+            var img = element as WebAppBlog.Models.Blog.ImageElement;
+            <img src="@img.base64" />
+        }
+        else //add a video
+        {
+            var video = element as WebAppBlog.Models.Blog.VideoElement;
+            <div>
+                <iframe src="@video.Src" height="315" width="560" frameBorder="0" allowFullscreen></iframe>
+            </div>
+        }
+
+    }
+</div>
 
 

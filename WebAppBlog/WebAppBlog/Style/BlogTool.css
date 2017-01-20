@@ -114,17 +114,123 @@ table {
 }
 
 /* =======================================================================================================================
-        General styles - mobile Version
+        Mobile Version Styles
    ======================================================================================================================= */
 
-navbar a:hover {
-    color: #80cbc4;
-}
+/* ======================================================
+        General styles 
+   ====================================================== */
 
 body {
     font: 700 18px/20px "Dosis"; 
     padding: 50px 0 20px;
 }
+
+
+
+
+.body-content {
+    padding: 50px 15px;
+}
+
+.body-content a {
+    color: #000;
+    display: block;
+    margin: 20px 0 3px;
+    text-decoration: none;
+}
+
+button, .btn {
+    background: #009688;
+    border: none;
+    box-shadow: 5px 6px 25px -5px rgba(0,0,0,0.75);
+    font: 16px/18px "Chewy"; 
+    margin: 15px 0;
+    padding: 6px 15px;
+}
+
+a:hover, button:hover {
+    color: #80cbc4; /*#0ca; #0ac;*/
+    text-decoration: none;
+}
+
+navbar a:hover {
+    color: #80cbc4;
+}
+
+.icon-users:before {
+    color: white;
+    content: "\e972";
+    margin-right: 5px;
+}
+
+.icon-users {
+    margin: 15px 0 0 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ======================================================
+        Home page styles 
+   ====================================================== */
+/*
+    .home-page
+*/
+
+
+
+/* ======================================================
+        Create Blog page styles 
+   ====================================================== */
+/*
+    .create-blog-page
+*/
+
+
+
+/* ======================================================
+        Blog preview page styles 
+   ====================================================== */
+/*
+    .preview-page
+*/
+
+
+/* ======================================================
+        Finished Blog page styles 
+   ====================================================== */
+/*
+    .finished-blog-page
+*/
+
+
+/* ======================================================
+        About page styles 
+   ====================================================== */
+/*
+    .about-page
+*/
+
+
+/* ======================================================
+        Impressum page styles 
+   ====================================================== */
+/*
+    .impressum-page
+*/
+
+
+
+
+
 
 .main-container {
      align-items: stretch;
@@ -149,62 +255,51 @@ body {
     order: 2; 
 }
 
-.map-container h2{
+.map-container h2 {
     margin-top: 0;
 }
 
-.body-content {
-    padding: 50px 15px;
+
+
+
+
+
+
+.body-content ul {
+    list-style-type: disc;
+    list-style-position: inside;
+} 
+
+.body-content li {
+    margin: 7px 0;
 }
 
 .body-content li, .body-content span {
     font-weight: normal;
 }
 
-.body-content li {
-    margin: 7px 0;
-}
 
-.body-content ul {
-    list-style-type: disc;
-    list-style-position: inside;
-}
-
+/*
 .icon-menu:before {
     content: "\e9bd";
     font-size: 30px;
 }
+*/
 
-a {
-    color: #000;
-    display: block;
-    margin: 20px 0 3px;
-    text-decoration: none;
-}
-
-button, .btn {
-    background: #009688;
-    border: none;
-    box-shadow: 5px 6px 25px -5px rgba(0,0,0,0.75);
-    font: 16px/18px "Chewy"; 
-    margin: 15px 0;
-    padding: 6px 15px;
-}
 
 .blog-element {
+    background: #000;
+    border: solid 1px #333;
+    box-shadow: 5px 6px 25px -5px rgba(0,0,0,0.75);
     color: #fff;
+    display: block;
+    float: left;
+    height: 40px;
+    margin: 10px 0;
+    width: 40px;
 }
 
-a:hover, button:hover {
-    color: #80cbc4; /*#0ca; #0ac;*/
-    text-decoration: none;
-}
 
-.icon-users:before {
-    color: white;
-    content: "\e972";
-    margin-right: 15px;
-}
 
 .blog-elements {
     border: solid 1px #333;
@@ -218,16 +313,7 @@ a:hover, button:hover {
     margin: 10px 0 0;
 }
 
-.blog-element {
-    background: #000;
-    border: solid 1px #333;
-    box-shadow: 5px 6px 25px -5px rgba(0,0,0,0.75);
-    display: block;
-    float: left;
-    height: 40px;
-    margin: 10px 0;
-    width: 40px;
-}
+
 
 .blog-element:before {
     display: block;
@@ -452,7 +538,9 @@ input[type="checkbox"]:checked + label span {
 }
 */
 
-
+.about-img {
+    margin: 30px 0;
+}
 
 
 

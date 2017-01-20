@@ -10,43 +10,45 @@
     ViewBag.Title = "Demo Blog under construction";
 }
 
-<h1>Create your Blog</h1>
-<div class="main-container group">
-    <div class="blog-build-container group">
-        <div class="blog-elements">
-            <h2>Please choose your content here.</h2>
-            <a id="textAdd" href"#" draggable="true" ondragstart="drag(event)" class="blog-element icon-text"></a>
-            <a id="imgAdd" href"#" draggable="true" ondragstart="drag(event)" class="blog-element icon-image"></a>
-            <a id="galleryAdd" href"#" draggable="true" ondragstart="drag(event)" class="blog-element icon-images"></a>  <!-- -gallery -->
-            <a id="videoAdd" href"#" draggable="true" ondragstart="drag(event)" class="blog-element icon-video"></a>
-            <a id="mp3Add" href"#" draggable="true" ondragstart="drag(event)" class="blog-element icon-music"></a>
-        </div>
-        <div class="blog-preview">
-            <div id="blogdata">
-                <label>Titel</label>
-                <input id="blog-titel" type="text" />
-                <label>Subtitel</label>
-                <input id="blog-subtitle" type="text" />
-                    
-                <h2>Your Content</h2>
-                    
-                <label>First Paragraph</label>
-                <textarea></textarea>
-
-                <div class="more-content" id="blogdata-continued">
-                    <h3>Add More Content</h3>
-                    <span id="more-content-box" class="more-content-box" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
-                </div>
-                <button onclick="createBlog()">Preview</button>
+<div class="create-blog-page">
+    <h1>Create your Blog</h1>
+    <div class="main-container group">
+        <div class="blog-build-container group">
+            <div class="blog-elements">
+                <h2>Please choose your content here.</h2>
+                <a id="textAdd" href"#" draggable="true" ondragstart="drag(event)" class="blog-element icon-text"></a>
+                <a id="imgAdd" href"#" draggable="true" ondragstart="drag(event)" class="blog-element icon-image"></a>
+                <a id="galleryAdd" href"#" draggable="true" ondragstart="drag(event)" class="blog-element icon-images"></a>  <!-- -gallery -->
+                <a id="videoAdd" href"#" draggable="true" ondragstart="drag(event)" class="blog-element icon-video"></a>
+                <a id="mp3Add" href"#" draggable="true" ondragstart="drag(event)" class="blog-element icon-music"></a>
             </div>
-        </div>
-        
-    </div>
-    <div class="map-container">
-        <h2 class="location-icon">Show your friends where you are</h2>
-        <div id="map"></div>
-    </div>
+            <div class="blog-preview">
+                <div id="blogdata">
+                    <label>Titel</label>
+                    <input id="blog-titel" type="text" />
+                    <label>Subtitel</label>
+                    <input id="blog-subtitle" type="text" />
 
+                    <h2>Your Content</h2>
+
+                    <label>First Paragraph</label>
+                    <textarea></textarea>
+
+                    <div class="more-content" id="blogdata-continued">
+                        <h3>Add More Content</h3>
+                        <span id="more-content-box" class="more-content-box" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+                    </div>
+                    <button onclick="createBlog()">Preview</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="map-container">
+            <h2 class="location-icon">Show your friends where you are</h2>
+            <div id="map"></div>
+        </div>
+
+    </div>
 </div>
 
 

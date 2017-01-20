@@ -3,18 +3,19 @@
     ViewBag.Title = "My Blog";
 }
 
-
-<h2>@Model.Title</h2>
-<h3>@Model.Subtitle</h3>
-@foreach(var element in Model.Elements)
-{
-    if(element is WebAppBlog.Models.Blog.TextElement)
+<div class="finished-blog-page">
+    <h2>@Model.Title</h2>
+    <h3>@Model.Subtitle</h3>
+    @foreach (var element in Model.Elements)
     {
-        @Html.Raw(element.value); <br />
-    }
-    else
-    {
+        if (element is WebAppBlog.Models.Blog.TextElement)
+        {
+            @Html.Raw(element.value); <br />
+        }
+        else
+        {
 
+        }
     }
-}
+</div>
 
