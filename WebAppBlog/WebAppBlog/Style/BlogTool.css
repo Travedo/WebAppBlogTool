@@ -170,7 +170,18 @@ navbar a:hover {
     margin: 15px 0 0 15px;
 }
 
+.body-content ul {
+    list-style-type: disc;
+    list-style-position: inside;
+} 
 
+.body-content li {
+    margin: 7px 0;
+}
+
+.body-content li, .body-content span {
+    font-weight: normal;
+}
 
 
 
@@ -195,52 +206,6 @@ navbar a:hover {
 /*
     .create-blog-page
 */
-
-
-
-/* ======================================================
-        Blog preview page styles 
-   ====================================================== */
-/*
-    .preview-page
-*/
-
-
-/* ======================================================
-        Finished Blog page styles 
-   ====================================================== */
-/*
-    .finished-blog-page
-*/
-
-
-/* ======================================================
-        About page styles 
-   ====================================================== */
-/*
-    .about-page
-*/
-
-
-/* ======================================================
-        Impressum page styles 
-   ====================================================== */
-/*
-    .impressum-page
-*/
-
-/* ======================================================
-        Register/Login page styles 
-   ====================================================== */
-
-
-
-
-
-
-
-
-
 .main-container {
      align-items: stretch;
      display: flex;
@@ -267,38 +232,6 @@ navbar a:hover {
 .map-container h2 {
     margin-top: 0;
 }
-
-
-
-
-
-
-
-.body-content ul {
-    list-style-type: disc;
-    list-style-position: inside;
-} 
-
-.body-content li {
-    margin: 7px 0;
-}
-
-.body-content li, .body-content span {
-    font-weight: normal;
-}
-
-
-/*
-.icon-menu:before {
-    content: "\e9bd";
-    font-size: 30px;
-}
-*/
-
-
-
-
-
 
 .blog-elements {
     border: solid 1px #333;
@@ -360,6 +293,62 @@ navbar a:hover {
     float: right;
     width: 63%;
 }
+
+
+/* ======================================================
+        Blog preview page styles 
+   ====================================================== */
+/*
+    .preview-page
+*/
+
+
+/* ======================================================
+        Finished Blog page styles 
+   ====================================================== */
+/*
+    .finished-blog-page
+*/
+
+
+/* ======================================================
+        About page styles 
+   ====================================================== */
+/*
+    .about-page
+*/
+
+
+/* ======================================================
+        Impressum page styles 
+   ====================================================== */
+/*
+    .impressum-page
+*/
+
+/* ======================================================
+        Register/Login page styles 
+   ====================================================== */
+
+
+
+
+
+
+
+/*
+.icon-menu:before {
+    content: "\e9bd";
+    font-size: 30px;
+}
+*/
+
+
+
+
+
+
+
 
 h1 {
     font: 22px/24px "Chewy"; 
