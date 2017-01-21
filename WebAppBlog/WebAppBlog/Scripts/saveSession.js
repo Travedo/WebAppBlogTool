@@ -10,8 +10,14 @@
             processData(element, dynamic);
         }
 
-        sessionStorage.createPage = JSON.stringify({ dynamic});
-        sessionStorage.values = values;
+        try{
+            sessionStorage.createPage = JSON.stringify({ dynamic });
+        } catch (error) {
+            //send data to server!
+            console.log("Data exceeded session storage range, sending to server instead.");
+            sessionStorage.createPage = null;
+        }
+
     } else {
         alert("Information entered on Create page could NOT be saved dynamically. Please use the edit button for editing.");
     }
@@ -42,6 +48,10 @@ function processData(element, dynamic) {
             var obj = { html: element.outerHTML };
             dynamic.push(obj);
             break;
+        case "img":
+            var obj = { html: element.outerHTML };
+            dynamic.push(obj);
+            break;
     }
 
 
@@ -52,6 +62,10 @@ function retrieveSessionData()
     if (isStorageUsable) {
         if (sessionStorage.createPage)
             return sessionStorage.createPage
+        else {
+            //get data from server instead
+            return null;
+        }
     }
 }
 
