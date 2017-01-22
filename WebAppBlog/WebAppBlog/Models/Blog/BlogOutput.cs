@@ -7,6 +7,8 @@ namespace WebAppBlog.Models.Blog
 {
     public class BlogOutput
     {
+        public int id { get; set; }
+
         private string title;
         public string Title { get { return title; } set { title = value; } }
 

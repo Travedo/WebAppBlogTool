@@ -12,7 +12,9 @@ namespace WebAppBlog.Services
         private List<Images> blogimages;
         public List<Images> BlogImages { get { return blogimages; }set { blogimages = value; } }
         public List<List<Images>> GalleryImages = new List<List<Images>>();
+
         BlogOutput blogdata { get; set; }
+
         public BlogDataService()
         {
             BlogImages = new List<Images>();
@@ -56,6 +58,16 @@ namespace WebAppBlog.Services
         public BlogOutput GetBlog()
         {
             return blogdata;
+        }
+
+        public void clearData()
+        {
+            BlogImages = null;
+            BlogImages = new List<Images>();
+            GalleryImages = null;
+            GalleryImages = new List<List<Images>>();
+            blog = null;
+            blogdata = null;
         }
     }
 }

@@ -1,4 +1,9 @@
-﻿@model WebAppBlog.Models.Blog.BlogOutput
+﻿@section JavaScript
+{
+    <script type="text/javascript" src="@Url.Content("/Scripts/clearSession.js")" defer='defer'></script>
+}
+
+@model WebAppBlog.Models.Blog.BlogOutput
 @{
     ViewBag.Title = "My Blog";
 }
