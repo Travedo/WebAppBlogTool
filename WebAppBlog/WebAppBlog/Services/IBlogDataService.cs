@@ -18,5 +18,8 @@ namespace WebAppBlog.Services
         void AddGallery(Images[] images);
         List<List<Images>> GetGallery();
 
+        void SetBlog(BlogOutput blog);
+        BlogOutput GetBlog();
+
     }
 }

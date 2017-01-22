@@ -225,8 +225,30 @@
     <Compile Include="Migrations\201611231214038_Birthdate.Designer.cs">
       <DependentUpon>201611231214038_Birthdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701221617457_blogdata.cs" />
+    <Compile Include="Migrations\201701221617457_blogdata.Designer.cs">
+      <DependentUpon>201701221617457_blogdata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701221725566_addedKey.cs" />
+    <Compile Include="Migrations\201701221725566_addedKey.Designer.cs">
+      <DependentUpon>201701221725566_addedKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701221740375_somechanges.cs" />
+    <Compile Include="Migrations\201701221740375_somechanges.Designer.cs">
+      <DependentUpon>201701221740375_somechanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701221808443_somechanges2.cs" />
+    <Compile Include="Migrations\201701221808443_somechanges2.Designer.cs">
+      <DependentUpon>201701221808443_somechanges2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701221940514_imagemodel.cs" />
+    <Compile Include="Migrations\201701221940514_imagemodel.Designer.cs">
+      <DependentUpon>201701221940514_imagemodel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BlogData.cs" />
+    <Compile Include="Models\BlogOverviewViewModel.cs" />
     <Compile Include="Models\Blog\Blog.cs" />
     <Compile Include="Models\Blog\BlogOutput.cs" />
     <Compile Include="Models\Blog\BlogWrapper.cs" />
@@ -241,6 +263,7 @@
     <Compile Include="Models\Blog\Video.cs" />
     <Compile Include="Models\Blog\VideoElement.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ImageModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -341,6 +364,7 @@
     <Content Include="Views\Blog\Create.cshtml" />
     <Content Include="Views\Blog\Preview.cshtml" />
     <Content Include="Views\Blog\Edit.cshtml" />
+    <Content Include="Views\Blog\Overview.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -361,6 +385,21 @@
     <EmbeddedResource Include="Migrations\201611231214038_Birthdate.resx">
       <DependentUpon>201611231214038_Birthdate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701221617457_blogdata.resx">
+      <DependentUpon>201701221617457_blogdata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701221725566_addedKey.resx">
+      <DependentUpon>201701221725566_addedKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701221740375_somechanges.resx">
+      <DependentUpon>201701221740375_somechanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701221808443_somechanges2.resx">
+      <DependentUpon>201701221808443_somechanges2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701221940514_imagemodel.resx">
+      <DependentUpon>201701221940514_imagemodel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -378,10 +417,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:64293/</IISUrl>
-          
+         
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
