@@ -10,7 +10,7 @@
 
 <div class="preview-page">
 
-    <h2>Preview of Your Blog</h2>
+    <h1>Preview of Your Blog</h1>
 
     @model WebAppBlog.Models.Blog.BlogOutput
     @{
@@ -36,8 +36,8 @@
                 }
                 @if (img.Images.Count > 0)
                 {
-                    <a onclick="initSlideChange(event)" class="galleryButtonLeft">&#10094;</a>
-                    <a onclick="initSlideChange(event)" class="galleryButtonRight">&#10095;</a>
+                    <a onclick="initSlideChange(event)" class="galleryButton galleryButtonLeft">&#10094;</a>
+                    <a onclick="initSlideChange(event)" class="galleryButton galleryButtonRight">&#10095;</a>
                     <script>changeSlides(1, "@img.ClassName");</script>
                 }
             </div>

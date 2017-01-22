@@ -3,31 +3,40 @@
     ViewBag.Title = "Profile";
 }
 
-<h2>@ViewBag.Title</h2>
-<div>
-    @Html.LabelFor(m => m.Email)<br />
-    @Html.DisplayTextFor(m => m.Email)<br /><br />
-    @Html.LabelFor(m => m.FirstName)<br />
-    @Html.DisplayTextFor(m => m.FirstName)<br /><br />
-    @Html.LabelFor(m => m.LastName)<br />
-    @Html.DisplayTextFor(m => m.LastName)<br /><br />
-    @Html.LabelFor(m => m.Birthdate)<br />
-    @Html.DisplayTextFor(m => m.Birthdate)<br /><br />
-    @Html.LabelFor(m => m.EmailConfirmation)<br />
-    @Html.DisplayTextFor(m => m.EmailConfirmation)<br /><br />
-    @{
-        if (!Model.EmailConfirmation)
-        {
-            using (Html.BeginForm("ResendEmail", "User", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+<div class="user-profile-page">
+    <h1>@ViewBag.Title</h1>
+    <div>
+        <div class="user-data">
+            <h3>@Html.LabelFor(m => m.Email)</h3>
+            <span>@Html.DisplayTextFor(m => m.Email)</span>
+
+            <h3>@Html.LabelFor(m => m.FirstName)</h3>
+            <span>@Html.DisplayTextFor(m => m.FirstName)</span>
+
+            <h3>@Html.LabelFor(m => m.LastName)</h3>
+            <span>@Html.DisplayTextFor(m => m.LastName)</span>
+
+            <h3>@Html.LabelFor(m => m.Birthdate)</h3>
+            <span>@Html.DisplayTextFor(m => m.Birthdate)</span>
+
+            <h3>@Html.LabelFor(m => m.EmailConfirmation)</h3>
+            <span>@Html.DisplayTextFor(m => m.EmailConfirmation)</span>
+        </div>
+        @{
+            if (!Model.EmailConfirmation)
             {
-                @Html.AntiForgeryToken()
-                <text>Resend Email Confirmation
-                    <input type="submit" value="Resend Mail" class="btn btn-link" />
-                </text>
+                using (Html.BeginForm("ResendEmail", "User", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div>
+                        <h2>Resend Email Confirmation</h2>
+                        <input type="submit" value="Resend Mail" class="btn btn-link" />
+                    </div>
+                }
             }
         }
-    }
-  
-      @Html.ActionLink("Edit", "Index","Manage",null,null)
-   
+
+        <div class="more-options">@Html.ActionLink("Edit Profile", "Index", "Manage", null, null)</div>
+
+    </div>
 </div>

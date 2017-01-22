@@ -108,7 +108,6 @@ function previewGallery(event) {
         //delete all children
         while (el.hasChildNodes())
             el.removeChild(el.lastChild);
-
         container = el;
     }
     else {
@@ -127,7 +126,7 @@ function previewGallery(event) {
             var img = document.createElement("img");
             img.className = classname;
             img.name = file.name;
-            img.style = "width:100%";
+            //    img.style = "width:100%";
              //add img to container
             container.appendChild(img);
 
