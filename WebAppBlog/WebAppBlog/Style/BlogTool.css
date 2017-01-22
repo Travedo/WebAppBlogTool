@@ -140,6 +140,7 @@ body {
 
 .navbar li {
     font-size: 18px;
+    font-weight: bold;
 }
 
 .icon-users:before {
