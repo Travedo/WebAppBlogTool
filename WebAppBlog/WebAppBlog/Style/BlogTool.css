@@ -5,13 +5,14 @@
 
     ICH:
     
-        aufräumen! abstände auf die obergeordneten elemente setzen, wenn nicht andere seiten beeinflusst!
+        aufräumen! 
+            code sortieren
+            abstände auf die obergeordneten elemente setzen, wenn nicht andere seiten beeinflusst!
 
         style profile pages!
         
-        
-
         testing preview
+        style blog
 
         styles perfektionieren
         alles responsible machen 
@@ -20,10 +21,7 @@
 
         erklärung blogtool - help/about
         willkommensseite text ausdenken
-        
-        hinweis dateformat 01/01/2017 beim registrieren
-
-
+       
 
         - schwieriger - als letztes -
         solve bug overlap footer-hr and blog-elements
@@ -141,7 +139,9 @@ body {
 
 
 
-
+.navbar li {
+    font-size: 18px;
+}
 
 .icon-users:before {
     color: #fff;
@@ -162,14 +162,14 @@ button, .btn {
     padding: 6px 15px;
 }
 
-a:hover, button:hover {
+a:hover, button:hover, .btn:hover, .body-content a:hover {
     color: #80cbc4;
     cursor: pointer;
     text-decoration: none;
 }
 
 .body-content {
-    padding: 50px 15px;
+    padding: 50px 15px 0;
 }
 
 .body-content a {
@@ -278,10 +278,9 @@ footer:before {
 /* ======================================================
         Home page styles 
    ====================================================== */
-/*
-    .home-page
-*/
-
+.home-page .note {
+    margin: 20px 0 10px;
+}
 
 
 /* ======================================================
@@ -342,13 +341,6 @@ footer:before {
     width: 40px;
 }
 
-.create-blog-page .blog-element:hover {
-    color: #80cbc4;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-
 .blog-element:before {
     display: block;
     font-size: 20px;
@@ -386,74 +378,6 @@ footer:before {
     float: right;
     width: 63%;
 }
-
-
-/* ======================================================
-        Blog preview page styles 
-   ====================================================== */
-/*
-    .preview-page
-*/
-
-
-/* ======================================================
-        Finished Blog page styles 
-   ====================================================== */
-/*
-    .finished-blog-page
-*/
-
-
-/* ======================================================
-        About page styles 
-   ====================================================== */
-/*
-    .about-page
-*/
-
-
-/* ======================================================
-        Impressum page styles 
-   ====================================================== */
-/*
-    .impressum-page
-*/
-
-/* ======================================================
-        Register/Login page styles 
-   ====================================================== */
-
-
-/* ======================================================
-        User profile pages styles 
-   ====================================================== */
-.user-profile-page .btn, .edit-profile-page .btn {
-    display: block;
-    width: 150px;
-}
-
-.user-data {
-    margin-bottom: 50px;
-}
-
-
-
-
-/*
-.icon-menu:before {
-    content: "\e9bd";
-    font-size: 30px;
-}
-*/
-
-
-
-
-
-
-
-
-
 
 .more-content-box {
     background: #fff url(../fonts/all-in-one-small.png) center center no-repeat;
@@ -512,14 +436,40 @@ footer:before {
 
 
 
-.home-page .note {
-    margin: 20px 0 10px;
+/* ======================================================
+        Blog preview page styles 
+   ====================================================== */
+/*
+    .preview-page
+*/
+
+
+/* ======================================================
+        Finished Blog page styles 
+   ====================================================== */
+/*
+    .finished-blog-page
+*/
+
+
+/* ======================================================
+        About page styles 
+   ====================================================== */
+/*
+    .about-page
+*/
+.about-img {
+    margin: 30px 0;
 }
 
-#RememberMe {
-    width: 10px;
-}
 
+
+/* ======================================================
+        Impressum page styles 
+   ====================================================== */
+/*
+    .impressum-page
+*/
 .contact-info {
     margin-top: 20px;
 }
@@ -534,6 +484,22 @@ footer:before {
 
 address {
     margin: 20px 0;
+}
+
+.address-htw {
+    margin: 20px 0;
+}
+
+.address-htw li {
+    list-style: none;
+    margin: 3px 0;
+}
+
+/* ======================================================
+        Register/Login page styles 
+   ====================================================== */
+#RememberMe {
+    width: 10px;
 }
 
 .radio label, .checkbox label {
@@ -553,15 +519,27 @@ address {
     width: 100%;
 }
 
-.address-htw {
-    margin: 20px 0;
+/* ======================================================
+        User profile pages styles 
+   ====================================================== */
+.user-profile-page .btn, .edit-profile-page .btn {
+    display: block;
+    width: 150px;
 }
 
-.address-htw li {
-    list-style: none;
-    margin: 3px 0;
+.user-data {
+    margin-bottom: 50px;
 }
 
+
+
+
+/*
+.icon-menu:before {
+    content: "\e9bd";
+    font-size: 30px;
+}
+*/
 
 /*
 input[type="checkbox"] {
@@ -581,9 +559,6 @@ input[type="checkbox"]:checked + label span {
 }
 */
 
-.about-img {
-    margin: 30px 0;
-}
 
 
 
