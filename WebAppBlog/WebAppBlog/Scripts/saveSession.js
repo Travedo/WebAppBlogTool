@@ -77,6 +77,25 @@ function isStorageUsable() {
     }
 }
 
+function clearBlog()
+{
+    var data = document.getElementById("blogdata-continued");
+    var titel = document.getElementById("blog-titel");
+    titel.value = "";
+
+    var subtitle = document.getElementById("blog-subtitle");
+    subtitle.value = "";
+
+    var firstParagraph = document.getElementById("first-paragraph");
+        firstParagraph.value="";
+
+    //delete all children
+    while (data.hasChildNodes() && data.children.length > 1) {
+             data.removeChild(data.firstChild);
+    }
+        
+}
+
 $(document).ready(function () {
 
     if (retrieveSessionData()) {
