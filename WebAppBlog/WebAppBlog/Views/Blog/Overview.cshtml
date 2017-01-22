@@ -3,15 +3,15 @@
     ViewBag.Title = "Overview";
 }
 
-<table>
+<div class="blogs-overview-page">
     
     @foreach (var blog in Model.usersBlogs)
     {
-    <tr>
-        <td>@blog.Title</td>
-        <td>@blog.Subtitle</td>
-        <td></td>
-    </tr>
+    <div>
+        <span>@blog.Title</span>
+        <span>@blog.Subtitle</span>
+        <span></span>
+    </div>
     }
-</table>
+</div>
 

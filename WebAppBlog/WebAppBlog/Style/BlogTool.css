@@ -5,19 +5,17 @@
 
     ICH:
     
+        style blog
+
+        alles responsible machen
+
         aufräumen! 
             code sortieren
             abstände auf die obergeordneten elemente setzen, wenn nicht andere seiten beeinflusst!
 
         testing preview
-        style blog
-
-        styles perfektionieren
-        alles responsible machen 
-
-            review stylen-> ALLE br tags raus, durch spacings ersetzen
-
-        erklärung blogtool - help/about
+        
+        styles "perfektionieren"        
         willkommensseite text ausdenken
        
 
@@ -27,12 +25,13 @@
         input of type file stylen
 
     AIJANA:
-    
-        PREVIEW!!!
-        Karte markieren können
+        erklärung blogtool - about
+        PREVIEW --> musik. rausnehmen?
+        Karte markierung speichern
         Hello NAME!
-
         edit profile > speichern realisieren
+
+        
 
     WIR:
         coolen Namen ausdenken
@@ -391,7 +390,7 @@ footer:before {
     width: calc(100% - 94px);
 }
 
-.blog-container{
+.blog-container {
     float: right;
     width: 63%;
 }
@@ -413,12 +412,17 @@ footer:before {
     padding: 15px;
 }
 
-.more-content-box input, .more-content-box textarea  {
+.more-content-box input, .more-content-box textarea {
     width: 100%;
 }
 
 input[type="file"] {
     color: #fff;
+}
+
+
+.gallery-container {
+    position: relative;
 }
 
 .body-content .galleryButton {
@@ -432,14 +436,14 @@ input[type="file"] {
 
     display: inline-block;
     text-align: center;
-    color: #fff;
-    background-color: #000;
+    color: #80cbc4;
     overflow: hidden;
     z-index: 1;
     padding: 0;
     border-radius: 50%;
     cursor: pointer;
     font-size: 24px;
+    margin: 0;
 }
 
 .body-content .galleryButtonRight {
@@ -699,10 +703,12 @@ input[type="checkbox"]:checked + label span {
         font: 700 20px/24px "Dosis";  
     }
 
+    
 
-    .more-options {
-        margin-top: 60px;
-    }
+    
+
+
+
 
     .menu-trigger {
         display: none;
@@ -731,6 +737,11 @@ input[type="checkbox"]:checked + label span {
     h2, button {
         font: 20px/22px "Chewy"; 
     }
+
+    h3, label {
+        font-size: 18px;
+        line-height: 20px;
+    }
     
     p {
         font: 18px/20px "Dosis"; 
@@ -742,8 +753,15 @@ input[type="checkbox"]:checked + label span {
     }
 
     textarea {
-        font: 18px/20px "Dosis";
+        font: 16px/18px "Dosis";
     }
+
+    .more-options {
+        margin-top: 60px;
+    }
+
+
+
 
     .blog-elements {
         width: 125px;

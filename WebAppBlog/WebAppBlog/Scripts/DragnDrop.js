@@ -113,7 +113,7 @@ function previewGallery(event) {
     else {
         //else create new container
         container = document.createElement("div");
-        container.style = "position: relative;";
+        container.className = "gallery-container";
         parent.insertBefore(container, element.nextSibling);
     }
    
@@ -126,7 +126,6 @@ function previewGallery(event) {
             var img = document.createElement("img");
             img.className = classname;
             img.name = file.name;
-            //    img.style = "width:100%";
              //add img to container
             container.appendChild(img);
 
@@ -146,11 +145,11 @@ function previewGallery(event) {
     var button1 = document.createElement('a');
     button1.innerHTML = "&#10094";
     button1.onclick = plusDivs;
-    button1.className = "galleryButtonLeft";
+    button1.className = "galleryButton galleryButtonLeft";
     var button2 = document.createElement('a');
     button2.innerHTML = "&#10095;";
     button2.onclick = plusDivs;
-    button2.className = "galleryButtonRight";
+    button2.className = "galleryButton galleryButtonRight";
     container.appendChild(button1);
     container.appendChild(button2);
 
