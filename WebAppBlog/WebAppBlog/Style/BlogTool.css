@@ -9,8 +9,6 @@
             code sortieren
             abstände auf die obergeordneten elemente setzen, wenn nicht andere seiten beeinflusst!
 
-        style profile pages!
-        
         testing preview
         style blog
 
@@ -33,6 +31,8 @@
         PREVIEW!!!
         Karte markieren können
         Hello NAME!
+
+        edit profile > speichern realisieren
 
     WIR:
         coolen Namen ausdenken
@@ -169,7 +169,7 @@ a:hover, button:hover, .btn:hover, .body-content a:hover {
 }
 
 .body-content {
-    padding: 50px 15px 0;
+    padding: 50px 25px 0;
 }
 
 .body-content a {
@@ -213,6 +213,10 @@ p {
     display: block;
     font: 14px/16px "Dosis"; 
     margin: 20px 0;
+}
+
+li, span {
+    font: 14px/16px "Dosis";
 }
 
 input, select, textarea {
@@ -646,6 +650,10 @@ input[type="checkbox"]:checked + label span {
         margin: 28px 0;
     }
 
+    li, span {
+        font: 16px/18px "Dosis"; 
+    }
+
     .blog-elements {
         box-shadow: 5px 6px 25px -5px rgba(0,0,0,0.75);
         padding: 10px 22px;
@@ -727,6 +735,10 @@ input[type="checkbox"]:checked + label span {
     p {
         font: 18px/20px "Dosis"; 
         margin: 28px 0;
+    }
+
+    li, span {
+        font: 18px/20px "Dosis"; 
     }
 
     textarea {
