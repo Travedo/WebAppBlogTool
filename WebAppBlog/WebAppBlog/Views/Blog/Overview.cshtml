@@ -5,12 +5,13 @@
 
 <div class="blogs-overview-page">
     
+    <h1>My Blogs</h1>
     @foreach (var blog in Model.usersBlogs)
     {
     <div>
-        <span>@blog.Title</span>
+        <h3>@blog.Title</h3>
         <span>@blog.Subtitle</span>
-        <span></span>
+        <span>more information</span>
     </div>
     }
 </div>

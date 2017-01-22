@@ -244,6 +244,16 @@ img, iframe {
     margin: 10px auto;
     max-height: 300px;
     max-width: 70%;
+    
+    /*
+        wenn horizontal:
+
+        display: block;
+        margin: 10px 0;
+        max-height: 300px;
+        width: 96%;
+    */
+    
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -422,7 +432,9 @@ input[type="file"] {
 
 
 .gallery-container {
+    margin: 20px 0;
     position: relative;
+    width: 96%;
 }
 
 .body-content .galleryButton {
@@ -455,7 +467,7 @@ input[type="file"] {
 }
 
 #map {
-    height:250px;
+    height: 250px;
     margin: 10px 0;
 }
 
@@ -476,6 +488,12 @@ input[type="file"] {
     .finished-blog-page
 */
 
+
+
+.blogs-overview-page span {
+    display: inline-block;
+    margin: 15px 10px 15px 0;
+}
 
 /* ======================================================
         About page styles 
