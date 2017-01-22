@@ -315,14 +315,7 @@ footer:before {
 /*
     .create-blog-page
 */
-.main-container {
-     align-items: stretch;
-     display: flex;
-     flex-direction: row;
-     flex-wrap: wrap;
-     justify-content: flex-start;
-     padding: 30px 0;
-}
+
 
 .blog-build-container {
     flex-basis: 66%;
@@ -723,7 +716,14 @@ input[type="checkbox"]:checked + label span {
 
     
 
-    
+    .main-container {
+     align-items: stretch;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: flex-start;
+     padding: 30px 0;
+}
 
 
 
