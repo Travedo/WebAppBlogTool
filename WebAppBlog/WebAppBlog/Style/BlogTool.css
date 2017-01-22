@@ -244,6 +244,16 @@ img, iframe {
     margin: 10px auto;
     max-height: 300px;
     max-width: 70%;
+    
+    /*
+        wenn horizontal:
+
+        display: block;
+        margin: 10px 0;
+        max-height: 300px;
+        width: 96%;
+    */
+    
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
