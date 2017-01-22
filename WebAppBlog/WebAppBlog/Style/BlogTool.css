@@ -422,7 +422,9 @@ input[type="file"] {
 
 
 .gallery-container {
+    margin: 20px 0;
     position: relative;
+    width: 96%;
 }
 
 .body-content .galleryButton {
