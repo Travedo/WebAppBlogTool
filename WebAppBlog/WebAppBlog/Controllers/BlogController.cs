@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebAppBlog.Models;
 using WebAppBlog.Models.Blog;
 using WebAppBlog.Services;
 
@@ -15,27 +17,56 @@ namespace WebAppBlog.Controllers
         { }
 
         private IBlogDataService service;
-        public BlogController(IBlogDataService service)
+        private ApplicationUserManager userManager;
+        public BlogController(IBlogDataService service, ApplicationUserManager userManager)
         {
             this.service = service;
+            this.userManager = userManager;
         }
 
         // GET: Blog
         public ActionResult Index()
         {
-            BlogOutput data = new BlogOutput();
-            var blog = service.GetBlogData();
-            data.Title = blog.titel;
-            data.Subtitle = blog.subtitel;
-            data.Elements = new List<Element>();
+            if(service.GetBlog()!= null) { 
 
-            foreach (var text in blog.text)
+            ApplicationDbContext context = new ApplicationDbContext();
+
+          var user=  context.Users.Find(User.Identity.GetUserId());
+           
+            var data = service.GetBlog();
+            
+            
+            BlogData blog = new BlogData { ApplicationUser = user, Title = data.Title, Subtitle = data.Subtitle };
+           // user.BlogDatas.Add(blog);
+              context.BlogDatas.Add(blog);
+             
+            context.SaveChanges();
+            context.Dispose();
+
+            return View(data);
+            }else
             {
-                data.Elements.Add(new TextElement { value = text.value, position = text.position });
+                return RedirectToAction("Create", "Blog"); ;
+            }
+        }
+
+        public ActionResult Overview()
+        {
+            ApplicationDbContext context = new ApplicationDbContext();
+
+            var user = context.Users.Find(User.Identity.GetUserId());
+            BlogOverviewViewModel blogvm = new BlogOverviewViewModel();
+            blogvm.usersBlogs = new List<BlogOutput>();
+
+             //find by user id
+             var lists = context.BlogDatas.Where(blog => blog.ApplicationUserId==user.Id).ToList();
+            foreach (var blog in lists)
+            {
+                blogvm.usersBlogs.Add(new BlogOutput { Title=blog.Title, Subtitle=blog.Subtitle });
             }
 
-            data.Elements = data.Elements.OrderBy(x => x.position).ToList();
-            return View(data);
+
+            return View(blogvm);
         }
 
         public ActionResult Create()
@@ -70,6 +101,7 @@ namespace WebAppBlog.Controllers
             //sort, based on position
             data.Elements = data.Elements.OrderBy(x => x.position).ToList();
 
+            service.SetBlog(data);
             //shove elements into view or display
             return View(data);
         }
@@ -123,6 +155,8 @@ namespace WebAppBlog.Controllers
         {
             return View();
         }
+
+
 
     }
 

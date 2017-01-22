@@ -4,15 +4,25 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebAppBlog.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        public ApplicationUser()
+        {
+            BlogDatas = new List<BlogData>();
+        }
+
+       // public int ApplicationUserId { get; set;}
         public DateTime Birthdate { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
+        public virtual ICollection<BlogData> BlogDatas { get; set; }
 
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -31,9 +41,22 @@ namespace WebAppBlog.Models
         {
         }
 
+        public DbSet<BlogData> BlogDatas { get; set; }
+       
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+          /*  modelBuilder.Entity<BlogData>()
+                .HasRequired(c => c.ApplicationUser)
+                .WithMany(t => t.BlogDatas)
+                .Map(m => m.MapKey("UserId"));*/
         }
     }
 }

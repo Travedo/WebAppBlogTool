@@ -1,0 +1,17 @@
+﻿@model WebAppBlog.Models.BlogOverviewViewModel
+@{
+    ViewBag.Title = "Overview";
+}
+
+<table>
+    
+    @foreach (var blog in Model.usersBlogs)
+    {
+    <tr>
+        <td>@blog.Title</td>
+        <td>@blog.Subtitle</td>
+        <td></td>
+    </tr>
+    }
+</table>
+
