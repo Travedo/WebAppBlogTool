@@ -193,7 +193,7 @@ h2 {
 h3 {
     font-size: 14px;
     line-height: 16px;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .body-content ul {
@@ -243,7 +243,20 @@ img, iframe {
     max-width: 70%;
 }
 
-
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #fff;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: #fff;
+   opacity: 1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: #fff;
+   opacity: 1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #fff;
+}
 
 
 
@@ -370,7 +383,7 @@ footer:before {
 
 .blog-preview {
     float: right;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
     width: calc(100% - 94px);
 }
 
@@ -380,7 +393,7 @@ footer:before {
 }
 
 .more-content-box {
-    background: #fff url(../fonts/all-in-one-small.png) center center no-repeat;
+    background: #fff url(../fonts/all-in-one-smaller.png) center center no-repeat;
     border: solid 1px #80cbc4;
     display: block;
     font: 14px/16px "Dosis";
@@ -398,6 +411,10 @@ footer:before {
 
 .more-content-box input, .more-content-box textarea  {
     width: 100%;
+}
+
+input[type="file"] {
+    color: #fff;
 }
 
 .body-content .galleryButton {
@@ -510,7 +527,7 @@ address {
     padding-top: 10px;
 }
 
-.form-horizontal:before {
+.horizonal-line-before:before {
     background: #ddd;
     content: " ";
     display: block;
@@ -531,8 +548,30 @@ address {
     margin-bottom: 50px;
 }
 
+.edit-user-data input {
+    margin-bottom: 0;
+    width: 100%;
+}
 
+.edit-user-data a {
+    display: inline;
+}
 
+.more-options a {
+    margin: 0;
+}
+
+.save {
+    float: right;
+}
+
+.manage-login-page a {
+    display: inline;
+}
+
+.change-password-page input {
+    width: 100%;
+}
 
 /*
 .icon-menu:before {
@@ -561,10 +600,7 @@ input[type="checkbox"]:checked + label span {
 
 
 
-
-
-
-@media (max-width:760px) {
+@media (max-width: 760px) {
    .main-container {
        flex-wrap: nowrap;
        flex-direction: column;
@@ -617,9 +653,10 @@ input[type="checkbox"]:checked + label span {
     }
 
     .blog-preview {
+        margin-bottom: 50px;
         width: calc(100% - 110px);
     }
-
+    
     .create-blog-page .blog-element {
         height: 50px;
         width: 50px;
@@ -637,6 +674,7 @@ input[type="checkbox"]:checked + label span {
     .map-container {
         margin-top: 0;
     }
+
     .form-group {
       margin-bottom: 15px;
     }
@@ -711,6 +749,7 @@ input[type="checkbox"]:checked + label span {
     }
 
     .blog-preview {
+        margin-bottom: 100px;
         width: calc(100% - 150px);
     }
 
