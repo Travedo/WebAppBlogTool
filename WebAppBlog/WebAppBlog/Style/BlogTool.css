@@ -457,7 +457,7 @@ input[type="file"] {
 }
 
 #map {
-    height:250px;
+    height: 250px;
     margin: 10px 0;
 }
 
@@ -478,6 +478,12 @@ input[type="file"] {
     .finished-blog-page
 */
 
+
+
+.blogs-overview-page span {
+    display: inline-block;
+    margin: 15px 10px 15px 0;
+}
 
 /* ======================================================
         About page styles 
