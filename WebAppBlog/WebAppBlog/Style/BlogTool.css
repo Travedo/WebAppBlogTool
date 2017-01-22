@@ -5,34 +5,26 @@
 
     ICH:
     
-        style blog
+        alles responsive machen
+        abstände auf die obergeordneten elemente setzen, wenn nicht andere seiten beeinflusst!
+        clean code
 
-        alles responsible machen
-
-        aufräumen! 
-            code sortieren
-            abstände auf die obergeordneten elemente setzen, wenn nicht andere seiten beeinflusst!
-
-        testing preview
-        
-        styles "perfektionieren"        
         willkommensseite text ausdenken
        
-
         - schwieriger - als letztes -
         solve bug overlap footer-hr and blog-elements
         checkbox hübsch machen 
         input of type file stylen
 
     AIJANA:
-        erklärung blogtool - about
-        PREVIEW --> musik. rausnehmen?
-        Karte markierung speichern
+        löschbar machen der blog-elemente
         Hello NAME!
+        erklärung blogtool - about
+        Karte markierung speichern
         edit profile > speichern realisieren
-
+        blog-overview: blogs anklickbar machen (link zu jeweiligem blog editor), blogs löschbar machen
+        PREVIEW --> musik umsetzen oder rausnehmen?
         
-
     WIR:
         coolen Namen ausdenken
         logo?
@@ -432,24 +424,22 @@ input[type="file"] {
 }
 
 .body-content .galleryButton {
-    position: absolute;
-    top: 50%;
-    transform: translate(0%,-50%);
-
-    width: 40px;
+    border-radius: 50%;
+    color: #80cbc4;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 24px;
     height: 40px;
     line-height: 40px;
-
-    display: inline-block;
-    text-align: center;
-    color: #80cbc4;
-    overflow: hidden;
-    z-index: 1;
-    padding: 0;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 24px;
     margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(0%,-50%);
+    width: 40px;
+    z-index: 1;
 }
 
 .body-content .galleryButtonRight {
@@ -581,7 +571,7 @@ address {
     margin: 0;
 }
 
-.save {
+.btn-right {
     float: right;
 }
 
@@ -640,10 +630,6 @@ input[type="checkbox"]:checked + label span {
 
 @media only screen and (min-width: 760px) {
   
-    body {
-
-    }
-
     .more-options {
         margin-top: 40px;
     }

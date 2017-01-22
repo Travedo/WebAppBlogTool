@@ -56,8 +56,10 @@
         }
 
     }
-    @Html.ActionLink("Save", "Index", "Blog")
-    @Html.ActionLink("Edit", "Edit", "Blog")
+    <div class="more-options">
+        @Html.ActionLink("< Edit", "Edit", "Blog")
+        <div class="btn-right">@Html.ActionLink("Save >", "Index", "Blog")</div>
+    </div>
 </div>
 
 
