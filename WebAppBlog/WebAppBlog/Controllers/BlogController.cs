@@ -34,14 +34,39 @@ namespace WebAppBlog.Controllers
           var user=  context.Users.Find(User.Identity.GetUserId());
            
             var data = service.GetBlog();
+                List<TextModel> texts = new List<TextModel>();
+                List<ImageModel> images = new List<ImageModel>();
+                ICollection<GalleryModel> gallerys = new List<GalleryModel>();
+                foreach (var text in data.Elements) {
+                    if (text is TextElement)
+                    {
+                        texts.Add(new TextModel { Text = text.value });
+                    }
+                    else if (text is ImageElement)
+                    {
+                        var image = text as ImageElement;
+
+                        images.Add(new ImageModel { Base64= image.base64});
+                    }
+                    else {
+
+                        var gallery = text as GalleryElement;
+                       
+
+                        //TODO!
+                    }
+                }
+                
             
-            
-            BlogData blog = new BlogData { ApplicationUser = user, Title = data.Title, Subtitle = data.Subtitle };
-           // user.BlogDatas.Add(blog);
-              context.BlogDatas.Add(blog);
+                //add everything to db
+            BlogData blog = new BlogData { ApplicationUser = user, Title = data.Title, Subtitle = data.Subtitle, GalleryModels=gallerys, ImageModels=images, TextModels=texts };
+            context.BlogDatas.Add(blog);
              
             context.SaveChanges();
             context.Dispose();
+
+            //clear service
+            service.clearData();
 
             return View(data);
             }else

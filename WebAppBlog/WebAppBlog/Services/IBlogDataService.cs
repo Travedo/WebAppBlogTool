@@ -21,5 +21,7 @@ namespace WebAppBlog.Services
         void SetBlog(BlogOutput blog);
         BlogOutput GetBlog();
 
+        void clearData();
+
     }
 }

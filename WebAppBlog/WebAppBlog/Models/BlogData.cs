@@ -18,6 +18,8 @@ namespace WebAppBlog.Models
         public string Subtitle { get; set; }
 
         public virtual ICollection<ImageModel> ImageModels { get; set; }
+        public virtual ICollection<GalleryModel> GalleryModels { get; set; }
+        public virtual ICollection<TextModel> TextModels { get; set; }
 
 
     }
