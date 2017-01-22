@@ -8,33 +8,29 @@
 
     <p class="text-success">@ViewBag.StatusMessage</p>
     <div>
-        <h4>Change your account settings</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>Password:</dt>
-            <dd>
-                @if (Model.HasPassword)
-                {
-                    @Html.ActionLink("Change your password", "ChangePassword")
-                }
-                else
-                {
-                    @Html.ActionLink("Create", "SetPassword")
-                }
-            </dd>
-            <dt>First Name:</dt>
-            <dd>
-                @Html.TextBoxFor(m => m.FirstName) 
-            </dd>
-            <dt>Last Name:</dt>
-            <dd>
-                @Html.TextBoxFor(m => m.LastName)
-            </dd>
-            <dt>External Logins:</dt>
-            <dd>
+        <h2>Change your account settings</h2>
+        <div class="edit-user-data horizonal-line-before">
+            <h3>Password:</h3>
+            
+            @if (Model.HasPassword)
+            {
+                @Html.ActionLink("Change your password", "ChangePassword")
+            }
+            else
+            {
+                @Html.ActionLink("Create", "SetPassword")
+            }
+            <h3>First Name:</h3>
+             @Html.TextBoxFor(m => m.FirstName) 
+            
+            <h3>Last Name:</h3>
+            @Html.TextBoxFor(m => m.LastName)
+            
+            <h3>External Logins:</h3>
+            <span>
                 @Model.Logins.Count 
                 @Html.ActionLink("Manage", "ManageLogins")
-            </dd>
+            </span>
             @*
                 Phone Numbers can used as a second factor of verification in a two-factor authentication system.
              
@@ -63,8 +59,8 @@
                     }
                 </dd>
             *@
-            <dt>Two-Factor Authentication:</dt>
-            <dd>
+            <h3>Two-Factor Authentication:</h3>
+            <span>
                 @if (Model.TwoFactor)
                     {
                         using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -85,10 +81,11 @@
                             </text>
                         }
                     }
-            </dd>
-        </dl>
-
-        @Html.ActionLink("Back", "Index", "User", null, null)
-        <a href="/#">Save</a>
+            </span>
+        </div>
+        <div class="more-options">
+            @Html.ActionLink("< Back", "Index", "User", null, null)
+            <a href="/#" class="save">Save ></a>
+        </div>
     </div>
 </div>
