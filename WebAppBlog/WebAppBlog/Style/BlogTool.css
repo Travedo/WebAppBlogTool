@@ -555,10 +555,6 @@ address {
     width: 220px;
 }
 
-.user-data {
-    margin-bottom: 50px;
-}
-
 .edit-user-data input {
     margin-bottom: 0;
     width: 100%;
@@ -687,10 +683,6 @@ input[type="checkbox"]:checked + label span {
 
     .map-container {
         margin-top: 0;
-    }
-
-    .form-group {
-      margin-bottom: 15px;
     }
 }
 
