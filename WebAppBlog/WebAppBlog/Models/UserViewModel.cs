@@ -10,7 +10,8 @@ namespace WebAppBlog.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public DateTime Birthdate{ get; set; }
-        public bool EmailConfirmation { get; set; }
+        public string Birthdate{ get; set; }
+        public string EmailConfirmation { get; set; }
+        public bool IsEmailConfirmed { get; set; }
     }
 }

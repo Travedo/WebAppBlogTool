@@ -52,14 +52,22 @@ namespace WebAppBlog.Controllers
         {
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
             var model = new UserViewModel {
-                FirstName=user.FirstName,
-                LastName=user.LastName,
-                Birthdate=user.Birthdate,
-                Email=user.Email,
-                EmailConfirmation=user.EmailConfirmed
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Birthdate = user.Birthdate.ToString("dd.mm.yyyy"),
+                Email = user.Email,
+                EmailConfirmation = getEmailConfirmation(user.EmailConfirmed),
+                IsEmailConfirmed= user.EmailConfirmed
+
             };
 
             return View(model);
+        }
+
+        private string getEmailConfirmation(bool emailConfirmed)
+        {
+            if (emailConfirmed) return "Yes";
+            else return "No";
         }
     }
 }

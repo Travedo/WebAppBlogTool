@@ -19,11 +19,14 @@
             <h3>@Html.LabelFor(m => m.Birthdate)</h3>
             <span>@Html.DisplayTextFor(m => m.Birthdate)</span>
 
-            <h3>@Html.LabelFor(m => m.EmailConfirmation)</h3>
+            <h3><label>Email Confirmation</label></h3>
             <span>@Html.DisplayTextFor(m => m.EmailConfirmation)</span>
         </div>
+        @if (!Model.IsEmailConfirmed)
+        { <p> @Html.Raw("Resend a forgotten password and two-factor authentification only work when the mail adress is confirmed.") </p> }
+
         @{
-            if (!Model.EmailConfirmation)
+            if (!Model.IsEmailConfirmed)
             {
                 using (Html.BeginForm("ResendEmail", "User", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                 {
