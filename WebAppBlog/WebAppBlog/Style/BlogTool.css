@@ -126,10 +126,6 @@ body {
     padding: 50px 0 20px;
 }
 
-
-
-
-
 .navbar li {
     font-size: 18px;
     font-weight: bold;
@@ -174,12 +170,12 @@ a:hover, button:hover, .btn:hover, .body-content a:hover {
 
 h1 {
     font: 22px/24px "Chewy"; 
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 h2 {
     font: 16px/18px "Chewy"; 
-    margin: 20px 0 0 0;
+    margin: 20px 0 10px;
 }
 
 h3 {
@@ -360,6 +356,7 @@ footer:before {
     font-size: 20px;
     margin: 10px 0;
     text-align: center;
+    text-shadow: none;
 }
 
 .icon-text:before {
@@ -662,7 +659,7 @@ input[type="checkbox"]:checked + label span {
 
     .blog-elements {
         box-shadow: 5px 6px 25px -5px rgba(0,0,0,0.75);
-        padding: 14px 22px;
+        padding: 19px 22px;
         width: 95px;
     }
 
@@ -716,7 +713,7 @@ input[type="checkbox"]:checked + label span {
 
     h3, label {
         font-size: 18px;
-        line-height: 24px;
+        line-height: 29px;
     }
     
     p { 
@@ -729,6 +726,7 @@ input[type="checkbox"]:checked + label span {
 
     textarea {
         font: 16px/20px "Dosis";
+        height: 94px;
     }
 
     .more-options {
@@ -747,6 +745,7 @@ input[type="checkbox"]:checked + label span {
     }
 
     .blog-elements {
+        padding: 27px 22px;
         width: 125px;
     }
 
