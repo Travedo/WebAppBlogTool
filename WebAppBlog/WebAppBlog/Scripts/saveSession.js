@@ -77,6 +77,16 @@ function isStorageUsable() {
     }
 }
 
+function isDataStored()
+{
+    if (sessionStorage.createPage !== "undefined" && sessionStorage.createPage !== null)
+        return true;
+    else
+        //check if data is on server?
+        return false;
+
+}
+
 function clearBlog()
 {
     var data = document.getElementById("blogdata-continued");
@@ -98,7 +108,7 @@ function clearBlog()
 
 $(document).ready(function () {
 
-    if (retrieveSessionData()) {
+    if (isDataStored()) {
         var data = retrieveSessionData();
         var container = document.getElementById("blogdata-continued");
         var existingChilden = [];
