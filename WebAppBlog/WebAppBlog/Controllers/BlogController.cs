@@ -40,13 +40,13 @@ namespace WebAppBlog.Controllers
                 foreach (var text in data.Elements) {
                     if (text is TextElement)
                     {
-                        texts.Add(new TextModel { Text = text.value });
+                        texts.Add(new TextModel { Text = text.value, Position=text.position });
                     }
                     else if (text is ImageElement)
                     {
                         var image = text as ImageElement;
 
-                        images.Add(new ImageModel { Base64= image.base64});
+                        images.Add(new ImageModel { Base64= image.base64, Position=image.position});
                     }
                     else {
 
@@ -84,13 +84,14 @@ namespace WebAppBlog.Controllers
             blogvm.usersBlogs = new List<BlogOutput>();
 
              //find by user id
+             if(user!=null) { 
              var lists = context.BlogDatas.Where(blog => blog.ApplicationUserId==user.Id).ToList();
             foreach (var blog in lists)
             {
-                blogvm.usersBlogs.Add(new BlogOutput { Title=blog.Title, Subtitle=blog.Subtitle });
+                blogvm.usersBlogs.Add(new BlogOutput { Title=blog.Title, Subtitle=blog.Subtitle, id=blog.BlogDataId });
             }
 
-
+            }
             return View(blogvm);
         }
 

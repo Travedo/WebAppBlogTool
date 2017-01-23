@@ -12,5 +12,6 @@ namespace WebAppBlog.Models
         public string BlogDataId { get; set; }
         public List<ImageModel> Images { get; set; }
         public string ClassName { get; set; }
+        public int Position { get; set; }
     }
 }

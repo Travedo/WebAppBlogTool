@@ -251,6 +251,14 @@
     <Compile Include="Migrations\201701222115323_blogmodels.Designer.cs">
       <DependentUpon>201701222115323_blogmodels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701232126511_positions.cs" />
+    <Compile Include="Migrations\201701232126511_positions.Designer.cs">
+      <DependentUpon>201701232126511_positions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701232327147_cascadingDeleteTest.cs" />
+    <Compile Include="Migrations\201701232327147_cascadingDeleteTest.Designer.cs">
+      <DependentUpon>201701232327147_cascadingDeleteTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BlogData.cs" />
@@ -268,6 +276,7 @@
     <Compile Include="Models\Blog\TextElement.cs" />
     <Compile Include="Models\Blog\Video.cs" />
     <Compile Include="Models\Blog\VideoElement.cs" />
+    <Compile Include="Models\ExternBlogViewModel.cs" />
     <Compile Include="Models\GalleryModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ImageModel.cs" />
@@ -372,6 +381,7 @@
     <Content Include="Views\Blog\Edit.cshtml" />
     <Content Include="Views\Blog\Overview.cshtml" />
     <Content Include="Views\ExternBlog\Index.cshtml" />
+    <Content Include="Views\ExternBlog\ShowBlog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -410,6 +420,12 @@
     <EmbeddedResource Include="Migrations\201701222115323_blogmodels.resx">
       <DependentUpon>201701222115323_blogmodels.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701232126511_positions.resx">
+      <DependentUpon>201701232126511_positions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701232327147_cascadingDeleteTest.resx">
+      <DependentUpon>201701232327147_cascadingDeleteTest.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -427,9 +443,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:57851/</IISUrl>
+         
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

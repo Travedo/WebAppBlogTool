@@ -7,7 +7,16 @@ using System.Web.Http;
 
 namespace WebAppBlog.Controllers
 {
+    [RoutePrefix("api/ExternBlog")]
     public class ExternBlogApiController : ApiController
     {
+
+        [HttpGet]
+        [Route("Delete")]
+        public HttpResponseMessage Delete(int id)
+        {
+
+            return null;
+        }
     }
 }
