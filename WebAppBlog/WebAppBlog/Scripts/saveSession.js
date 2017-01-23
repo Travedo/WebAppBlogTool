@@ -79,11 +79,14 @@ function isStorageUsable() {
 
 function isDataStored()
 {
-    if (sessionStorage.createPage !== "undefined" && sessionStorage.createPage !== null)
-        return true;
-    else
-        //check if data is on server?
+    if (sessionStorage.createPage === "undefined" || sessionStorage.createPage === null)
         return false;
+    else {
+        if (sessionStorage.createPage)
+            return true;
+        else return false;
+       
+    }
 
 }
 
