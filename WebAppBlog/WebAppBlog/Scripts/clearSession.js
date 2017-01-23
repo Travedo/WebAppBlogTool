@@ -9,7 +9,7 @@
 $(document).ready(function () {
 
     if (isStorageUsable) {
-        sessionStorage.createPage = null;
+        sessionStorage.createPage = undefined;
     }
        
 });
