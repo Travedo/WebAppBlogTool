@@ -211,6 +211,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BlogApiController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\ExternBlogApiController.cs" />
+    <Compile Include="Controllers\ExternBlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -369,6 +371,7 @@
     <Content Include="Views\Blog\Preview.cshtml" />
     <Content Include="Views\Blog\Edit.cshtml" />
     <Content Include="Views\Blog\Overview.cshtml" />
+    <Content Include="Views\ExternBlog\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
