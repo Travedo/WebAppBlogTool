@@ -28,11 +28,6 @@
                 @Html.ActionLink("Create", "SetPassword")
             }
 
-            <h3>External Logins</h3>
-            <span> @Model.Logins.Count</span> 
-            @Html.ActionLink("Manage", "ManageLogins")
-            
-           
             <h3>Two-Factor Authentication</h3>
             <span>
                 @if (Model.TwoFactor)

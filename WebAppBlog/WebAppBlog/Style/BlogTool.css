@@ -552,12 +552,19 @@ address {
    ====================================================== */
 .user-profile-page .btn, .edit-profile-page .btn {
     display: block;
+}
+
+.user-profile-page .btn {
     width: 220px;
+}
+
+.edit-profile-page .btn {
+    width: 150px;
 }
 
 .edit-user-data input {
     margin-bottom: 0;
-    width: 100%;
+    width: 65%;
 }
 
 .edit-user-data a {
