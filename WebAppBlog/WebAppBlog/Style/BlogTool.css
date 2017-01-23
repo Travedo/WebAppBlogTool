@@ -9,8 +9,8 @@
         abstände auf die obergeordneten elemente setzen, wenn nicht andere seiten beeinflusst!
         clean code
 
-        willkommensseite text ausdenken
-       
+        font-size readability
+           
         - schwieriger - als letztes -
         solve bug overlap footer-hr and blog-elements
         checkbox hübsch machen 
@@ -203,18 +203,20 @@ h3 {
 
 p {
     display: block;
-    font: 14px/19px "Dosis"; 
     margin: 20px 0;
 }
 
-li, span {
-    font: 14px/16px "Dosis";
+p, li, span, a, input, select, textarea, .more-content-box {
+    font: 14px/19px "Dosis";
+}
+
+.container a {
+    font-weight: bold;
 }
 
 input, select, textarea {
     background: #80cbc4;
     border: none;
-    font: 14px/16px "Dosis";
     margin: 3px 0 15px;
     padding: 10px 15px;
     width: 96%;
@@ -395,7 +397,6 @@ footer:before {
     background: #fff url(../fonts/all-in-one-smaller.png) center center no-repeat;
     border: solid 1px #80cbc4;
     display: block;
-    font: 14px/16px "Dosis";
     height: auto;
     margin: 3px 0 15px;
     padding: 10px 15px;
@@ -448,6 +449,10 @@ input[type="file"] {
 
 .body-content .galleryButtonLeft {
      left: 0%;
+}
+
+.blog-preview .btn-right {
+    margin-right: 4%;
 }
 
 #map {
@@ -648,12 +653,11 @@ input[type="checkbox"]:checked + label span {
     }
 
     p {
-        font: 16px/21px "Dosis"; 
         margin: 28px 0;
     }
 
-    li, span {
-        font: 16px/18px "Dosis"; 
+    p, li, span, a, input {
+        font: 16px/21px "Dosis"; 
     }
 
     .blog-elements {
@@ -712,20 +716,19 @@ input[type="checkbox"]:checked + label span {
 
     h3, label {
         font-size: 18px;
-        line-height: 20px;
+        line-height: 24px;
     }
     
-    p {
-        font: 18px/23px "Dosis"; 
+    p { 
         margin: 28px 0;
     }
 
-    li, span {
-        font: 18px/20px "Dosis"; 
+    p, li, span, a, input {
+        font: 18px/24px "Dosis"; 
     }
 
     textarea {
-        font: 16px/18px "Dosis";
+        font: 16px/20px "Dosis";
     }
 
     .more-options {
