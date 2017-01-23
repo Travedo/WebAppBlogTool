@@ -205,7 +205,7 @@ p, li, span, input, select, textarea, .more-content-box {
     font: 14px/19px "Dosis";
 }
 
-.container a {
+a {
     font: 700 15px/20px "Dosis";
 }
 
@@ -588,13 +588,6 @@ address {
 }
 
 /*
-.icon-menu:before {
-    content: "\e9bd";
-    font-size: 30px;
-}
-*/
-
-/*
 input[type="checkbox"] {
     display:none;
 }
@@ -659,13 +652,13 @@ input[type="checkbox"]:checked + label span {
         font: 16px/21px "Dosis"; 
     }
 
-    .container a {
+    a {
         font: 700 17px/22px "Dosis";
     }
 
     .blog-elements {
         box-shadow: 5px 6px 25px -5px rgba(0,0,0,0.75);
-        padding: 19px 22px;
+        padding: 9px 22px;
         width: 95px;
     }
 
@@ -726,7 +719,7 @@ input[type="checkbox"]:checked + label span {
         font: 18px/24px "Dosis"; 
     }
 
-    .container a {
+    a {
         font: 700 19px/25px "Dosis";
     }
 
@@ -739,8 +732,6 @@ input[type="checkbox"]:checked + label span {
         margin-top: 60px;
     }
 
-
-
     .main-container {
          align-items: stretch;
          display: flex;
@@ -751,7 +742,7 @@ input[type="checkbox"]:checked + label span {
     }
 
     .blog-elements {
-        padding: 27px 22px;
+        padding: 20px 22px;
         width: 125px;
     }
 
