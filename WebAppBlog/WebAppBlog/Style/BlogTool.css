@@ -201,19 +201,19 @@ p {
     margin: 20px 0;
 }
 
-p, li, span, a, input, select, textarea, .more-content-box {
+p, li, span, input, select, textarea, .more-content-box {
     font: 14px/19px "Dosis";
 }
 
 .container a {
-    font-weight: bold;
+    font: 700 15px/20px "Dosis";
 }
 
 input, select, textarea {
     background: #80cbc4;
     border: none;
     margin: 3px 0 15px;
-    padding: 10px 15px;
+    padding: 5px 15px 8px;
     width: 96%;
 }
 
@@ -552,7 +552,7 @@ address {
    ====================================================== */
 .user-profile-page .btn, .edit-profile-page .btn {
     display: block;
-    width: 210px;
+    width: 220px;
 }
 
 .user-data {
@@ -652,8 +652,12 @@ input[type="checkbox"]:checked + label span {
         margin: 28px 0;
     }
 
-    p, li, span, a, input {
+    p, li, span, input {
         font: 16px/21px "Dosis"; 
+    }
+
+    .container a {
+        font: 700 17px/22px "Dosis";
     }
 
     .blog-elements {
@@ -719,8 +723,12 @@ input[type="checkbox"]:checked + label span {
         margin: 28px 0;
     }
 
-    p, li, span, a, input {
+    p, li, span, input {
         font: 18px/24px "Dosis"; 
+    }
+
+    .container a {
+        font: 700 19px/25px "Dosis";
     }
 
     textarea {
