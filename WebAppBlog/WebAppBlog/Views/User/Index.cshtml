@@ -23,7 +23,7 @@
             <span>@Html.DisplayTextFor(m => m.EmailConfirmation)</span>
         </div>
         @if (!Model.IsEmailConfirmed)
-        { <span class="note"> @Html.Raw("The mail adress needs to be confirmed to be able to use the resend of a forgotten password and two-factor authentification.") </span> }
+        { <span class="note"> @Html.Raw("The mail adress needs to be confirmed to be able to use the resend of a forgotten password and the two-factor authentification.") </span> }
 
         @{
             if (!Model.IsEmailConfirmed)
