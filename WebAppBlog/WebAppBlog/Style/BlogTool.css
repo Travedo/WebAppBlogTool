@@ -662,7 +662,7 @@ input[type="checkbox"]:checked + label span {
 
     .blog-elements {
         box-shadow: 5px 6px 25px -5px rgba(0,0,0,0.75);
-        padding: 10px 22px;
+        padding: 14px 22px;
         width: 95px;
     }
 
