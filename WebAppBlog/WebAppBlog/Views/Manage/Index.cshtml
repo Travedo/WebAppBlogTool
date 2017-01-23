@@ -10,7 +10,7 @@
     <div>
         <h2>Change your account settings</h2>
         <div class="edit-user-data horizonal-line-before">
-            <h3>Password:</h3>
+            <h3>Password</h3>
             
             @if (Model.HasPassword)
             {
@@ -20,13 +20,13 @@
             {
                 @Html.ActionLink("Create", "SetPassword")
             }
-            <h3>First Name:</h3>
+            <h3>First Name</h3>
              @Html.TextBoxFor(m => m.FirstName) 
             
-            <h3>Last Name:</h3>
+            <h3>Last Name</h3>
             @Html.TextBoxFor(m => m.LastName)
             
-            <h3>External Logins:</h3>
+            <h3>External Logins</h3>
             <span>
                 @Model.Logins.Count 
                 @Html.ActionLink("Manage", "ManageLogins")
@@ -59,7 +59,7 @@
                     }
                 </dd>
             *@
-            <h3>Two-Factor Authentication:</h3>
+            <h3>Two-Factor Authentication</h3>
             <span>
                 @if (Model.TwoFactor)
                     {

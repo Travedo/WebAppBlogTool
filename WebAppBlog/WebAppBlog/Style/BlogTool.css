@@ -203,7 +203,7 @@ h3 {
 
 p {
     display: block;
-    font: 14px/16px "Dosis"; 
+    font: 14px/19px "Dosis"; 
     margin: 20px 0;
 }
 
@@ -648,7 +648,7 @@ input[type="checkbox"]:checked + label span {
     }
 
     p {
-        font: 16px/18px "Dosis"; 
+        font: 16px/21px "Dosis"; 
         margin: 28px 0;
     }
 
@@ -716,7 +716,7 @@ input[type="checkbox"]:checked + label span {
     }
     
     p {
-        font: 18px/20px "Dosis"; 
+        font: 18px/23px "Dosis"; 
         margin: 28px 0;
     }
 
