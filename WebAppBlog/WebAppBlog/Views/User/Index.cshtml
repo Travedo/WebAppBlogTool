@@ -22,9 +22,7 @@
             <h3><label>Email Confirmation</label></h3>
             <span>@Html.DisplayTextFor(m => m.EmailConfirmation)</span>
         </div>
-        @if (!Model.IsEmailConfirmed)
-        { <span class="note"> @Html.Raw("The mail adress needs to be confirmed to be able to use the resend of a forgotten password and two-factor authentification.") </span> }
-
+        
         @{
             if (!Model.IsEmailConfirmed)
             {
@@ -32,12 +30,14 @@
                 {
                     @Html.AntiForgeryToken()
                     <div>
-                        <h2>Resend Email Confirmation</h2>
-                        <input type="submit" value="Resend Mail" class="btn btn-link" />
+                        <input type="submit" value="Resend Email Confirmation" class="btn btn-link" />
                     </div>
                 }
             }
         }
+        @if (!Model.IsEmailConfirmed)
+        { <span class="note"> @Html.Raw("The mail adress needs to be confirmed to be able to use the resend of a forgotten password and the two-factor authentification.") </span> }
+
 
         <div class="more-options">@Html.ActionLink("Edit Profile", "Index", "Manage", null, null)</div>
 
