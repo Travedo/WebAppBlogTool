@@ -259,6 +259,10 @@
     <Compile Include="Migrations\201701232327147_cascadingDeleteTest.Designer.cs">
       <DependentUpon>201701232327147_cascadingDeleteTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701240056147_externalConnection.cs" />
+    <Compile Include="Migrations\201701240056147_externalConnection.Designer.cs">
+      <DependentUpon>201701240056147_externalConnection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BlogData.cs" />
@@ -382,6 +386,7 @@
     <Content Include="Views\Blog\Overview.cshtml" />
     <Content Include="Views\ExternBlog\Index.cshtml" />
     <Content Include="Views\ExternBlog\ShowBlog.cshtml" />
+    <Content Include="Views\ExternBlog\ViewBlogFromExtern.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -426,6 +431,9 @@
     <EmbeddedResource Include="Migrations\201701232327147_cascadingDeleteTest.resx">
       <DependentUpon>201701232327147_cascadingDeleteTest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701240056147_externalConnection.resx">
+      <DependentUpon>201701240056147_externalConnection.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -443,7 +451,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-         
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59386/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

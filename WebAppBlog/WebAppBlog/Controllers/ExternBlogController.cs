@@ -41,13 +41,39 @@ namespace WebAppBlog.Controllers
 
             List<Element> elements = GenerateElements(blogdata.GalleryModels,blogdata.ImageModels, blogdata.TextModels);
             elements = elements.OrderBy(x => x.position).ToList();
-            var viewmodel = new ExternBlogViewModel { Title= blogdata.Title, Subtitle=blogdata.Subtitle, Elements=elements };
+           
+                var viewmodel = new ExternBlogViewModel { Title= blogdata.Title, Subtitle=blogdata.Subtitle, Elements=elements };
 
 
             return View(viewmodel);
             }
             else
                 return RedirectToAction("Overview", "Blog");
+        }
+
+        [AllowAnonymous]
+        public ActionResult ViewBlogFromExtern(string userid, string blogid)
+        {
+            var userdata = userid.Split(':');
+            var blogguid = new Guid(blogid);
+            var uderid = userdata[0];
+            ApplicationDbContext context = new ApplicationDbContext();
+            if(context.BlogDatas.Where(blog => blog.ApplicationUserId == uderid && blog.ExternalId == blogguid).ToList().Any()) {
+
+                var blogdata = context.BlogDatas.Where(blog => blog.ApplicationUserId == uderid && blog.ExternalId == blogguid).ToList().Single();
+
+
+                List<Element> elements = GenerateElements(blogdata.GalleryModels, blogdata.ImageModels, blogdata.TextModels);
+                elements = elements.OrderBy(x => x.position).ToList();
+
+                var viewmodel = new ExternBlogViewModel { Title = blogdata.Title, Subtitle = blogdata.Subtitle, Elements = elements };
+
+
+                return View(viewmodel);
+            }
+
+
+            return null;
         }
 
         private List<Element> GenerateElements(ICollection<GalleryModel> galleryModels, ICollection<ImageModel> imageModels, ICollection<TextModel> textModels)
