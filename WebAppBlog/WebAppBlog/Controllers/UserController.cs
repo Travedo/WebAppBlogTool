@@ -54,7 +54,7 @@ namespace WebAppBlog.Controllers
             var model = new UserViewModel {
                 FirstName = user.FirstName,
                 LastName = user.LastName,
-                Birthdate = user.Birthdate.ToString("dd.mm.yyyy"),
+                Birthdate = user.Birthdate.ToString("dd.MM.yyyy"),
                 Email = user.Email,
                 EmailConfirmation = getEmailConfirmation(user.EmailConfirmed),
                 IsEmailConfirmed= user.EmailConfirmed
