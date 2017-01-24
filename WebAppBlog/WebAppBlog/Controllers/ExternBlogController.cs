@@ -39,7 +39,7 @@ namespace WebAppBlog.Controllers
             if (user != null) { 
             var blogdata = context.BlogDatas.Where(blog => blog.ApplicationUserId == user.Id && blog.BlogDataId==id).ToList().Single();
 
-            List<Element> elements = GenerateElements(blogdata.GalleryModels,blogdata.ImageModels, blogdata.TextModels);
+            List<Element> elements = GenerateElements(blogdata.GalleryModels,blogdata.ImageModels, blogdata.TextModels, blogdata.VideoModels);
             elements = elements.OrderBy(x => x.position).ToList();
            
                 var viewmodel = new ExternBlogViewModel { Title= blogdata.Title, Subtitle=blogdata.Subtitle, Elements=elements };
@@ -63,7 +63,7 @@ namespace WebAppBlog.Controllers
                 var blogdata = context.BlogDatas.Where(blog => blog.ApplicationUserId == uderid && blog.ExternalId == blogguid).ToList().Single();
 
 
-                List<Element> elements = GenerateElements(blogdata.GalleryModels, blogdata.ImageModels, blogdata.TextModels);
+                List<Element> elements = GenerateElements(blogdata.GalleryModels, blogdata.ImageModels, blogdata.TextModels, blogdata.VideoModels);
                 elements = elements.OrderBy(x => x.position).ToList();
 
                 var viewmodel = new ExternBlogViewModel { Title = blogdata.Title, Subtitle = blogdata.Subtitle, Elements = elements };
@@ -76,7 +76,7 @@ namespace WebAppBlog.Controllers
             return null;
         }
 
-        private List<Element> GenerateElements(ICollection<GalleryModel> galleryModels, ICollection<ImageModel> imageModels, ICollection<TextModel> textModels)
+        private List<Element> GenerateElements(ICollection<GalleryModel> galleryModels, ICollection<ImageModel> imageModels, ICollection<TextModel> textModels, ICollection<VideoModel> videoModels)
         {
             List<Element> elements = new List<Element>();
 
@@ -84,13 +84,15 @@ namespace WebAppBlog.Controllers
 
             imageModels.ToList().ForEach(image=> elements.Add(new ImageElement { position = image.Position, base64 = image.Base64 }));
 
-            galleryModels.ToList().ForEach(gallery=> 
+            galleryModels.ToList().ForEach(gallery =>
             {
                 List<Images> imgs = new List<Images>();
-                gallery.Images.ForEach(img => imgs.Add(new Images { base64 = img.Base64 }));
-                elements.Add(new GalleryElement { position = gallery.Position, Images = imgs });
+                gallery.GalleryImageModels.ToList().ForEach(img => imgs.Add(new Images { base64=img.Base64 }));
+                elements.Add(new GalleryElement { position = gallery.Position, Images = imgs, ClassName=gallery.ClassName }); 
             });
 
+            videoModels.ToList().ForEach(video => elements.Add( new VideoElement { Src=video.Source, position=video.Position } ));
+            
             return elements;
         }
     }

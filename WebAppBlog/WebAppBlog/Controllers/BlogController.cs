@@ -36,6 +36,7 @@ namespace WebAppBlog.Controllers
             var data = service.GetBlog();
                 List<TextModel> texts = new List<TextModel>();
                 List<ImageModel> images = new List<ImageModel>();
+                List<VideoModel> videos = new List<VideoModel>();
                 ICollection<GalleryModel> gallerys = new List<GalleryModel>();
                 foreach (var text in data.Elements) {
                     if (text is TextElement)
@@ -48,19 +49,26 @@ namespace WebAppBlog.Controllers
 
                         images.Add(new ImageModel { Base64= image.base64, Position=image.position});
                     }
-                    else {
+                    else if(text is GalleryElement){
 
                         var gallery = text as GalleryElement;
-                       
+                        var galleryImage = new List<GalleryImageModel>();
+                        gallery.Images.ForEach(image => { galleryImage.Add(new GalleryImageModel { Base64=image.base64 }); } );
+                        gallerys.Add(new GalleryModel { Position=gallery.position, ClassName=gallery.ClassName, GalleryImageModels=galleryImage });
 
                         //TODO!
+                    }
+                    else
+                    {
+                        var video = text as VideoElement;
+                        videos.Add(new VideoModel { Source=video.Src, Position=video.position });
                     }
                 }
 
 
                 //add everything to db
             string externaluserid = String.Format("{0}:{1}:{2}",user.Id,user.LastName,Guid.NewGuid().ToString());
-            BlogData blog = new BlogData { ApplicationUser = user, Title = data.Title, Subtitle = data.Subtitle, GalleryModels=gallerys, ImageModels=images, TextModels=texts, ExternalId=Guid.NewGuid(), ExternalUser= externaluserid, IsVisibleFromOutside=false };
+            BlogData blog = new BlogData { ApplicationUser = user, Title = data.Title, Subtitle = data.Subtitle, GalleryModels=gallerys, ImageModels=images, TextModels=texts, ExternalId=Guid.NewGuid(), ExternalUser= externaluserid, IsVisibleFromOutside=false, VideoModels=videos };
             context.BlogDatas.Add(blog);
              
             context.SaveChanges();

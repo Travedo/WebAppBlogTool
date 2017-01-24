@@ -24,6 +24,7 @@ namespace WebAppBlog.Models
         public virtual ICollection<ImageModel> ImageModels { get; set; }
         public virtual ICollection<GalleryModel> GalleryModels { get; set; }
         public virtual ICollection<TextModel> TextModels { get; set; }
+        public virtual ICollection<VideoModel> VideoModels { get; set; }
 
 
     }
