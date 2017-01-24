@@ -9,6 +9,7 @@ using WebAppBlog.Models.Blog;
 
 namespace WebAppBlog.Controllers
 {
+    [Authorize]
     public class ExternBlogController : Controller
     {
 
@@ -45,11 +46,13 @@ namespace WebAppBlog.Controllers
 
             if (user != null) { 
             
-            //find by user id
-            var blogdata = context.BlogDatas.Where(blog => blog.ApplicationUserId == user.Id && blog.BlogDataId == id).ToList().Single();
-
-                context.BlogDatas.Remove(blogdata);
-                context.SaveChanges();
+                if(context.BlogDatas.Where(blog => blog.ApplicationUserId == user.Id && blog.BlogDataId == id).ToList().Any()) { 
+                        var blogdata = context.BlogDatas.Where(blog => blog.ApplicationUserId == user.Id && blog.BlogDataId == id).ToList().Single();
+                if (blogdata != null) { 
+                     context.BlogDatas.Remove(blogdata);
+                     context.SaveChanges();
+                }
+                }
             }
             return RedirectToAction("Overview", "Blog");
         }
@@ -58,7 +61,8 @@ namespace WebAppBlog.Controllers
         {
             ApplicationDbContext context = new ApplicationDbContext();
             var user = context.Users.Find(User.Identity.GetUserId());
-            //find by user id
+         
+            if (user != null) { 
             var blogdata = context.BlogDatas.Where(blog => blog.ApplicationUserId == user.Id && blog.BlogDataId==id).ToList().Single();
 
             List<Element> elements = GenerateElements(blogdata.GalleryModels,blogdata.ImageModels, blogdata.TextModels);
@@ -67,33 +71,25 @@ namespace WebAppBlog.Controllers
 
 
             return View(viewmodel);
+            }
+            else
+                return RedirectToAction("Overview", "Blog");
         }
 
         private List<Element> GenerateElements(ICollection<GalleryModel> galleryModels, ICollection<ImageModel> imageModels, ICollection<TextModel> textModels)
         {
             List<Element> elements = new List<Element>();
 
-            foreach (var text in textModels)
-            {
-                elements.Add(new TextElement { position=text.Position, value=text.Text });
-            }
+            textModels.ToList().ForEach(text => elements.Add(new TextElement { position = text.Position, value = text.Text }));
 
-            foreach (var image in imageModels)
-            {
-                elements.Add(new ImageElement { position = image.Position, base64= image.Base64 });
-            }
+            imageModels.ToList().ForEach(image=> elements.Add(new ImageElement { position = image.Position, base64 = image.Base64 }));
 
-            foreach (var gallery in galleryModels)
+            galleryModels.ToList().ForEach(gallery=> 
             {
                 List<Images> imgs = new List<Images>();
-
-                gallery.Images.ForEach(img => imgs.Add(new Images {base64=img.Base64 }));
-
-
-                elements.Add(new GalleryElement { position = gallery.Position, Images=imgs });
-            }
-
-
+                gallery.Images.ForEach(img => imgs.Add(new Images { base64 = img.Base64 }));
+                elements.Add(new GalleryElement { position = gallery.Position, Images = imgs });
+            });
 
             return elements;
         }
