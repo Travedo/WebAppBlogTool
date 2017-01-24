@@ -17,6 +17,10 @@ namespace WebAppBlog.Models
         public string Title { get; set; }
         public string Subtitle { get; set; }
 
+        public Guid ExternalId { get; set; }
+        public string ExternalUser { get; set; }
+        public bool IsVisibleFromOutside { get; set; }
+
         public virtual ICollection<ImageModel> ImageModels { get; set; }
         public virtual ICollection<GalleryModel> GalleryModels { get; set; }
         public virtual ICollection<TextModel> TextModels { get; set; }

@@ -53,10 +53,20 @@ namespace WebAppBlog.Models
         {
             base.OnModelCreating(modelBuilder);
 
-          /*  modelBuilder.Entity<BlogData>()
-                .HasRequired(c => c.ApplicationUser)
-                .WithMany(t => t.BlogDatas)
-                .Map(m => m.MapKey("UserId"));*/
+            var entity = modelBuilder.Entity<BlogData>();
+            entity.HasMany<GalleryModel>(c => c.GalleryModels)
+                 .WithOptional(x => x.BlogData)
+                .WillCascadeOnDelete(true);
+
+            entity.HasMany<ImageModel>(c => c.ImageModels)
+               .WithOptional(x => x.BlogData)
+              .WillCascadeOnDelete(true);
+
+            entity.HasMany<TextModel>(c => c.TextModels)
+            .WithOptional(x => x.BlogData)
+           .WillCascadeOnDelete(true);
+
+
         }
     }
 }

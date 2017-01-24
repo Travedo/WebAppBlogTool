@@ -9,6 +9,10 @@ namespace WebAppBlog.Models.Blog
     {
         public int id { get; set; }
 
+        public string ExternalUrl { get; set; }
+
+        public bool IsAccessible { get; set; }
+
         private string title;
         public string Title { get { return title; } set { title = value; } }
 

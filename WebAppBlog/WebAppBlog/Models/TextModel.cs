@@ -11,5 +11,6 @@ namespace WebAppBlog.Models
         public virtual BlogData BlogData { get; set; }
         public string BlogDataId { get; set; }
         public string Text { get; set; }
+        public int Position { get; set; }
     }
 }
