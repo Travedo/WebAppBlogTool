@@ -631,7 +631,7 @@ input[type="checkbox"]:checked + label span {
         margin: 28px 0;
     }
 
-    p, li, span, input {
+    p, li, span, input, textarea {
         font: 16px/21px "Dosis"; 
     }
 
@@ -698,7 +698,7 @@ input[type="checkbox"]:checked + label span {
         margin: 28px 0;
     }
 
-    p, li, span, input {
+    p, li, span, input, textarea {
         font: 18px/24px "Dosis"; 
     }
 
@@ -707,7 +707,6 @@ input[type="checkbox"]:checked + label span {
     }
 
     textarea {
-        font: 16px/20px "Dosis";
         height: 94px;
     }
 
@@ -743,6 +742,10 @@ input[type="checkbox"]:checked + label span {
     .blog-preview {
         margin-bottom: 100px;
         width: calc(100% - 150px);
+    }
+    
+    #RememberMe {
+        margin-top: 9px;
     }
 }
 
