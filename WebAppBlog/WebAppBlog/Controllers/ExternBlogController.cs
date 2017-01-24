@@ -12,32 +12,6 @@ namespace WebAppBlog.Controllers
     [Authorize]
     public class ExternBlogController : Controller
     {
-
-
-        private ApplicationUserManager userManager;
-        public ExternBlogController() { }
-
-        public ExternBlogController(ApplicationUserManager userManager)
-        {
-            this.userManager = userManager;
-        }
-
-        // GET: ExternBlog
-        public ActionResult Index()
-        {
-            ApplicationDbContext context = new ApplicationDbContext();
-            var user = context.Users.Find(User.Identity.GetUserId());
-
-            //find by user id
-            var lists = context.BlogDatas.Where(blog => blog.ApplicationUserId == user.Id).ToList();
-
-
-            var viewmodel = new ExternBlogViewModel { };
-
-
-            return View(viewmodel);
-        }
-
         public ActionResult Delete(int id)
         {
             ApplicationDbContext context = new ApplicationDbContext();
