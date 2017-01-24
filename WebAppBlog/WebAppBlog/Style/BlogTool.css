@@ -214,9 +214,16 @@ input, select, textarea {
     background: #80cbc4;
     border: none;
     margin: 3px 0 15px;
-    padding: 5px 15px 8px;
     width: 96%;
 }
+
+input, select {
+    padding: 5px 15px 8px;
+}
+
+ textarea {
+     padding: 15px 15px;
+ }
 
 label {
     font-size: 14px;
