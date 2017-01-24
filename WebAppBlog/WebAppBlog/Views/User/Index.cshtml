@@ -7,24 +7,22 @@
     <h1>@ViewBag.Title</h1>
     <div>
         <div class="user-data">
-            <h3>@Html.LabelFor(m => m.Email)</h3>
+            <h3><label>Email</label></h3>
             <span>@Html.DisplayTextFor(m => m.Email)</span>
 
-            <h3>@Html.LabelFor(m => m.FirstName)</h3>
+            <h3><label>First Name</label></h3>
             <span>@Html.DisplayTextFor(m => m.FirstName)</span>
 
-            <h3>@Html.LabelFor(m => m.LastName)</h3>
+            <h3><label>Last Name</label></h3>
             <span>@Html.DisplayTextFor(m => m.LastName)</span>
 
-            <h3>@Html.LabelFor(m => m.Birthdate)</h3>
+            <h3><label>Birthdate</label></h3>
             <span>@Html.DisplayTextFor(m => m.Birthdate)</span>
 
             <h3><label>Email Confirmation</label></h3>
             <span>@Html.DisplayTextFor(m => m.EmailConfirmation)</span>
         </div>
-        @if (!Model.IsEmailConfirmed)
-        { <span class="note"> @Html.Raw("The mail adress needs to be confirmed to be able to use the resend of a forgotten password and two-factor authentification.") </span> }
-
+        
         @{
             if (!Model.IsEmailConfirmed)
             {
@@ -32,12 +30,14 @@
                 {
                     @Html.AntiForgeryToken()
                     <div>
-                        <h2>Resend Email Confirmation</h2>
-                        <input type="submit" value="Resend Mail" class="btn btn-link" />
+                        <input type="submit" value="Resend Email Confirmation" class="btn btn-link" />
                     </div>
                 }
             }
         }
+        @if (!Model.IsEmailConfirmed)
+        { <span class="note"> @Html.Raw("The mail adress needs to be confirmed to be able to use the resend of a forgotten password and the two-factor authentification.") </span> }
+
 
         <div class="more-options">@Html.ActionLink("Edit Profile", "Index", "Manage", null, null)</div>
 
