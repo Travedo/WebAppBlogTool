@@ -263,6 +263,26 @@
     <Compile Include="Migrations\201701240056147_externalConnection.Designer.cs">
       <DependentUpon>201701240056147_externalConnection.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701241931051_videoModel.cs" />
+    <Compile Include="Migrations\201701241931051_videoModel.Designer.cs">
+      <DependentUpon>201701241931051_videoModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701242032384_galleryImagesAsString.cs" />
+    <Compile Include="Migrations\201701242032384_galleryImagesAsString.Designer.cs">
+      <DependentUpon>201701242032384_galleryImagesAsString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701242042224_galleryImages.cs" />
+    <Compile Include="Migrations\201701242042224_galleryImages.Designer.cs">
+      <DependentUpon>201701242042224_galleryImages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701242044242_galleryimagetest.cs" />
+    <Compile Include="Migrations\201701242044242_galleryimagetest.Designer.cs">
+      <DependentUpon>201701242044242_galleryimagetest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701242048174_galleryimageFix.cs" />
+    <Compile Include="Migrations\201701242048174_galleryimageFix.Designer.cs">
+      <DependentUpon>201701242048174_galleryimageFix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BlogData.cs" />
@@ -281,12 +301,14 @@
     <Compile Include="Models\Blog\Video.cs" />
     <Compile Include="Models\Blog\VideoElement.cs" />
     <Compile Include="Models\ExternBlogViewModel.cs" />
+    <Compile Include="Models\GalleryImageModel.cs" />
     <Compile Include="Models\GalleryModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ImageModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\TextModel.cs" />
     <Compile Include="Models\UserViewModel.cs" />
+    <Compile Include="Models\VideoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BlogDataService.cs" />
     <Compile Include="Services\IBlogDataService.cs" />
@@ -434,6 +456,21 @@
     <EmbeddedResource Include="Migrations\201701240056147_externalConnection.resx">
       <DependentUpon>201701240056147_externalConnection.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701241931051_videoModel.resx">
+      <DependentUpon>201701241931051_videoModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701242032384_galleryImagesAsString.resx">
+      <DependentUpon>201701242032384_galleryImagesAsString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701242042224_galleryImages.resx">
+      <DependentUpon>201701242042224_galleryImages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701242044242_galleryimagetest.resx">
+      <DependentUpon>201701242044242_galleryimagetest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701242048174_galleryimageFix.resx">
+      <DependentUpon>201701242048174_galleryimageFix.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -451,9 +488,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49748/</IISUrl>
+        
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

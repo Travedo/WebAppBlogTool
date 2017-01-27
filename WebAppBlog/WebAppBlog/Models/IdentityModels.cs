@@ -55,6 +55,7 @@ namespace WebAppBlog.Models
 
             var entity = modelBuilder.Entity<BlogData>();
             entity.HasMany<GalleryModel>(c => c.GalleryModels)
+                
                  .WithOptional(x => x.BlogData)
                 .WillCascadeOnDelete(true);
 
@@ -65,6 +66,15 @@ namespace WebAppBlog.Models
             entity.HasMany<TextModel>(c => c.TextModels)
             .WithOptional(x => x.BlogData)
            .WillCascadeOnDelete(true);
+
+            entity.HasMany<VideoModel>(c => c.VideoModels)
+                .WithOptional(x => x.BlogData)
+                .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<GalleryModel>()
+                .HasMany(c => c.GalleryImageModels)
+                .WithOptional(x => x.GalleryModel)
+                .WillCascadeOnDelete(true);
 
 
         }
