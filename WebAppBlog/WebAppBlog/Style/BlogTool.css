@@ -121,6 +121,7 @@ table {
    ====================================================== */
 
 body {
+    background: url(../Images/brand-small.png) bottom right no-repeat;
     font: 700 18px/20px "Dosis"; 
     padding: 50px 0 20px;
 }
@@ -128,6 +129,16 @@ body {
 .navbar li {
     font-size: 18px;
     font-weight: bold;
+}
+
+.navbar-brand:before {
+    content: " ";
+    background: url(../Images/brand-smallest.png) center center no-repeat;
+    background-size: 20px 20px;
+    display: inline-block; 
+    height: 20px;
+    width: 40px;
+
 }
 
 .icon-users:before {
