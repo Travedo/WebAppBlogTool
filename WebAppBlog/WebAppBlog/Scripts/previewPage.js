@@ -32,6 +32,6 @@ function changeSlides(n, classname) {
     }
 
     //show img based on calculated index
-    imgInGallery[n - 1].style = "display:block; width:100%; height:500px;"
+    imgInGallery[n - 1].style = "display:block;"
     setTimeout(function () { changeSlides(n + 1, classname); }, 5000); //switch slides every 5 sec automatically
 }

@@ -4,15 +4,16 @@
 ******************************************************************
 
     ICH:
-    
-        (abstände auf die obergeordneten elemente setzen, wenn nicht andere seiten beeinflusst!)
-        clean code
+        
+        buttons generell und span blogoverview größe,
+        header last selected markieren, create blog element
 
         font-size readability
-        image preview styling - orientierungsabhängigS
            
-        - schwieriger - als letztes -
-        (solve bug overlap footer-hr and blog-elements
+        - als letztes -
+        (abstände auf die obergeordneten elemente setzen, wenn nicht andere seiten beeinflusst! ,
+        clean code,
+        solve bug overlap footer-hr and blog-elements
         checkbox hübsch machen 
         input of type file stylen)
 
@@ -22,8 +23,6 @@
         erklärung blogtool - about
         Karte markierung speichern
         edit profile > speichern realisieren
-        blog-overview: blogs anklickbar machen (link zu jeweiligem blog editor), blogs löschbar machen
-        PREVIEW --> musik umsetzen oder rausnehmen?
         
     WIR:
         coolen Namen ausdenken
