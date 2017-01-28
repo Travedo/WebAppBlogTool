@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNet.Identity
+@using WebAppBlog.Models.Extensions
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
@@ -8,7 +9,7 @@
     <ul class="nav navbar-nav navbar-right">
         <li class="icon-users"></li>
         <li>
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "User", routeValues: null, htmlAttributes: new { title = "Profile" })
+            @Html.ActionLink("Hello " + User.Identity.GetFullName() + "!", "Index", "User", routeValues: null, htmlAttributes: new { title = "Profile" })
         </li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
     </ul>

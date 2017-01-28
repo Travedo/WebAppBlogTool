@@ -17,9 +17,12 @@ namespace WebAppBlog.Models
             BlogDatas = new List<BlogData>();
         }
 
-       // public int ApplicationUserId { get; set;}
+        public int ApplicationUserId { get; set;}
+
         public DateTime Birthdate { get; set; }
+
         public string FirstName { get; set; }
+
         public string LastName { get; set; }
 
         public virtual ICollection<BlogData> BlogDatas { get; set; }
@@ -30,6 +33,10 @@ namespace WebAppBlog.Models
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
+            string fullName = this.FirstName + " " + this.LastName;
+            if (String.IsNullOrEmpty(fullName)) fullName = "Annonymus";
+            userIdentity.AddClaim(new Claim("FullName", fullName));
+
             return userIdentity;
         }
     }
