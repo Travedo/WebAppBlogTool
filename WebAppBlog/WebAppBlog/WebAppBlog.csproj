@@ -317,6 +317,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\clearSession.js" />
+    <Content Include="Scripts\homepage.js" />
     <Content Include="Scripts\previewPage.js" />
     <Content Include="Scripts\mapsIntegration.js" />
     <Content Include="Scripts\saveSession.js" />
@@ -370,6 +371,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Style\homepage.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -489,7 +491,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          
+         
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
