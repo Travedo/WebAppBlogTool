@@ -48,6 +48,8 @@ namespace WebAppBlog.Controllers
             else
             {
                 var blogdata = JsonConvert.DeserializeObject<BlogWrapper>(data);
+                if (blogService.GetGMapsMarker().Count > 0)
+                    blogdata.blog.gmapsMarker = blogService.GetGMapsMarker();
                 blogService.SetBlogData(blogdata.blog);
                 return new HttpResponseMessage(HttpStatusCode.OK);
             }
@@ -131,6 +133,35 @@ namespace WebAppBlog.Controllers
             return blogService.GetGMapsMarker();
         }
 
+        [HttpPost]
+        [Route("DeleteImage")]
+        public HttpResponseMessage DeleteImage(HttpRequestMessage request)
+        {
+            var data = request.Content.ReadAsStringAsync().Result;
+            if (data == null)
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest)
+                {
+                    Content = new StringContent("Post data is empty")
+                };
+            }
+            else
+            {
+                Debug.WriteLine(data);
+                var blogdata = JsonConvert.DeserializeObject<Helper>(data);
+              //  blogService.AddGMapsMarker(blogdata);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+        }
+
+        [HttpPost]
+        [Route("DeleteGallery")]
+        public HttpResponseMessage DeleteGallery(HttpRequestMessage request)
+        {
+
+            return null;
+        }
+
 
         /* [HttpPost]
          [Route("CreateBlog")]
@@ -140,7 +171,7 @@ namespace WebAppBlog.Controllers
              return "test";
          }*/
 
-            // PUT api/<controller>/5
+        // PUT api/<controller>/5
         public void Put(int id, [FromBody]string value)
         {
         }

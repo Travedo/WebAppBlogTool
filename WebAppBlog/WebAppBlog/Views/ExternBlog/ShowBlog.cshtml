@@ -49,5 +49,13 @@
         }
 
     }
+
+    @if (Model.IsGoogleMapsVisible)
+    {
+        <div>
+            <h2 class="location-icon">My position</h2>
+            <div id="map"></div>
+        </div>
+    }
 </div>
 

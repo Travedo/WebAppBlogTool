@@ -15,6 +15,8 @@ namespace WebAppBlog.Models.Blog
 
         public bool IsAccessible { get; set; }
 
+        public bool IsGoogleMapsVisible { get; set; }
+
         private string title;
         public string Title { get { return title; } set { title = value; } }
 

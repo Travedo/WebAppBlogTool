@@ -86,6 +86,7 @@ namespace WebAppBlog.Controllers
 
             
             data.GMapsMarker.AddRange(blog.gmapsMarker);
+                if (data.GMapsMarker.Count > 0) data.IsGoogleMapsVisible = true;
 
             service.SetBlog(data);
             //shove elements into view or display
