@@ -5,10 +5,17 @@
 
     ICH:
         
+        bilder slider einfügen,
+        slider-höhe mobile kleiner,
+        text TraveLog überall einfügen,
+        
+
+
+        
         buttons generell und span blogoverview größe,
         header last selected markieren, create blog element
 
-        font-size readability
+        //font-size readability
            
         - als letztes -
         (abstände auf die obergeordneten elemente setzen, wenn nicht andere seiten beeinflusst! ,
@@ -307,6 +314,15 @@ footer:before {
     width: 100%;
 }
 
+.impressum-link {
+    float: right;
+    width: 88px;
+}
+
+.impressum-link a {
+    margin-top: 0;
+}
+
 /* ======================================================
         Home page styles 
    ====================================================== */
@@ -317,7 +333,7 @@ footer:before {
 /* Slideshow container */
 .home-page .slideshow-container {
       background-color: #000;
-      height: 285px;
+      height: 330px;
       margin: auto;
       margin-top: -50px;
       max-width: 120%;
@@ -326,11 +342,11 @@ footer:before {
 
 .home-page .slideshow-container img {
       max-width: 100%;
-      max-height: 285px;
+      max-height: 330px;
 }
 
 .home-page .item {
-      max-height: 285px;
+      max-height: 330px;
       overflow: hidden;
       position: relative;
 }
@@ -338,18 +354,18 @@ footer:before {
       max-width: 100%;
  
       animation: zoom 5s ease-in-out  alternate;
-      -webkit-animation: zoom 5s ease-in-out  alternate;
+      -webkit-animation: zoom 4s ease-in-out  alternate;
       -webkit-animation-fill-mode: forwards;
 }
 
 @keyframes zoom {
         0% {
-            transform: scale(1.0);
-            -webkit-transform: scale(1.0);
+            transform: scale(2.2);
+            -webkit-transform: scale(2.2);
         }
         100% {
-            transform: scale(1.8);
-            -webkit-transform: scale(1.8);
+            transform: scale(3.6);
+            -webkit-transform: scale(3.6);
         }
 }
 

@@ -42,8 +42,8 @@
     <div class="container body-content">
         @RenderBody()
         <footer>
-            <span>&copy; @DateTime.Now.Year - BlogTool Productions    @Html.ActionLink("Impressum", "Impressum", "Home")</span>
-
+            <span>&copy; @DateTime.Now.Year - BlogTool Productions</span>
+            <span class="impressum-link">@Html.ActionLink("Impressum", "Impressum", "Home")</span>
         </footer>
     </div>
 
