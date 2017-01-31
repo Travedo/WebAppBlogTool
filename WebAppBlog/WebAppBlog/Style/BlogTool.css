@@ -577,13 +577,19 @@ input[type="file"] {
 /* ======================================================
         Finished Blog page styles 
    ====================================================== */
-/*
-    .finished-blog-page
-*/
+.blogs-overview-page h2 {
+    margin-bottom: 5px;
+}
+
 .blogs-overview-page span {
     display: inline-block;
-    margin: 15px 10px 15px 0;
+    margin: 5px 10px 15px 0;
 }
+
+.blogs-overview-page a {
+    margin-top: 0;
+}
+
 
 /* ======================================================
         About page styles 
@@ -689,26 +695,6 @@ address {
 .change-password-page input {
     width: 100%;
 }
-
-/*
-input[type="checkbox"] {
-    display:none;
-}
-input[type="checkbox"] + label span {
-    display:inline-block;
-    width:19px;
-    height:19px;
-    margin:-1px 4px 0 0;
-    vertical-align:middle;
-    background: blue;
-    cursor:pointer;
-}
-input[type="checkbox"]:checked + label span {
-    background: yellow;
-}
-*/
-
-
 
 @media (max-width: 760px) {
    .main-container {
