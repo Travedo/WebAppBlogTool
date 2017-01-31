@@ -60,6 +60,7 @@ namespace WebAppBlog.Controllers
             //TODO: move to service!
             BlogOutput data = new BlogOutput();
             var blog = service.GetBlogData();
+            if (blog != null && !String.IsNullOrEmpty(blog.titel)) {
             data.Title = blog.titel;
             data.Subtitle = blog.subtitel;
             data.Elements = new List<Element>();
@@ -84,11 +85,17 @@ namespace WebAppBlog.Controllers
             data.Elements = data.Elements.OrderBy(x => x.position).ToList();
 
             
-                    data.GMapsMarker.AddRange(blog.gmapsMarker);
+            data.GMapsMarker.AddRange(blog.gmapsMarker);
 
             service.SetBlog(data);
             //shove elements into view or display
             return View(data);
+            }
+            else
+            {
+                data.ErrorMessage = "No preview data available. Please add elements to your blog and then hit preview.";
+                return View(data);
+            }
         }
 
         private IEnumerable<Element> mapImages(List<Images> list1, List<ImageListcs> list2, List<List<Images>> galleries)
