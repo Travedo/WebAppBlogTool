@@ -326,6 +326,12 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\about-image.png" />
+    <Content Include="Images\about-image2.png" />
+    <Content Include="Images\brand-small.png" />
+    <Content Include="Images\brand-smaller.png" />
+    <Content Include="Images\brand-smallest.png" />
+    <Content Include="Images\brand.png" />
     <Content Include="Scripts\clearSession.js" />
     <Content Include="Scripts\homepage.js" />
     <Content Include="Scripts\previewPage.js" />
@@ -367,6 +373,7 @@
     <Content Include="fonts\icomoon.woff" />
     <Content Include="fonts\icomoon.zip" />
     <Content Include="fonts\icomoon_21_icons.zip" />
+    <Content Include="Images\brand.psd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\DragnDrop.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
