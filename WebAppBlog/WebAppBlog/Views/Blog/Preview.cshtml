@@ -17,8 +17,16 @@
         ViewBag.Title = "My Blog";
     }
 
-    <h2>@Model.Title</h2>
-    <h3>@Model.Subtitle</h3>
+    @if (!String.IsNullOrEmpty(Model.ErrorMessage))
+        {
+        <p>@Model.ErrorMessage</p>
+        }else
+    {
+
+    <h2>@{if (!String.IsNullOrEmpty(Model.Title))
+        {@Model.Title}}</h2>
+    <h3>@{if (!String.IsNullOrEmpty(Model.Subtitle))
+        {@Model.Subtitle}}</h3>
     <div>
     @foreach (var element in Model.Elements)
     {
@@ -57,14 +65,20 @@
         }
 
     }
+     
     </div>
+        }
     <div>
+        @if (Model != null && !String.IsNullOrEmpty(Model.Title)) { 
         <h2 class="location-icon">My position</h2>
-        <div id="map"></div>
+        <div id="map"></div>}
     </div>
     <div class="more-options">
-        @Html.ActionLink("< Edit", "Edit", "Blog")
+        @Html.ActionLink("< Back", "Create", "Blog")
+        @if (Model != null && !String.IsNullOrEmpty(Model.Title))
+        {
         <div class="btn-right"><a onclick="createNewBlog()">Save ></a></div>
+        }
     </div>
 </div>
 
