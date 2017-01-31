@@ -24,6 +24,6 @@ namespace WebAppBlog.Models.Blog
         public IList<Video> videos { get; set; }
 
         [JsonProperty]
-        public string gmapsMarker { get; set; }
+        public IList<GMapsMarker> gmapsMarker { get; set; }
     }
 }

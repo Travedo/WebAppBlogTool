@@ -283,6 +283,14 @@
     <Compile Include="Migrations\201701242048174_galleryimageFix.Designer.cs">
       <DependentUpon>201701242048174_galleryimageFix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701311531242_gmapsmarker.cs" />
+    <Compile Include="Migrations\201701311531242_gmapsmarker.Designer.cs">
+      <DependentUpon>201701311531242_gmapsmarker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701311546492_gmapsmarker_double.cs" />
+    <Compile Include="Migrations\201701311546492_gmapsmarker_double.Designer.cs">
+      <DependentUpon>201701311546492_gmapsmarker_double.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BlogData.cs" />
@@ -292,6 +300,7 @@
     <Compile Include="Models\Blog\BlogWrapper.cs" />
     <Compile Include="Models\Blog\Element.cs" />
     <Compile Include="Models\Blog\GalleryElement.cs" />
+    <Compile Include="Models\Blog\GMapsMarker.cs" />
     <Compile Include="Models\Blog\Image.cs" />
     <Compile Include="Models\Blog\ImageElement.cs" />
     <Compile Include="Models\Blog\ImageListcs.cs" />
@@ -304,6 +313,7 @@
     <Compile Include="Models\GalleryImageModel.cs" />
     <Compile Include="Models\GalleryModel.cs" />
     <Compile Include="Models\Extensions\IdentityExtensions.cs" />
+    <Compile Include="Models\GMapsMarkerModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ImageModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -402,7 +412,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\Create.cshtml" />
     <Content Include="Views\Blog\Preview.cshtml" />
     <Content Include="Views\Blog\Edit.cshtml" />
@@ -472,6 +481,12 @@
     <EmbeddedResource Include="Migrations\201701242048174_galleryimageFix.resx">
       <DependentUpon>201701242048174_galleryimageFix.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701311531242_gmapsmarker.resx">
+      <DependentUpon>201701311531242_gmapsmarker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701311546492_gmapsmarker_double.resx">
+      <DependentUpon>201701311546492_gmapsmarker_double.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -489,7 +504,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          
+         
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -25,8 +25,16 @@ namespace WebAppBlog.Models
         public virtual ICollection<GalleryModel> GalleryModels { get; set; }
         public virtual ICollection<TextModel> TextModels { get; set; }
         public virtual ICollection<VideoModel> VideoModels { get; set; }
+        public virtual ICollection<GMapsMarkerModel> GMapsMarkerModels { get; set; }
 
-
+        public BlogData()
+        {
+            ImageModels = new List<ImageModel>();
+            GalleryModels = new List<GalleryModel>();
+            TextModels= new List<TextModel>();
+            VideoModels= new List<VideoModel>();
+            GMapsMarkerModels = new List<GMapsMarkerModel>();
+        }
     }
 
     

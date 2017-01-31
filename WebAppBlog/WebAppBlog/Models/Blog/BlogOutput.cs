@@ -22,6 +22,6 @@ namespace WebAppBlog.Models.Blog
         private List<Element> elemets;
         public List<Element> Elements { get { return elemets; } set { elemets = value; } }
 
-
+        public List<GMapsMarker> GMapsMarker { get; set; }
     }
 }

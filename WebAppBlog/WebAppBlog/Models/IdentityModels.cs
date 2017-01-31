@@ -78,6 +78,10 @@ namespace WebAppBlog.Models
                 .WithOptional(x => x.BlogData)
                 .WillCascadeOnDelete(true);
 
+            entity.HasMany<GMapsMarkerModel>(c => c.GMapsMarkerModels)
+               .WithOptional(x => x.BlogData)
+               .WillCascadeOnDelete(true);
+
             modelBuilder.Entity<GalleryModel>()
                 .HasMany(c => c.GalleryImageModels)
                 .WithOptional(x => x.GalleryModel)

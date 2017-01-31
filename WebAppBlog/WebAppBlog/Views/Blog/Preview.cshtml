@@ -19,6 +19,7 @@
 
     <h2>@Model.Title</h2>
     <h3>@Model.Subtitle</h3>
+    <div>
     @foreach (var element in Model.Elements)
     {
         if (element is WebAppBlog.Models.Blog.TextElement) //show all text elements
@@ -56,9 +57,14 @@
         }
 
     }
+    </div>
+    <div>
+        <h2 class="location-icon">My position</h2>
+        <div id="map"></div>
+    </div>
     <div class="more-options">
         @Html.ActionLink("< Edit", "Edit", "Blog")
-        <div class="btn-right">@Html.ActionLink("Save >", "Index", "Blog")</div>
+        <div class="btn-right"><a onclick="createNewBlog()">Save ></a></div>
     </div>
 </div>
 
