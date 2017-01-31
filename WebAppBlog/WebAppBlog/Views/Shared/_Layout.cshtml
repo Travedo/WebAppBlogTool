@@ -31,9 +31,9 @@
                     {
                         <li>@Html.ActionLink("My Blogs", "Overview", "Blog")</li>
                     }
-                    <!--li>@Html.ActionLink("Create Blog", "Index", "Home")</li-->
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Impressum", "Impressum", "Home")</li>
+                    <li>@Html.ActionLink("Create Blog", "Create", "Blog")</li>
+                    <li>@Html.ActionLink("Help", "About", "Home")</li>
+                    
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -42,7 +42,8 @@
     <div class="container body-content">
         @RenderBody()
         <footer>
-            <p>&copy; @DateTime.Now.Year - BlogTool Productions</p>
+            <span>&copy; @DateTime.Now.Year - BlogTool Productions    @Html.ActionLink("Impressum", "Impressum", "Home")</span>
+
         </footer>
     </div>
 
