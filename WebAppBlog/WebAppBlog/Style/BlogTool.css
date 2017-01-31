@@ -597,6 +597,10 @@ input[type="file"] {
     margin-top: 0;
 }
 
+.blogs-overview-page .more-options {
+    display: block;
+    margin-top: 50px;
+}
 
 /* ======================================================
         About page styles 
