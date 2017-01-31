@@ -4,14 +4,6 @@
 ******************************************************************
 
     ICH:
-        
-        bilder slider einfügen,
-        slider-höhe mobile kleiner,
-        text TraveLog überall einfügen,
-        
-
-
-        
         buttons generell und span blogoverview größe,
         header last selected markieren, create blog element
 
@@ -265,7 +257,7 @@ label {
 img, iframe {
     display: block;
     margin: 10px auto;
-    max-height: 300px;
+    max-height: 150px;
     max-width: 70%;
     
     /*
