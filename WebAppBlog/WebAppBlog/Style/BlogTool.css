@@ -4,12 +4,10 @@
 ******************************************************************
 
     ICH:
-        buttons generell und span blogoverview größe,
-        header last selected markieren, create blog element
-
-        //font-size readability
-           
         - als letztes -
+        font-size readability,
+        buttons generell größe,
+        header last selected markieren, create blog element,
         (abstände auf die obergeordneten elemente setzen, wenn nicht andere seiten beeinflusst! ,
         clean code,
         solve bug overlap footer-hr and blog-elements
