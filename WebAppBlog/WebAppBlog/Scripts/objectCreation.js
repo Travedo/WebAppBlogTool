@@ -38,6 +38,7 @@ function create()
     blog.images = [];
     blog.videos = [];
     blog.gmapsMarker = gmapsMarkerArray;
+    
 
     var position = { counter:0};
     for (var element of blogdata.children) {
@@ -49,8 +50,6 @@ function create()
         extratElements(element, blog, position);
     }
     console.log(blog);
-
-    
     return blog;
    
 }

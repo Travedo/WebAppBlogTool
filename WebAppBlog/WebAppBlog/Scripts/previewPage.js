@@ -46,7 +46,7 @@ function createNewBlog() {
         complete: function (data) {
             if (data.readyState === 4 & data.status === 200) {
                 console.log(data);
-                window.location.href = window.location.href = "http://localhost:62781/ExternBlog/ShowBlog/" + data.responseText;
+                window.location.href = window.location.href = "/ExternBlog/ShowBlog/" + data.responseText;
             }
         }
     });

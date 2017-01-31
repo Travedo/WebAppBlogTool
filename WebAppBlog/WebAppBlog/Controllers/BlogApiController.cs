@@ -101,6 +101,37 @@ namespace WebAppBlog.Controllers
         }
 
 
+        [HttpPost]
+        [Route("AddGMapsMarker")]
+        public HttpResponseMessage AddGMapsMarker(HttpRequestMessage request)
+        {
+            var data = request.Content.ReadAsStringAsync().Result;
+            if (data == null)
+            {
+                return new HttpResponseMessage(HttpStatusCode.BadRequest)
+                {
+                    Content = new StringContent("Post data is empty")
+                };
+            }
+            else
+            {
+                Debug.WriteLine(data);
+                var blogdata = JsonConvert.DeserializeObject<GMapsMarker>(data);
+                blogService.AddGMapsMarker(blogdata);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+
+        }
+
+        [HttpGet]
+        [Route("GetGMapsMarkers")]
+        public List<GMapsMarker> GetGMapsMarkers()
+        {
+
+            return blogService.GetGMapsMarker();
+        }
+
+
         /* [HttpPost]
          [Route("CreateBlog")]
          public string CreateBlog(string value)
@@ -109,7 +140,7 @@ namespace WebAppBlog.Controllers
              return "test";
          }*/
 
-        // PUT api/<controller>/5
+            // PUT api/<controller>/5
         public void Put(int id, [FromBody]string value)
         {
         }
