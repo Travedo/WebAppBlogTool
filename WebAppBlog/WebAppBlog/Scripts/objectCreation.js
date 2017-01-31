@@ -56,44 +56,40 @@ function create()
 
 function extratElements(element, blog, position) {
     switch (element.localName) {
-        case "input": //go trough children and add accordingly
+        case "div": //go trough children and add accordingly
             //TODO: handle file input! (single) correctly
 
-            if (element.type === "file") {
+            if (element.className === "gallery-container" && element.children[0].nodeName.toLowerCase() === "img") {
                 
                 //gallery found
-                if (element.nextSibling && element.nextSibling.nodeName.toLowerCase() === "div" && element.nextSibling.children[0].nodeName.toLowerCase() === "img") {
+           
                     var el = element.nextSibling;
-                    for(var imgs of el.children)
+                    for(var imgs of element.children)
                     {
                         extratElements(imgs, blog, position);
                     }
-                    //single image
-                } else if (element.nextSibling.nodeName.toLowerCase() === 'img') {
-
-                    var image = {};
-                    image.name = element.nextSibling.name;
-                    image.gallery = false;
-                    image.position = position.counter;
-                    position.counter++;
-                    blog.images.push(image);
-
-                }
+                   
             }
-            else
-            if (element.id === "blog-titel") {
-                blog.titel = element.value;
-            } else
-                if (element.id === "blog-subtitle") {
-                    blog.subtitel = element.value;
-                } else {
+            
+               
 
-                    var text = {};
-                    text.value = element.value;
-                    text.position = position.counter;
-                    blog.text.push(text);
-                    position.counter++;
-                }
+            break;
+        case "input":
+            if (element.type === "text") {
+                if (element.id === "blog-titel") {
+                    blog.titel = element.value;
+                } else
+                    if (element.id === "blog-subtitle") {
+                        blog.subtitel = element.value;
+                    } else {
+
+                        var text = {};
+                        text.value = element.value;
+                        text.position = position.counter;
+                        blog.text.push(text);
+                        position.counter++;
+                    }
+            }
 
             break;
         case "textarea":
@@ -118,17 +114,21 @@ function extratElements(element, blog, position) {
         case "img":
             var image = {};
 
-            if (element.className.includes("galery")){
+            if (element.className.includes("galeryPreview")){
                 image.gallery = true;
-            
-
-
-
+  
             image.name = element.className+"_"+element.name;
             image.position = position.counter;
             image.galleryName = element.className;
             position.counter++;
             blog.images.push(image);
+            } else {
+
+                image.gallery = false;
+                image.name = element.name;
+                image.position = position.counter;
+                position.counter++;
+                blog.images.push(image);
             }
             break;
     }

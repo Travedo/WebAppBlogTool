@@ -15,10 +15,26 @@ function drop(ev) {
     var data = ev.dataTransfer.getData("text");
     var parent = ev.currentTarget.parentElement;
 
-    parent.insertBefore(chooseElement(data),ev.currentTarget); //add new created element
+    var newelement=chooseElement(data);
+    parent.insertBefore(newelement, ev.currentTarget); //add new created element
+    var child = document.createElement("div");
+    child.className += "deleter";
+    child.className += " btn";
+    child.onclick = deleteElement;
+    parent.insertBefore(child, newelement);
 
+
+    
     /*ev.currentTarget.insertBefore(chooseElement(data));*/
     /*parent.insertBefore(img, element.children[0])*/
+}
+
+function deleteElement(event) {
+    var element = event.currentTarget;
+    var sibling = element.nextSibling;
+    var parent = element.parentElement;
+    parent.removeChild(element);
+    parent.removeChild(sibling);
 }
 
 function chooseElement(id) {
@@ -59,6 +75,7 @@ function chooseElement(id) {
             input.onchange = createMusicPlayer;
             break;
     }
+    
     return input;
 }
 
@@ -85,6 +102,7 @@ function previewImage(event) {
 
         var image = [{ name: file.name, base64: reader.result }];
         sendImageData(image, "/api/BlogApi/AddImages/");
+        parent.removeChild(element);
     }, false);
 
     if (file) {
@@ -137,8 +155,9 @@ function previewGallery(event) {
         }
     }
     
+    var done = function () { parent.removeChild(element); };
     //wait until all images have been processed, then send to server
-    myId = setInterval(function(){ sendGallery(status,element.files.length,image,myId)},2000);
+    myId = setInterval(function(){ sendGallery(status,element.files.length,image,myId, done)},2000);
 
 
     //add 'nav' buttons to slideshows
@@ -155,13 +174,16 @@ function previewGallery(event) {
 
     //init slide show
     showDivs(1, classname);
+  
+    
 }
 
 
-function sendGallery(status, length,images,myId)
+function sendGallery(status, length,images,myId, done)
 {
     if (status.info === length) {
         sendImageData(images, "/api/BlogApi/AddGallery");
+        done();
         clearInterval(myId);
     }
 }
