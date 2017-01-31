@@ -43,8 +43,13 @@ namespace WebAppBlog.Controllers
 
             List<Element> elements = GenerateElements(blogdata.GalleryModels,blogdata.ImageModels, blogdata.TextModels, blogdata.VideoModels);
             elements = elements.OrderBy(x => x.position).ToList();
-           
-                var viewmodel = new ExternBlogViewModel { Title= blogdata.Title, Subtitle=blogdata.Subtitle, Elements=elements };
+
+            bool gmapsVisibility = false;
+            if (blogdata.GMapsMarkerModels.Count > 0)
+                     gmapsVisibility = true;
+
+
+            var viewmodel = new ExternBlogViewModel { Title= blogdata.Title, Subtitle=blogdata.Subtitle, Elements=elements,IsGoogleMapsVisible=gmapsVisibility };
 
 
             return View(viewmodel);
@@ -79,7 +84,11 @@ namespace WebAppBlog.Controllers
                 List<Element> elements = GenerateElements(blogdata.GalleryModels, blogdata.ImageModels, blogdata.TextModels, blogdata.VideoModels);
                 elements = elements.OrderBy(x => x.position).ToList();
 
-                var viewmodel = new ExternBlogViewModel { Title = blogdata.Title, Subtitle = blogdata.Subtitle, Elements = elements };
+                bool gmapsVisibility = false;
+                if (blogdata.GMapsMarkerModels.Count > 0)
+                    gmapsVisibility = true;
+
+                var viewmodel = new ExternBlogViewModel { Title = blogdata.Title, Subtitle = blogdata.Subtitle, Elements = elements, IsGoogleMapsVisible=gmapsVisibility };
 
 
                 return View(viewmodel);

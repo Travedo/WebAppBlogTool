@@ -99,6 +99,32 @@ namespace WebAppBlog.Controllers
         }
 
         [HttpGet]
+        [Route("GetGMapsMarkers")]
+        public List<GMapsMarker> GetGMapsMarkers(int? id)
+        {
+            ApplicationDbContext context = new ApplicationDbContext();
+            var user = context.Users.Find(User.Identity.GetUserId());
+
+            if (user != null && id!=null && context.BlogDatas.Any(blog => blog.ApplicationUserId == user.Id && blog.BlogDataId == id))
+            {
+
+                var blogdata = context.BlogDatas.Where(blog => blog.ApplicationUserId == user.Id && blog.BlogDataId == id).ToList().Single();
+                List<GMapsMarker> gmapsmarker = new List<GMapsMarker>();
+                foreach(var marker in blogdata.GMapsMarkerModels)
+                {
+                    gmapsmarker.Add(new GMapsMarker { Latitude=marker.Latitude, Longitude=marker.Longitude });
+                }
+                context.Dispose();
+
+                return gmapsmarker;
+            }else
+            {
+                return null;
+            }
+            
+        }
+
+        [HttpGet]
         [Route("DeleteBlog")]
         public HttpResponseMessage DeleteBlog(int id)
         {

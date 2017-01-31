@@ -301,6 +301,7 @@
     <Compile Include="Models\Blog\Element.cs" />
     <Compile Include="Models\Blog\GalleryElement.cs" />
     <Compile Include="Models\Blog\GMapsMarker.cs" />
+    <Compile Include="Models\Blog\Helper.cs" />
     <Compile Include="Models\Blog\Image.cs" />
     <Compile Include="Models\Blog\ImageElement.cs" />
     <Compile Include="Models\Blog\ImageListcs.cs" />
@@ -326,6 +327,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="fonts\button_close.png" />
     <Content Include="Images\about-image.png" />
     <Content Include="Images\about-image2.png" />
     <Content Include="Images\brand-small.png" />
@@ -513,9 +515,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49578/</IISUrl>
+         
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

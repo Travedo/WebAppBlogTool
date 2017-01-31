@@ -240,6 +240,15 @@ input, select {
      padding: 15px 15px;
  }
 
+ .deleter{
+     background-color:white;
+     background-image: url(../fonts/button_close.png);
+     background-size: 30px 30px;
+     height:30px;
+     width:30px;
+     float:right;
+ }
+
 label {
     font-size: 14px;
     line-height: 16px;

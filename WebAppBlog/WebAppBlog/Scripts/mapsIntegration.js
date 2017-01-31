@@ -7,14 +7,26 @@ function initMap() {
             zoom: 8
         };
         var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        
+        if (window.location.href.indexOf("/ExternBlog/") > -1) {
+            var id = window.location.pathname.split("/").slice(-1)[0]; //get last part of url
+            var url = "/api/ExternBlogApi/GetGMapsMarkers/?id="+id;
+            getData(url,map);
 
-        getData(map);
+        } else {
+            var url = "/api/BlogApi/GetGMapsMarkers/";
+            if (!window.location.href.indexOf("/blog/preview/") > -1) {
+                google.maps.event.addListener(map, 'click', function (e) {
+                    // gmapsMarkerArray.push({ "Latitude": e.latLng.lat(), "Longitude": e.latLng.lng() });
+                    postMarker(e.latLng.lat(), e.latLng.lng());
+                    placeMarker(e.latLng, map);
+                });
+            }
+        }
 
-        google.maps.event.addListener(map, 'click', function (e) {
-           // gmapsMarkerArray.push({ "Latitude": e.latLng.lat(), "Longitude": e.latLng.lng() });
-            postMarker(e.latLng.lat(), e.latLng.lng());
-            placeMarker(e.latLng, map);
-        });
+        getData(url,map);
+
+       
 
         function placeMarker(position, map) {
             var marker = new google.maps.Marker({
@@ -59,10 +71,10 @@ function postMarker(lat, lng) {
     });
 }
 
-function getData(map) {
+function getData(url,map) {
     $.ajax({
         type: "Get",
-        url: "/api/BlogApi/GetGMapsMarkers/",
+        url: url,
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         complete: function (data) {

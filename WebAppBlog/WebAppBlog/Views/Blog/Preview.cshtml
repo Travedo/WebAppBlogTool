@@ -69,7 +69,7 @@
     </div>
         }
     <div>
-        @if (Model != null && !String.IsNullOrEmpty(Model.Title)) { 
+        @if (Model != null && !String.IsNullOrEmpty(Model.Title) && Model.IsGoogleMapsVisible) { 
         <h2 class="location-icon">My position</h2>
         <div id="map"></div>}
     </div>
