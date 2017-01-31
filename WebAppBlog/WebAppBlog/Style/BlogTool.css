@@ -121,7 +121,7 @@ table {
    ====================================================== */
 
 body {
-    background: url(../Images/brand-small.png) bottom right no-repeat;
+    /*background: url(../Images/brand-small.png) bottom right no-repeat;*/
     font: 700 18px/20px "Dosis"; 
     padding: 50px 0 20px;
 }
@@ -129,6 +129,10 @@ body {
 .navbar li {
     font-size: 18px;
     font-weight: bold;
+}
+
+.navbar-brand {
+    padding: 12px 15px;
 }
 
 .navbar-brand:before {
@@ -308,6 +312,104 @@ footer:before {
    ====================================================== */
 .home-page .note {
     margin: 20px 0 10px;
+}
+
+/* Slideshow container */
+.home-page .slideshow-container {
+      background-color: #000;
+      height: 285px;
+      margin: auto;
+      margin-top: -50px;
+      max-width: 120%;
+      position: relative;
+}
+
+.home-page .slideshow-container img {
+      max-width: 100%;
+      max-height: 285px;
+}
+
+.home-page .item {
+      max-height: 285px;
+      overflow: hidden;
+      position: relative;
+}
+.home-page .item img {
+      max-width: 100%;
+ 
+      animation: zoom 5s ease-in-out  alternate;
+      -webkit-animation: zoom 5s ease-in-out  alternate;
+      -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes zoom {
+        0% {
+            transform: scale(1.0);
+            -webkit-transform: scale(1.0);
+        }
+        100% {
+            transform: scale(1.8);
+            -webkit-transform: scale(1.8);
+        }
+}
+
+/* Next & previous buttons */
+.home-page .prev, .home-page .next {
+  border-radius: 0 3px 3px 0;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;  
+  margin-top: -22px;
+  padding: 16px;
+  position: absolute;
+  transition: 0.6s ease;
+  top: 50%;
+  width: auto;
+}
+
+/* Position the "next button" to the right */
+.home-page .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.home-page .prev:hover, .home-page .next:hover {
+  background-color: rgba(255,255,255,0.8);
+}
+
+/* Caption text */
+.home-page .text {
+  bottom: 8px;
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+/* The dots/bullets/indicators */
+.home-page .dot {
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    height: 13px;
+    margin: 0 2px;
+    transition: background-color 0.6s ease;
+    width: 13px;
+}
+
+.home-page .active, .dot:hover {
+  background-color: #717171;
+}
+
+.home-page .slide-dots {
+    display: block;
+    margin: 20px 0;
+    text-align: center;
 }
 
 /* ======================================================
