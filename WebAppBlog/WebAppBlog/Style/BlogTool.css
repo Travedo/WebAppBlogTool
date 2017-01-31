@@ -227,6 +227,10 @@ p, li, span, input, select, textarea, .more-content-box {
     font: 14px/19px "Dosis";
 }
 
+strong, .navbar-brand {
+    font-family: "Chewy";
+}
+
 a {
     font: 700 15px/20px "Dosis";
 }
