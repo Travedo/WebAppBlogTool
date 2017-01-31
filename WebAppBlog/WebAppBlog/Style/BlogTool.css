@@ -336,78 +336,78 @@ footer:before {
 
 /* Slideshow container */
 .home-page .slideshow-container {
-      background-color: #000;
-      height: 330px;
-      margin: auto;
-      margin-top: -50px;
-      max-width: 120%;
-      position: relative;
+    background-color: #000;
+    height: 150px;
+    margin: auto;
+    margin-top: -50px;
+    max-width: 120%;
+    position: relative;
 }
 
 .home-page .slideshow-container img {
-      max-width: 100%;
-      max-height: 330px;
+    max-width: 100%;
+    max-height: 150px;
 }
 
 .home-page .item {
-      max-height: 330px;
-      overflow: hidden;
-      position: relative;
+    max-height: 150px;
+    overflow: hidden;
+    position: relative;
 }
 .home-page .item img {
-      max-width: 100%;
+    max-width: 100%;
  
-      animation: zoom 5s ease-in-out  alternate;
-      -webkit-animation: zoom 4s ease-in-out  alternate;
-      -webkit-animation-fill-mode: forwards;
+    animation: zoom 5s ease-in-out  alternate;
+    -webkit-animation: zoom 4s ease-in-out  alternate;
+    -webkit-animation-fill-mode: forwards;
 }
 
 @keyframes zoom {
-        0% {
-            transform: scale(2.2);
-            -webkit-transform: scale(2.2);
-        }
-        100% {
-            transform: scale(3.6);
-            -webkit-transform: scale(3.6);
-        }
+    0% {
+        transform: scale(2.6);
+        -webkit-transform: scale(2.6);
+    }
+    100% {
+        transform: scale(3.6);
+        -webkit-transform: scale(3.6);
+    }
 }
 
 /* Next & previous buttons */
 .home-page .prev, .home-page .next {
-  border-radius: 0 3px 3px 0;
-  color: white;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 18px;  
-  margin-top: -22px;
-  padding: 16px;
-  position: absolute;
-  transition: 0.6s ease;
-  top: 50%;
-  width: auto;
+    border-radius: 0 3px 3px 0;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;  
+    font-weight: bold;
+    margin-top: -22px;
+    padding: 16px;
+    position: absolute;
+    transition: 0.6s ease;
+    top: 50%;
+    width: auto;
 }
 
 /* Position the "next button" to the right */
 .home-page .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
 .home-page .prev:hover, .home-page .next:hover {
-  background-color: rgba(255,255,255,0.8);
+    background-color: rgba(255,255,255,0.8);
 }
 
 /* Caption text */
 .home-page .text {
-  bottom: 8px;
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  text-align: center;
-  width: 100%;
+    bottom: 8px;
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
 }
 
 /* The dots/bullets/indicators */
@@ -423,7 +423,7 @@ footer:before {
 }
 
 .home-page .active, .dot:hover {
-  background-color: #717171;
+    background-color: #717171;
 }
 
 .home-page .slide-dots {
@@ -504,11 +504,7 @@ footer:before {
 .icon-video:before {
     content: "\e912";
 }
-/*
-.icon-music:before {
-    content: "\e911";
-}
-*/
+
 .blog-preview {
     float: right;
     margin-bottom: 30px;
@@ -745,16 +741,18 @@ input[type="checkbox"]:checked + label span {
     .more-options {
         margin-top: 40px;
     }
-
+    
     h1 {
         font: 24px/26px "Chewy"; 
     }
 
-    h2, button {
+    h2, 
+    button {
         font: 18px/20px "Chewy"; 
     }
 
-    h3, label {
+    h3, 
+    label {
         font-size: 16px;
         line-height: 18px;
     }
@@ -763,12 +761,28 @@ input[type="checkbox"]:checked + label span {
         margin: 28px 0;
     }
 
-    p, li, span, input, textarea {
+    p, 
+    li,
+    span, 
+    input, 
+    textarea {
         font: 16px/21px "Dosis"; 
     }
 
     a {
         font: 700 17px/22px "Dosis";
+    }
+
+    img,
+    iframe,
+    .text-img, 
+    .home-page .slideshow-container img,
+    .home-page .item {
+        max-height: 200px;
+    }
+
+    .home-page .slideshow-container {
+        height: 200px;
     }
 
     .blog-elements {
@@ -817,11 +831,13 @@ input[type="checkbox"]:checked + label span {
         margin: 5px 0;
     }
 
-    h2, button {
+    h2, 
+    button {
         font: 20px/22px "Chewy"; 
     }
 
-    h3, label {
+    h3, 
+    label {
         font-size: 18px;
         line-height: 29px;
     }
@@ -830,13 +846,30 @@ input[type="checkbox"]:checked + label span {
         margin: 28px 0;
     }
 
-    p, li, span, input, textarea {
+    p, 
+    li, 
+    span, 
+    input, 
+    textarea {
         font: 18px/24px "Dosis"; 
     }
 
     a {
         font: 700 19px/25px "Dosis";
     }
+
+    img,
+    iframe,
+    .text-img, 
+    .home-page .slideshow-container img,
+    .home-page .item {
+        max-height: 330px;
+    }
+
+    .home-page .slideshow-container {
+        height: 330px;
+    }
+
 
     textarea {
         height: 94px;
