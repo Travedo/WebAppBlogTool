@@ -4,6 +4,8 @@
     sendData("/blog/preview", create());
 }
 
+
+
 function sendData(url, blog){
     $.ajax({
         type: "POST",
@@ -18,8 +20,6 @@ function sendData(url, blog){
                 setTimeout(function () {
                     window.location.href=url;
                 }, 0)
-
-                
             }
         }
     });
@@ -37,7 +37,8 @@ function create()
     blog.text = [];
     blog.images = [];
     blog.videos = [];
-    blog.gmapsMarker = "";
+    blog.gmapsMarker = gmapsMarkerArray;
+    
 
     var position = { counter:0};
     for (var element of blogdata.children) {
@@ -49,8 +50,6 @@ function create()
         extratElements(element, blog, position);
     }
     console.log(blog);
-
-    
     return blog;
    
 }

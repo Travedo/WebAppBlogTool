@@ -12,6 +12,10 @@ namespace WebAppBlog.Services
         void SetBlogData(Blog blog);
         Blog GetBlogData();
 
+        void AddGMapsMarker(GMapsMarker marker);
+
+        List<GMapsMarker> GetGMapsMarker();
+
         void AddImages(Images[] images);
         List<Images> GetImages();
 

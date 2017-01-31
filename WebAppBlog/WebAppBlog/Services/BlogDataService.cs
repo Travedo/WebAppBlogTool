@@ -13,11 +13,15 @@ namespace WebAppBlog.Services
         public List<Images> BlogImages { get { return blogimages; }set { blogimages = value; } }
         public List<List<Images>> GalleryImages = new List<List<Images>>();
 
+        private List<GMapsMarker> gmapsmarker;
+        public List<GMapsMarker> GmapsMarker { get { return gmapsmarker; }set { gmapsmarker = value; } }
+
         BlogOutput blogdata { get; set; }
 
         public BlogDataService()
         {
             BlogImages = new List<Images>();
+            GmapsMarker = new List<GMapsMarker>();
         }
 
         public void AddImages(Images[] images)
@@ -66,8 +70,19 @@ namespace WebAppBlog.Services
             BlogImages = new List<Images>();
             GalleryImages = null;
             GalleryImages = new List<List<Images>>();
+            GmapsMarker = new List<GMapsMarker>();
             blog = null;
             blogdata = null;
+        }
+
+        public void AddGMapsMarker(GMapsMarker marker)
+        {
+            GmapsMarker.Add(marker);
+        }
+
+        public List<GMapsMarker> GetGMapsMarker()
+        {
+            return GmapsMarker;
         }
     }
 }

@@ -31,12 +31,14 @@ namespace WebAppBlog.Controllers
             return RedirectToAction("Overview", "Blog");
         }
 
-        public ActionResult ShowBlog(int id)
+        public ActionResult ShowBlog(int? id)
         {
+            if (id != null) { 
             ApplicationDbContext context = new ApplicationDbContext();
             var user = context.Users.Find(User.Identity.GetUserId());
          
-            if (user != null) { 
+            if (user != null && context.BlogDatas.Any(blog => blog.ApplicationUserId == user.Id && blog.BlogDataId == id)) { 
+                 
             var blogdata = context.BlogDatas.Where(blog => blog.ApplicationUserId == user.Id && blog.BlogDataId==id).ToList().Single();
 
             List<Element> elements = GenerateElements(blogdata.GalleryModels,blogdata.ImageModels, blogdata.TextModels, blogdata.VideoModels);
@@ -49,16 +51,27 @@ namespace WebAppBlog.Controllers
             }
             else
                 return RedirectToAction("Overview", "Blog");
+            }
+            else
+            {
+                return RedirectToAction("Overview", "Blog");
+            }
         }
 
         [AllowAnonymous]
         public ActionResult ViewBlogFromExtern(string userid, string blogid)
         {
             var userdata = userid.Split(':');
-            var blogguid = new Guid(blogid);
+            Guid blogguid; 
+            try { 
+             blogguid = new Guid(blogid);
+            }catch(FormatException e)
+            {
+                return null;
+            }
             var uderid = userdata[0];
             ApplicationDbContext context = new ApplicationDbContext();
-            if(context.BlogDatas.Where(blog => blog.ApplicationUserId == uderid && blog.ExternalId == blogguid).ToList().Any()) {
+            if(context.BlogDatas.Any(blog => blog.ApplicationUserId == uderid && blog.ExternalId == blogguid)) {
 
                 var blogdata = context.BlogDatas.Where(blog => blog.ApplicationUserId == uderid && blog.ExternalId == blogguid).ToList().Single();
 

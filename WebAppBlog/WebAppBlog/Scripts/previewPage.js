@@ -35,3 +35,21 @@ function changeSlides(n, classname) {
     imgInGallery[n - 1].style = "display:block;"
     setTimeout(function () { changeSlides(n + 1, classname); }, 5000); //switch slides every 5 sec automatically
 }
+
+function createNewBlog() {
+
+    $.ajax({
+        type: "GET",
+        url: "/api/ExternBlogApi/CreateBlog",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        complete: function (data) {
+            if (data.readyState === 4 & data.status === 200) {
+                console.log(data);
+                window.location.href = window.location.href = "/ExternBlog/ShowBlog/" + data.responseText;
+            }
+        }
+    });
+
+
+}
