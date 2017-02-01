@@ -2,29 +2,69 @@
 
 function initMap() {
 
-        var mapOptions = {
-            center: {  lat: 1.3523784000, lng: 103.9847063000},
-            zoom: 8
-        };
-        var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    var mapOptions = {
+        center: {  lat: 1.3523784000, lng: 103.9847063000},
+        zoom: 8
+    };
+    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+      
+    var createblog = false;
+    var blog = false;
+    var externblog = false;
+    var preview = false;
+    var url = window.location.href.split("/");
         
-        if (window.location.href.indexOf("/ExternBlog/") > -1) {
+    if (url.indexOf("ExternBlog") > -1) { blog = true; }
+    if (url.indexOf("ViewBlogFromExtern") > -1) { externblog = true; }
+    if (url.indexOf("Create") > -1) { createblog = true; }
+    if (url.indexOf("preview") > -1) preview = true;
+
+
+
+    if (blog && externblog)
+    {
+        var parturl = window.location.search;
+        if (parturl.substring(0, 1) == '?') {
+            parturl = parturl.substring(1);
+        }
+       var resturl = "/api/ExternBlogApi/GetGMapsMarkersForExtern/?userid=";
+        var getParams = new URLSearchParams(parturl);
+        for (let p of getParams) {
+            if (p[0] === "userid")
+            {
+                var id = p[1].split(':');
+                resturl += id[0];
+            }
+            if (p[0] === "blogid") {
+                resturl += "&blogid=" + p[1];
+            }
+        }
+
+        getData(resturl, map);
+
+    } else
+        if (blog) {
             var id = window.location.pathname.split("/").slice(-1)[0]; //get last part of url
             var url = "/api/ExternBlogApi/GetGMapsMarkers/?id="+id;
             getData(url,map);
 
-        } else {
-            var url = "/api/BlogApi/GetGMapsMarkers/";
-            if (!window.location.href.indexOf("/blog/preview/") > -1) {
-                google.maps.event.addListener(map, 'click', function (e) {
-                    // gmapsMarkerArray.push({ "Latitude": e.latLng.lat(), "Longitude": e.latLng.lng() });
-                    postMarker(e.latLng.lat(), e.latLng.lng());
-                    placeMarker(e.latLng, map);
-                });
+        } else
+            if ((createblog && !blog && !externblog) || (preview && !blog && !externblog)) {
+                var url = "/api/BlogApi/GetGMapsMarkers/";
+                getData(url, map);
+            
             }
+        
+
+        if (createblog && !blog && !externblog) {
+            google.maps.event.addListener(map, 'click', function (e) {
+                // gmapsMarkerArray.push({ "Latitude": e.latLng.lat(), "Longitude": e.latLng.lng() });
+                postMarker(e.latLng.lat(), e.latLng.lng());
+                placeMarker(e.latLng, map);
+            });
         }
 
-        getData(url,map);
+        
 
        
 

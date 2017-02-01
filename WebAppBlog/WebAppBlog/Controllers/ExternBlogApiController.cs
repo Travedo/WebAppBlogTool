@@ -125,6 +125,42 @@ namespace WebAppBlog.Controllers
         }
 
         [HttpGet]
+        [Route("GetGMapsMarkersForExtern")]
+        public List<GMapsMarker> GetGMapsMarkersForExtern(string userid, string blogid)
+        {
+            ApplicationDbContext context = new ApplicationDbContext();
+
+            Guid blogguid;
+            try
+            {
+                blogguid = new Guid(blogid);
+            }
+            catch (FormatException e)
+            {
+                return null;
+            }
+
+            if (context.BlogDatas.Any(blog => blog.ApplicationUserId == userid && blog.ExternalId == blogguid))
+            
+                {
+                var blogdata = context.BlogDatas.Where(blog => blog.ApplicationUserId == userid && blog.ExternalId == blogguid).ToList().Single();
+                List<GMapsMarker> gmapsmarker = new List<GMapsMarker>();
+                foreach (var marker in blogdata.GMapsMarkerModels)
+                {
+                    gmapsmarker.Add(new GMapsMarker { Latitude = marker.Latitude, Longitude = marker.Longitude });
+                }
+                context.Dispose();
+
+                return gmapsmarker;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
+        [HttpGet]
         [Route("DeleteBlog")]
         public HttpResponseMessage DeleteBlog(int id)
         {
