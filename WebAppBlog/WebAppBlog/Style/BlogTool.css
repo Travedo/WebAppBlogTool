@@ -243,12 +243,12 @@ input, select {
  .deleter {
      background-color: #fff;
      background: url(../fonts/button_close.png) no-repeat center center;
-     background-size: 20px 20px;
+     background-size: 10px 10px;
      float: right;
-     height: 20px;
-     margin: 5px 18px 2px;
-     padding: 10px 10px;
-     width: 20px;
+     height: 10px;
+     margin: 5px 4% 2px;
+     padding: 5px 5px;
+     width: 10px;
  }
      
  .error-empty-title {
@@ -544,6 +544,7 @@ footer:before {
 
 input[type="file"] {
     color: #fff;
+    font: 12px/18px "Dosis";
 }
 
 .gallery-container {
@@ -805,6 +806,17 @@ address {
 
     .more-content-box {
         background: #fff url(../fonts/all-in-one.png) center center no-repeat;
+    }
+
+    .deleter {
+        background-size: 20px 20px;
+        height: 20px;
+        padding: 10px 10px;
+        width: 20px;
+    }
+
+    input[type="file"] {
+        font: 13px/23px "Dosis";
     }
 
     .map-container {
