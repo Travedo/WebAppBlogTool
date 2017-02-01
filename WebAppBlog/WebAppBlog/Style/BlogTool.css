@@ -240,16 +240,18 @@ input, select {
      padding: 15px 15px;
  }
 
- .deleter{
-     background-color:white;
-     background-image: url(../fonts/button_close.png);
-     background-size: 30px 30px;
-     height:30px;
-     width:30px;
-     float:right;
+ .deleter {
+     background-color: #fff;
+     background: url(../fonts/button_close.png) no-repeat center center;
+     background-size: 20px 20px;
+     float: right;
+     height: 20px;
+     margin: 5px 18px 2px;
+     padding: 10px 10px;
+     width: 20px;
  }
-
- .error-empty-title{
+     
+ .error-empty-title {
      border-left: 6px solid red;
      background-color: #FFB2B2;
  }
@@ -605,9 +607,6 @@ input[type="file"] {
 .blogs-overview-page .more-options {
     display: block;
     margin-top: 50px;
-}
-
-.blogs-overview-page .btn {
     width: 135px;
 }
 
