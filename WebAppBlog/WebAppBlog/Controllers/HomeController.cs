@@ -13,14 +13,14 @@ namespace WebAppBlog.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Help()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
 
-        public ActionResult Impressum()
+        public ActionResult About()
         {
             ViewBag.Message = "Your contact page.";
 

@@ -32,7 +32,7 @@
                         <li>@Html.ActionLink("My Blogs", "Overview", "Blog")</li>
                     }
                     <li>@Html.ActionLink("Create Blog", "Create", "Blog")</li>
-                    <li>@Html.ActionLink("Help", "About", "Home")</li>
+                    <li>@Html.ActionLink("Help", "Help", "Home")</li>
                     
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -43,7 +43,7 @@
         @RenderBody()
         <footer>
             <span>&copy; @DateTime.Now.Year - BlogTool Productions</span>
-            <span class="impressum-link">@Html.ActionLink("Impressum", "Impressum", "Home")</span>
+            <span class="impressum-link">@Html.ActionLink("About", "About", "Home")</span>
         </footer>
     </div>
 
