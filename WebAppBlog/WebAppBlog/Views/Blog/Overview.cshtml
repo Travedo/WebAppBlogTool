@@ -8,14 +8,17 @@
     <h1>My Blogs</h1>
     @foreach (var blog in Model.usersBlogs)
     {
-         <div>
-             <a href="/ExternBlog/ShowBlog/@blog.id">
-                 <h2>@blog.Title</h2></a>
-                 <span>@blog.Subtitle</span>
-                 <span><a href="/ExternBlog/Delete/@blog.id">Delete</a></span>
-                 <span><a href="/ExternBlog/Edit/@blog.id">Edit</a></span>
+        <div class="blog-overview">
+            <div>
+                <a href="/ExternBlog/ShowBlog/@blog.id">
+                    <h2>@blog.Title</h2>
+                </a>
+                <span>@blog.Subtitle</span>
+                <span><a href="/ExternBlog/Delete/@blog.id">Delete</a></span>
+                <span><a href="/ExternBlog/Edit/@blog.id">Edit</a></span>
+            </div>
+            <a href="@blog.ExternalUrl">External Link to @blog.Title </a>
         </div>
-        <a href="@blog.ExternalUrl">External Link to @blog.Title </a>
     }
     <a class="more-options btn" href="/Blog/Create">Create new blog</a>
 </div>

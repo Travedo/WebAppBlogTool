@@ -611,6 +611,10 @@ input[type="file"] {
     width: 135px;
 }
 
+.blogs-overview-page .blog-overview {
+    margin: 50px 0;
+}
+
 /* ======================================================
         About page styles 
    ====================================================== */
@@ -821,6 +825,10 @@ address {
 
     .map-container {
         margin-top: 0;
+    }
+
+    .blogs-overview-page .blog-overview {
+        margin: 70px 0;
     }
 }
 
