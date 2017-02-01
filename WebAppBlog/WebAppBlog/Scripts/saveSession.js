@@ -116,44 +116,48 @@ $(document).ready(function () {
         var container = document.getElementById("blogdata-continued");
         var existingChilden = [];
 
-        //copy already existing children of container
-        for(var child of container.children)
-        {
-            existingChilden.push(child.outerHTML);
-        }
-
-        //delete all children
-        while (container.hasChildNodes())
-            container.removeChild(container.lastChild);
 
         //get json object from storage
         var object = $.parseJSON(data);
+        if (object !== null && object !== "undefined" && object.dynamic) {
 
-        //iterate over elements in array
-        for (var element of object.dynamic)
-        {
-            var div = document.createElement('div');
+            //copy already existing children of container
+            for(var child of container.children)
+            {
+                existingChilden.push(child.outerHTML);
+            }
+
+            //delete all children
+            while (container.hasChildNodes())
+                container.removeChild(container.lastChild);
+
+
+            //iterate over elements in array
+            for (var element of object.dynamic)
+            {
+                var div = document.createElement('div');
             //copy element.html into div (=> child of div)
-            div.innerHTML = element.html;
+                div.innerHTML = element.html;
 
             //get restored html object
-            var elements = div.children[0];
+                var elements = div.children[0];
 
             //add value, if available
-            if (element.value)
-                elements.value = element.value;
+                if (element.value)
+                    elements.value = element.value;
 
             //append recunstructed html object
-            container.appendChild(elements);
-        }
+                container.appendChild(elements);
+            }
 
-        //add back prior removed objects
-        for(var child of existingChilden)
-        {
-            var div = document.createElement('div');
-            div.innerHTML = child;
-            var elements = div.childNodes;
-            container.appendChild(elements[0]);
+            //add back prior removed objects
+            for(var child of existingChilden)
+            {
+                var div = document.createElement('div');
+                div.innerHTML = child;
+                var elements = div.childNodes;
+                container.appendChild(elements[0]);
+            }
         }
 
     } else
