@@ -249,6 +249,11 @@ input, select {
      float:right;
  }
 
+ .error-empty-title{
+     border-left: 6px solid red;
+     background-color: #FFB2B2;
+ }
+
 label {
     font-size: 14px;
     line-height: 16px;

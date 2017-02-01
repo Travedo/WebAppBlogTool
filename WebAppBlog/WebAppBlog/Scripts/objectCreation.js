@@ -1,5 +1,12 @@
 ﻿function createBlog() {
-
+    var titel = $("#blog-titel");
+    if (titel[0].value === "undefined" ||titel[0].value === "") {
+        titel.addClass("error-empty-title");
+       
+        return;
+    } else {
+        titel.removeClass("error-empty-title");
+    }
     var blog = create();
     sendData("/blog/preview", create());
 }
