@@ -60,8 +60,6 @@ namespace WebAppBlog.Controllers
                 : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
                 : message == ManageMessageId.SetTwoFactorSuccess ? "Your two-factor authentication provider has been set."
                 : message == ManageMessageId.Error ? "An error has occurred."
-                : message == ManageMessageId.AddPhoneSuccess ? "Your phone number was added."
-                : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
                 : "";
 
             var userId = User.Identity.GetUserId();
@@ -74,7 +72,8 @@ namespace WebAppBlog.Controllers
                 Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
                 FirstName = user.FirstName,
-                LastName=user.LastName
+                LastName=user.LastName,
+                Birthdate=user.Birthdate
             };
             return View(model);
         }
@@ -101,6 +100,38 @@ namespace WebAppBlog.Controllers
                 message = ManageMessageId.Error;
             }
             return RedirectToAction("ManageLogins", new { Message = message });
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> UpdateUser(IndexViewModel user)
+        {
+
+            if (ModelState.IsValid)
+            {
+                ApplicationDbContext context = new ApplicationDbContext();
+                var olduser = context.Users.Find(User.Identity.GetUserId());
+
+                olduser.FirstName = user.FirstName;
+                olduser.LastName = user.LastName;
+                olduser.Birthdate = user.Birthdate;
+                await context.SaveChangesAsync();
+                context.Dispose();
+
+                //resign in the user to update "Hello name surname"
+                if (olduser != null)
+                {
+                    await SignInManager.SignInAsync(olduser, isPersistent: false, rememberBrowser: false);
+                }
+
+                return RedirectToAction("Index", "User");
+                
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+
+                
         }
 
         //

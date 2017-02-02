@@ -13,8 +13,13 @@ namespace WebAppBlog.Models
         public string PhoneNumber { get; set; }
         public bool TwoFactor { get; set; }
         public bool BrowserRemembered { get; set; }
+
+        [Required]
         public string FirstName { get; set; }
+
+        [Required]
         public string LastName { get; set; }
+        public DateTime Birthdate { get; set; }
     }
 
     public class ManageLoginsViewModel
