@@ -12,12 +12,14 @@ function initMap() {
     var blog = false;
     var externblog = false;
     var preview = false;
+    var edit = false;
     var url = window.location.href.split("/");
         
     if (url.indexOf("ExternBlog") > -1) { blog = true; }
     if (url.indexOf("ViewBlogFromExtern") > -1) { externblog = true; }
     if (url.indexOf("Create") > -1) { createblog = true; }
     if (url.indexOf("preview") > -1) preview = true;
+    if (url.indexOf("Edit") > -1) edit = true;
 
 
 
@@ -56,13 +58,17 @@ function initMap() {
             }
         
 
-        if (createblog && !blog && !externblog) {
+    if (createblog && !blog && !externblog) {
             google.maps.event.addListener(map, 'click', function (e) {
-                // gmapsMarkerArray.push({ "Latitude": e.latLng.lat(), "Longitude": e.latLng.lng() });
-                postMarker(e.latLng.lat(), e.latLng.lng());
+                postMarker(e.latLng.lat(), e.latLng.lng(),"/api/BlogApi/AddGMapsMarker/");
                 placeMarker(e.latLng, map);
             });
-        }
+    } else if (edit && blog) {
+        google.maps.event.addListener(map, 'click', function (e) {
+            postMarker(e.latLng.lat(), e.latLng.lng(), "/api/ExternBlogApi/AddGMapsMarker/");
+            placeMarker(e.latLng, map);
+        });
+    }
 
         
 
@@ -96,10 +102,10 @@ function drawGMapsMarker(map, markerarray) {
     }
 }
 
-function postMarker(lat, lng) {
+function postMarker(lat, lng,url) {
     $.ajax({
         type: "POST",
-        url: "/api/BlogApi/AddGMapsMarker/",
+        url: url,
         data: JSON.stringify({ "Latitude": lat, "Longitude":lng }),
         contentType: "application/json; charset=utf-8",
         dataType: "json",
