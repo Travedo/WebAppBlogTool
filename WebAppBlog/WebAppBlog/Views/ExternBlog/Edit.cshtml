@@ -1,0 +1,101 @@
+﻿@section JavaScript
+{
+    <script type="text/javascript" src="@Url.Content("/Scripts/BlogTool.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/DragNDropEdit.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/Scripts/objectCreation.js")"></script>
+<script type="text/javascript" src="@Url.Content("/Scripts/EditPage.js")"></script>
+}
+
+@model WebAppBlog.Models.ExternBlogViewModel
+
+@{
+    ViewBag.Title = "Demo Blog under construction";
+}
+
+<div class="create-blog-page">
+    <h1>Create your Blog</h1>
+    <div class="main-container group">
+        <div class="blog-build-container group">
+            <div class="blog-elements">
+                <h2>Please choose your content here.</h2>
+                <a id="textAdd" href"#" draggable="true" ondragstart="drag(event)" class="blog-element icon-text"></a>
+                <a id="imgAdd" href"#" draggable="true" ondragstart="drag(event)" class="blog-element icon-image"></a>
+                <a id="galleryAdd" href"#" draggable="true" ondragstart="drag(event)" class="blog-element icon-images"></a>  <!-- -gallery -->
+                <a id="videoAdd" href"#" draggable="true" ondragstart="drag(event)" class="blog-element icon-video"></a>
+                <!--a id="mp3Add" href"#" draggable="true" ondragstart="drag(event)" class="blog-element icon-music"></a-->
+            </div>
+            <div class="blog-preview">
+                <div id="blogdata">
+                    <label>Titel</label>
+                    <input type="text" id="blog-titel" value="@Model.Title" />
+                        
+                        <label>Subtitel</label>
+                        <input id="blog-subtitle" type="text" value="@Model.Subtitle" />
+                        <form name="update"></form>
+
+                        @foreach (var element in Model.Elements)
+                        {
+                            if (element is WebAppBlog.Models.Blog.TextElement) //show all text elements
+                            {
+
+                                <div class="deleter btn" onclick="deleteExistingElement(@Model.Elements.IndexOf(element));"></div>
+                                <textarea form="update">@element.value</textarea>
+                            }
+                            else if (element is WebAppBlog.Models.Blog.GalleryElement) //generate an awesome slideshow...
+                            {
+                                var img = element as WebAppBlog.Models.Blog.GalleryElement;
+                                <div class="deleter btn" onclick="deleteExistingElement(@Model.Elements.IndexOf(element));"></div>
+                                <div style="position: relative;">
+                                    @foreach (var i in img.Images)
+                                    {
+                                        
+                                        <img src="@i.base64" class="@img.ClassName" />
+                                    }
+                                    @if (img.Images.Count > 0)
+                                    {
+                                        <a onclick="initSlideChange(event)" class="galleryButton galleryButtonLeft">&#10094;</a>
+                                        <a onclick="initSlideChange(event)" class="galleryButton galleryButtonRight">&#10095;</a>
+                                        <script>changeSlides(1, "@img.ClassName");</script>
+                                    }
+                                </div>
+                            }
+                            else if (element is WebAppBlog.Models.Blog.ImageElement) //create images
+                            {
+                                var img = element as WebAppBlog.Models.Blog.ImageElement;
+                                <div class="deleter btn" onclick="deleteExistingElement(@Model.Elements.IndexOf(element));"></div>
+                                <img src="@img.base64" />
+                            }
+                            else //add a video
+                            {
+                                var video = element as WebAppBlog.Models.Blog.VideoElement;
+                                <div class="deleter btn" onclick="deleteExistingElement(@Model.Elements.IndexOf(element));"></div>
+                                <div>
+                                    <iframe src="@video.Src" height="315" width="560" frameBorder="0" allowFullscreen></iframe>
+                                </div>
+                            }
+
+                        }
+                       
+
+                        <h2>Your Content</h2>
+
+                        <div class="more-content" id="blogdata-continued">
+                            <h3>More Content</h3>
+                            <span id="more-content-box" class="more-content-box" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+                        </div>
+                        <button onclick="cancel()">Cancel</button>
+                        <button class="btn-right" onclick="updateBlog()">Update</button>
+                    </div>
+            </div>
+
+        </div>
+        <div class="map-container">
+            <h2 class="location-icon">Show your friends where you are</h2>
+            <div id="map"></div>
+        </div>
+
+    </div>
+</div>
+
+
+

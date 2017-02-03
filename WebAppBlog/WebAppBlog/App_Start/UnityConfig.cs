@@ -48,7 +48,11 @@ namespace WebAppBlog.App_Start
 
             container.RegisterType<BlogDataService>(new ContainerControlledLifetimeManager());
             container.RegisterType<IBlogDataService,BlogDataService>();
-             GlobalConfiguration.Configuration.DependencyResolver = new UnityResolver(container);
+
+            container.RegisterType<BlogEditService>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IBlogEditService, BlogEditService>();
+
+            GlobalConfiguration.Configuration.DependencyResolver = new UnityResolver(container);
 
 
             container.RegisterType<ApplicationDbContext>();

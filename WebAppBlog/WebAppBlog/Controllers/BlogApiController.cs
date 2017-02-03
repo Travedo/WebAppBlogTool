@@ -18,20 +18,11 @@ namespace WebAppBlog.Controllers
         public BlogApiController(IBlogDataService service)
         {
             blogService = service;
+            position = 0;
         }
 
+        private int position;
 
-        // GET api/<controller>
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/<controller>/5
-        public string Get(int id)
-        {
-            return "value";
-        }
 
         [HttpPost]
         [Route("CreateBlog")]
@@ -133,25 +124,44 @@ namespace WebAppBlog.Controllers
             return blogService.GetGMapsMarker();
         }
 
-        [HttpPost]
-        [Route("DeleteImage")]
-        public HttpResponseMessage DeleteImage(HttpRequestMessage request)
+        [HttpGet]
+        [Route("GetNewText")]
+        public Helper GetNewText()
         {
-            var data = request.Content.ReadAsStringAsync().Result;
-            if (data == null)
-            {
-                return new HttpResponseMessage(HttpStatusCode.BadRequest)
-                {
-                    Content = new StringContent("Post data is empty")
-                };
-            }
-            else
-            {
-                Debug.WriteLine(data);
-                var blogdata = JsonConvert.DeserializeObject<Helper>(data);
-              //  blogService.AddGMapsMarker(blogdata);
-                return new HttpResponseMessage(HttpStatusCode.OK);
-            }
+            Helper h = new Helper();
+            h.Value = position.ToString();
+            position++;
+            return h;
+        }
+
+        [HttpGet]
+        [Route("GetNewImage")]
+        public Helper GetNewImage()
+        {
+            Helper h = new Helper();
+            h.Value = position.ToString();
+            position++;
+            return h;
+        }
+
+        [HttpGet]
+        [Route("GetNewGallery")]
+        public Helper GetNewGallery()
+        {
+            Helper h = new Helper();
+            h.Value = position.ToString();
+            position++;
+            return h;
+        }
+
+        [HttpGet]
+        [Route("GetNewVideo")]
+        public Helper GetNewVideo()
+        {
+            Helper h = new Helper();
+            h.Value = position.ToString();
+            position++;
+            return h;
         }
 
         [HttpPost]
