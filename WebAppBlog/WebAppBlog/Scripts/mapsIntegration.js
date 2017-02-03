@@ -29,7 +29,7 @@ function initMap() {
         if (parturl.substring(0, 1) == '?') {
             parturl = parturl.substring(1);
         }
-       var resturl = "/api/ExternBlogApi/GetGMapsMarkersForExtern/?userid=";
+        var resturl = "/api/ExternBlogApi/GetMapMarkersForExtern/?userid=";
         var getParams = new URLSearchParams(parturl);
         for (let p of getParams) {
             if (p[0] === "userid")
@@ -47,7 +47,7 @@ function initMap() {
     } else
         if (blog) {
             var id = window.location.pathname.split("/").slice(-1)[0]; //get last part of url
-            var url = "/api/ExternBlogApi/GetGMapsMarkers/?id="+id;
+            var url = "/api/ExternBlogApi/GetMapMarkers/?id=" + id;
             getData(url,map);
 
         } else
@@ -65,7 +65,7 @@ function initMap() {
             });
     } else if (edit && blog) {
         google.maps.event.addListener(map, 'click', function (e) {
-            postMarker(e.latLng.lat(), e.latLng.lng(), "/api/ExternBlogApi/AddGMapsMarker/");
+            postMarker(e.latLng.lat(), e.latLng.lng(), "/api/ExternBlogApi/AddMapsMarker/");
             placeMarker(e.latLng, map);
         });
     }

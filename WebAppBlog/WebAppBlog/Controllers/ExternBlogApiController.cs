@@ -26,7 +26,7 @@ namespace WebAppBlog.Controllers
         }
 
         [HttpGet]
-        public HttpResponseMessage GetDataToBeRemovedFromBlog(int? id)
+        public HttpResponseMessage RemoveById(int? id)
         {
             if (id != null)
             {
@@ -132,8 +132,8 @@ namespace WebAppBlog.Controllers
         }
 
         [HttpGet]
-        [Route("GetGMapsMarkers")]
-        public List<GMapsMarker> GetGMapsMarkers(int? id)
+        [Route("GetMapMarkers")]
+        public List<GMapsMarker> GetMapMarkers(int? id)
         {
             ApplicationDbContext context = new ApplicationDbContext();
             var user = context.Users.Find(User.Identity.GetUserId());
@@ -158,8 +158,8 @@ namespace WebAppBlog.Controllers
         }
 
         [HttpGet]
-        [Route("GetGMapsMarkersForExtern")]
-        public List<GMapsMarker> GetGMapsMarkersForExtern(string userid, string blogid)
+        [Route("GetMapMarkersForExtern")]
+        public List<GMapsMarker> GetMapMarkersForExtern(string userid, string blogid)
         {
             ApplicationDbContext context = new ApplicationDbContext();
 
@@ -396,8 +396,8 @@ namespace WebAppBlog.Controllers
 
 
         [HttpPost]
-        [Route("AddGMapsMarker")]
-        public HttpResponseMessage AddGMapsMarker(HttpRequestMessage request)
+        [Route("AddMapsMarker")]
+        public HttpResponseMessage AddMapsMarker(HttpRequestMessage request)
         {
             var data = request.Content.ReadAsStringAsync().Result;
             if (data == null)

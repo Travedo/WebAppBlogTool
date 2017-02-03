@@ -51,7 +51,7 @@ function changeSlides(n, classname) {
 function deleteExistingElement(index) {
     console.log(index);
     $.ajax({
-        url: '/api/ExternBlogApi/GetDataToBeRemovedFromBlog/?id=' + index,
+        url: '/api/ExternBlogApi/RemoveById/?id=' + index,
         type: 'GET', //in later release: change to delete!
         contentType: "application/json; charset=utf-8",
         success: function (result) {
