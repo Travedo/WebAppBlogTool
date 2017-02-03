@@ -20,6 +20,7 @@ namespace WebAppBlog.Controllers
         {
             deletetempService = service;
         }
+
         public ActionResult Delete(int id)
         {
             ApplicationDbContext context = new ApplicationDbContext();
@@ -60,6 +61,7 @@ namespace WebAppBlog.Controllers
                         elements = deletetempService.Retrieve();
                     else { 
                         elements = elements.OrderBy(x => x.position).ToList();
+                        deletetempService.Clear();
                         deletetempService.Initialize(elements);
                         deletetempService.SetCurrentBlogId(id.GetValueOrDefault());
                     }

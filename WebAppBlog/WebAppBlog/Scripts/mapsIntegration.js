@@ -52,7 +52,7 @@ function initMap() {
 
         } else
             if ((createblog && !blog && !externblog) || (preview && !blog && !externblog)) {
-                var url = "/api/BlogApi/GetGMapsMarkers/";
+                var url = "/api/BlogApi/GetMapMarkers/";
                 getData(url, map);
             
             }
@@ -60,7 +60,7 @@ function initMap() {
 
     if (createblog && !blog && !externblog) {
             google.maps.event.addListener(map, 'click', function (e) {
-                postMarker(e.latLng.lat(), e.latLng.lng(),"/api/BlogApi/AddGMapsMarker/");
+                postMarker(e.latLng.lat(), e.latLng.lng(), "/api/BlogApi/AddMapsMarker/");
                 placeMarker(e.latLng, map);
             });
     } else if (edit && blog) {

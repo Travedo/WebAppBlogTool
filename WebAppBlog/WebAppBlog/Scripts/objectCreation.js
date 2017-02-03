@@ -16,7 +16,7 @@
 function sendData(url, blog){
     $.ajax({
         type: "POST",
-        url: "/api/BlogApi/CreateBlog/",
+        url: "/api/BlogApi/PreviewBlog/",
         data: JSON.stringify({ blog }),
         contentType: "application/json; charset=utf-8",
         dataType: "json",

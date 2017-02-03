@@ -18,14 +18,12 @@ namespace WebAppBlog.Controllers
         public BlogApiController(IBlogDataService service)
         {
             blogService = service;
-            position = 0;
+           
         }
-
-        private int position;
 
 
         [HttpPost]
-        [Route("CreateBlog")]
+        [Route("PreviewBlog")]
         public HttpResponseMessage CreateBlog(HttpRequestMessage request)
         {
             var data = request.Content.ReadAsStringAsync().Result;
@@ -95,7 +93,7 @@ namespace WebAppBlog.Controllers
 
 
         [HttpPost]
-        [Route("AddGMapsMarker")]
+        [Route("AddMapsMarker")]
         public HttpResponseMessage AddGMapsMarker(HttpRequestMessage request)
         {
             var data = request.Content.ReadAsStringAsync().Result;
@@ -117,78 +115,12 @@ namespace WebAppBlog.Controllers
         }
 
         [HttpGet]
-        [Route("GetGMapsMarkers")]
+        [Route("GetMapMarkers")]
         public List<GMapsMarker> GetGMapsMarkers()
         {
 
             return blogService.GetGMapsMarker();
         }
 
-        [HttpGet]
-        [Route("GetNewText")]
-        public Helper GetNewText()
-        {
-            Helper h = new Helper();
-            h.Value = position.ToString();
-            position++;
-            return h;
-        }
-
-        [HttpGet]
-        [Route("GetNewImage")]
-        public Helper GetNewImage()
-        {
-            Helper h = new Helper();
-            h.Value = position.ToString();
-            position++;
-            return h;
-        }
-
-        [HttpGet]
-        [Route("GetNewGallery")]
-        public Helper GetNewGallery()
-        {
-            Helper h = new Helper();
-            h.Value = position.ToString();
-            position++;
-            return h;
-        }
-
-        [HttpGet]
-        [Route("GetNewVideo")]
-        public Helper GetNewVideo()
-        {
-            Helper h = new Helper();
-            h.Value = position.ToString();
-            position++;
-            return h;
-        }
-
-        [HttpPost]
-        [Route("DeleteGallery")]
-        public HttpResponseMessage DeleteGallery(HttpRequestMessage request)
-        {
-
-            return null;
-        }
-
-
-        /* [HttpPost]
-         [Route("CreateBlog")]
-         public string CreateBlog(string value)
-         {
-             Debug.WriteLine(value);
-             return "test";
-         }*/
-
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
-        }
     }
 }
