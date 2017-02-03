@@ -219,77 +219,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611162009351_InitialCreate.cs" />
-    <Compile Include="Migrations\201611162009351_InitialCreate.Designer.cs">
-      <DependentUpon>201611162009351_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611231214038_Birthdate.cs" />
-    <Compile Include="Migrations\201611231214038_Birthdate.Designer.cs">
-      <DependentUpon>201611231214038_Birthdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701221617457_blogdata.cs" />
-    <Compile Include="Migrations\201701221617457_blogdata.Designer.cs">
-      <DependentUpon>201701221617457_blogdata.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701221725566_addedKey.cs" />
-    <Compile Include="Migrations\201701221725566_addedKey.Designer.cs">
-      <DependentUpon>201701221725566_addedKey.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701221740375_somechanges.cs" />
-    <Compile Include="Migrations\201701221740375_somechanges.Designer.cs">
-      <DependentUpon>201701221740375_somechanges.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701221808443_somechanges2.cs" />
-    <Compile Include="Migrations\201701221808443_somechanges2.Designer.cs">
-      <DependentUpon>201701221808443_somechanges2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701221940514_imagemodel.cs" />
-    <Compile Include="Migrations\201701221940514_imagemodel.Designer.cs">
-      <DependentUpon>201701221940514_imagemodel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701222115323_blogmodels.cs" />
-    <Compile Include="Migrations\201701222115323_blogmodels.Designer.cs">
-      <DependentUpon>201701222115323_blogmodels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701232126511_positions.cs" />
-    <Compile Include="Migrations\201701232126511_positions.Designer.cs">
-      <DependentUpon>201701232126511_positions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701232327147_cascadingDeleteTest.cs" />
-    <Compile Include="Migrations\201701232327147_cascadingDeleteTest.Designer.cs">
-      <DependentUpon>201701232327147_cascadingDeleteTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701240056147_externalConnection.cs" />
-    <Compile Include="Migrations\201701240056147_externalConnection.Designer.cs">
-      <DependentUpon>201701240056147_externalConnection.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701241931051_videoModel.cs" />
-    <Compile Include="Migrations\201701241931051_videoModel.Designer.cs">
-      <DependentUpon>201701241931051_videoModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701242032384_galleryImagesAsString.cs" />
-    <Compile Include="Migrations\201701242032384_galleryImagesAsString.Designer.cs">
-      <DependentUpon>201701242032384_galleryImagesAsString.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701242042224_galleryImages.cs" />
-    <Compile Include="Migrations\201701242042224_galleryImages.Designer.cs">
-      <DependentUpon>201701242042224_galleryImages.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701242044242_galleryimagetest.cs" />
-    <Compile Include="Migrations\201701242044242_galleryimagetest.Designer.cs">
-      <DependentUpon>201701242044242_galleryimagetest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701242048174_galleryimageFix.cs" />
-    <Compile Include="Migrations\201701242048174_galleryimageFix.Designer.cs">
-      <DependentUpon>201701242048174_galleryimageFix.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701311531242_gmapsmarker.cs" />
-    <Compile Include="Migrations\201701311531242_gmapsmarker.Designer.cs">
-      <DependentUpon>201701311531242_gmapsmarker.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701311546492_gmapsmarker_double.cs" />
-    <Compile Include="Migrations\201701311546492_gmapsmarker_double.Designer.cs">
-      <DependentUpon>201701311546492_gmapsmarker_double.cs</DependentUpon>
+    <Compile Include="Migrations\201702031103484_InitialCreate.cs" />
+    <Compile Include="Migrations\201702031103484_InitialCreate.Designer.cs">
+      <DependentUpon>201702031103484_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -448,59 +380,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611162009351_InitialCreate.resx">
-      <DependentUpon>201611162009351_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611231214038_Birthdate.resx">
-      <DependentUpon>201611231214038_Birthdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701221617457_blogdata.resx">
-      <DependentUpon>201701221617457_blogdata.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701221725566_addedKey.resx">
-      <DependentUpon>201701221725566_addedKey.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701221740375_somechanges.resx">
-      <DependentUpon>201701221740375_somechanges.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701221808443_somechanges2.resx">
-      <DependentUpon>201701221808443_somechanges2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701221940514_imagemodel.resx">
-      <DependentUpon>201701221940514_imagemodel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701222115323_blogmodels.resx">
-      <DependentUpon>201701222115323_blogmodels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701232126511_positions.resx">
-      <DependentUpon>201701232126511_positions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701232327147_cascadingDeleteTest.resx">
-      <DependentUpon>201701232327147_cascadingDeleteTest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701240056147_externalConnection.resx">
-      <DependentUpon>201701240056147_externalConnection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701241931051_videoModel.resx">
-      <DependentUpon>201701241931051_videoModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701242032384_galleryImagesAsString.resx">
-      <DependentUpon>201701242032384_galleryImagesAsString.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701242042224_galleryImages.resx">
-      <DependentUpon>201701242042224_galleryImages.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701242044242_galleryimagetest.resx">
-      <DependentUpon>201701242044242_galleryimagetest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701242048174_galleryimageFix.resx">
-      <DependentUpon>201701242048174_galleryimageFix.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701311531242_gmapsmarker.resx">
-      <DependentUpon>201701311531242_gmapsmarker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701311546492_gmapsmarker_double.resx">
-      <DependentUpon>201701311546492_gmapsmarker_double.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702031103484_InitialCreate.resx">
+      <DependentUpon>201702031103484_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -519,7 +400,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-         
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51762/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
